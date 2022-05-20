@@ -6,15 +6,18 @@ use App\Models\Departamento;
 use App\Models\Equipo;
 use App\Models\Solicitud;
 use App\Http\Requests\Departamento as DepartamentoRequests;
+use App\Http\Requests\Solicitud as SolicitudRequests;
 
 class DepartamentoController extends Controller
 {
 
     protected $departamento;
-    public function __construct(Departamento $departamento){
+    protected $solicitud;
+    public function __construct(Departamento $departamento, Solicitud $solicitud){
         $this->departamento = $departamento;
+        $this->solicitud = $solicitud;
     }
-    
+
     public function index()
     {
         $departamento = Departamento::all();
@@ -28,13 +31,14 @@ class DepartamentoController extends Controller
     
     public function store(DepartamentoRequests $request)
     {
-        $departamento = $this->departamento->create($request->all());
+        $this->departamento->create($request->all());
         return $this->index();
     }
     
+    
     public function show($departamento)
     {
-        $solicitud = Solicitud::where('departamento_id', $departamento)->get();
+        $solicitud = Solicitud::where('departamento_id', $departamento)->orderBy('estatus', 'desc')->get();
         $equipo = Equipo::where('departamento_id', $departamento)->get();
         $departamento = Departamento::find($departamento);
         return view('templates.content.departamento.show', compact('departamento','solicitud','equipo'));

@@ -18,7 +18,7 @@ class SolicitudController extends Controller
     
     public function index()
     {
-        $solicitud = Solicitud::all();
+        $solicitud = Solicitud::orderBy('estatus', 'desc')->get();
         $equipo = Equipo::orderBy('departamento_id', 'asc')->get();
         $departamento = Departamento::orderBy('id', 'asc')->get();
         return view('templates.content.solicitud.index', compact('departamento','solicitud','equipo'));
@@ -31,11 +31,34 @@ class SolicitudController extends Controller
     
     public function store(SolicitudRequests $request)
     {
-        $solicitud = $this->solicitud->create($request->all());
+        
+        $departamento_id = Equipo::where('id', $request->get('equipo_id'))->value('departamento_id');
+        $Solicitud = new Solicitud;
+        $Solicitud->equipo_id = $request->equipo_id;
+        $Solicitud->departamento_id = $departamento_id;
+        $Solicitud->identificador = $request->identificador;
+        $Solicitud->observacion = $request->observacion;
+        $Solicitud->tipo = $request->tipo;
+        $Solicitud->estatus = $request->estatus;
+        $Solicitud->save();
         return $this->index();
     }
-
     
+    public function departamento(SolicitudRequests $request)
+    {
+        
+        $departamento_id = Equipo::where('id', $request->get('equipo_id'))->value('departamento_id');
+        $Solicitud = new Solicitud;
+        $Solicitud->equipo_id = $request->equipo_id;
+        $Solicitud->departamento_id = $departamento_id;
+        $Solicitud->identificador = $request->identificador;
+        $Solicitud->observacion = $request->observacion;
+        $Solicitud->tipo = $request->tipo;
+        $Solicitud->estatus = $request->estatus;
+        $Solicitud->save();
+        return redirect(route('departamento.show', $departamento_id));
+    }
+
     public function show($solicitud)
     {
         $departamento = Departamento::all();
@@ -54,7 +77,13 @@ class SolicitudController extends Controller
     {
         $id = $solicitud;
         $solicitud = Solicitud::find($id);
-        $solicitud->update($request->all());
+        $solicitud->equipo_id = $request->equipo_id;
+        $solicitud->departamento_id = $request->departamento_id;
+        $solicitud->identificador = $request->identificador;
+        $solicitud->observacion = $request->observacion;
+        $solicitud->tipo = $request->tipo;
+        $solicitud->estatus = $request->estatus;
+        $solicitud->save();
         return $this->show($id);
     }
     

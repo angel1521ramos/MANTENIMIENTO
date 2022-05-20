@@ -46,6 +46,13 @@ var KTProjectSettings = function () {
                             }
                         }
                     },
+                    estatus: {
+                        validators: {
+                            notEmpty: {
+                                message: ' El estatus de equipo es requerido'
+                            }
+                        }
+                    }
                 },
                 plugins: {
                     trigger: new FormValidation.plugins.Trigger(),

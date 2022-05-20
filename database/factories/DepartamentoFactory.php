@@ -18,7 +18,7 @@ class DepartamentoFactory extends Factory
     {
         return [
             'identificador' => $this->faker->currencyCode,
-            'nombre' => $this->faker->domainWord,
+            'nombre' => $this->faker->randomElement($array = array ('SISTEMAS','CATASTRO','TESORERIA','PRESIDENCIA','PATRIMONIO','CAEV','OBRAS PUBLICAS','RECURSOS HUMANOS')),
             'responsable' => $this->faker->name
         ];
     }

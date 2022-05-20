@@ -124,7 +124,7 @@
                                                 </div>
                                                 <!--end::Input group-->
                                                 <!--begin::Input group-->
-                                                <div class="fv-row mb-7 fv-plugins-icon-container">
+                                                <div class="fv-row mb-7 fv-plugins-icon-container" hidden>
                                                     <!--begin::Label-->
                                                     <label class="required fw-bold fs-6 mb-2">departamento</label>
                                                     <!--end::Label-->
@@ -140,7 +140,7 @@
                                                                 data-select2-id="2" tabindex="-1" aria-hidden="true">
                                                                 <option value="">Selecciona un departamento</option>
                                                                 @foreach ($departamento as $x)
-                                                                    <option value="{{ $x->id }}">
+                                                                    <option value="{{ $x->id }}" selected>
                                                                     {{ $x->nombre }}
                                                                     </option>
                                                                 @endforeach
@@ -285,7 +285,6 @@
                     <!--end::Card toolbar-->
                 </div>
                 <!--end::Card header-->
-
                 <!--begin::Card body-->
                 <div class="card-body py-4">
                     <!--begin::Table-->

@@ -17,7 +17,7 @@ class EquipoFactory extends Factory
     public function definition()
     {
         return [
-            'departamento_id' => $this->faker->numberBetween($min = 1, $max = 10),
+            'departamento_id' => $this->faker->numberBetween($min = 1, $max = 8),
             'inventario' => $this->faker->numberBetween($min = 1241, $max = 9999),
             'marca' => $this->faker->randomElement($array = array ('HP','LENOVO','BENQ','SAMSUNG','ACER')),
             'tipo' => $this->faker->randomElement($array = array ('COMPUTADORA','IMPRESORA','REGULADOR'))

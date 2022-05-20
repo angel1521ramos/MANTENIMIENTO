@@ -171,7 +171,7 @@
                                         {{ $solicitud->estatus == 'PENDIENTE' ? 'btn-active-danger active' : 'btn-active-danger' }}"
                                         data-kt-button="true">
                                         <!--begin::Input-->
-                                        <input class="btn-check" type="radio" name="estatus" value="PENDIENTE">
+                                        <input class="btn-check" type="radio" name="estatus" value="PENDIENTE" checked>
                                         <!--end::Input-->
                                         PENDIENTE
                                     </label>

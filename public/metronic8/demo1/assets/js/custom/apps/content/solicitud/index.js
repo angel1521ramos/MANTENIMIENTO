@@ -56,7 +56,7 @@ var KTUsersAddUser = function () {
                                 message: 'El estatus es requerido'
                             }
                         }
-                    },
+                    }
                 },
 
                 plugins: {
