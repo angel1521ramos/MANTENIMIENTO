@@ -7,7 +7,6 @@ use App\Http\Controllers\SolicitudController;
 
 
 
-
 Route::resources([
     'departamento' => DepartamentoController::class,
     'equipo' => EquipoController::class,

@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('identificador');
             $table->text('observacion');
             $table->string('tipo');
-            $table->string('estatus')->default('PENDIENTE');
+            $table->string('estatus');
             $table->timestamps();
         });
     }

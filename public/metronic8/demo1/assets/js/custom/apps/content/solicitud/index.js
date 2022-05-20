@@ -50,6 +50,13 @@ var KTUsersAddUser = function () {
                             }
                         }
                     },
+                    'estatus': {
+                        validators: {
+                            notEmpty: {
+                                message: 'El estatus es requerido'
+                            }
+                        }
+                    },
                 },
 
                 plugins: {

@@ -108,7 +108,8 @@
                                                                 tabindex="-1" aria-hidden="true">
                                                                 <option value="">Selecciona un equipo</option>
                                                                 @foreach ($equipo as $x)
-                                                                    <option value="{{ $x->id }}">{{ $x->tipo }}
+                                                                    <option value="{{ $x->id }}"
+                                                                    >{{ $x->tipo }}
                                                                         {{ $x->marca }} | {{ $x->inventario }} |
                                                                         {{ $x->Departamento->nombre }}
                                                                     </option>
@@ -133,13 +134,14 @@
                                                             <!--begin::Select2-->
                                                             <select
                                                                 class="form-select form-select-solid select2-hidden-accessible"
-                                                                name="departamento_id" id="departamento_id" data-control="select2"
-                                                                data-hide-search="true"
-                                                                data-placeholder="Selecciona un departamento" data-select2-id="1"
-                                                                tabindex="-1" aria-hidden="true">
+                                                                name="departamento_id" id="departamento_id"
+                                                                data-control="select2" data-hide-search="true"
+                                                                data-placeholder="Selecciona un departamento"
+                                                                data-select2-id="2" tabindex="-1" aria-hidden="true">
                                                                 <option value="">Selecciona un departamento</option>
                                                                 @foreach ($departamento as $x)
-                                                                    <option value="{{ $x->id }}">{{ $x->nombre }}
+                                                                    <option value="{{ $x->id }}">
+                                                                    {{ $x->nombre }}
                                                                     </option>
                                                                 @endforeach
                                                             </select>
@@ -159,7 +161,8 @@
                                                     <!--begin::Input-->
                                                     <input type="text" name="observacion" id="observacion"
                                                         class="form-control form-control-solid mb-3 mb-lg-0"
-                                                        placeholder="No funciona porque ..." style="text-transform:uppercase" value="">
+                                                        placeholder="No funciona porque ..."
+                                                        style="text-transform:uppercase" value="">
                                                     <!--end::Input-->
                                                     <div class="fv-plugins-message-container invalid-feedback"></div>
                                                 </div>
@@ -177,7 +180,7 @@
                                                                 class="form-select form-select-solid select2-hidden-accessible"
                                                                 name="tipo" id="tipo" data-control="select2"
                                                                 data-hide-search="true"
-                                                                data-placeholder="Selecciona el tipo" data-select2-id="2"
+                                                                data-placeholder="Selecciona el tipo" data-select2-id="3"
                                                                 tabindex="-1" aria-hidden="true">
                                                                 <option value="">Selecciona un tipo</option>
                                                                 <option value="MANTENIMIENTO">MANTENIMIENTO</option>
@@ -190,6 +193,66 @@
                                                     </div>
                                                     <!--end::Input-->
                                                     <div class="fv-plugins-message-container invalid-feedback"></div>
+                                                </div>
+                                                <!--end::Input group-->
+                                                <!--begin::Input group-->
+                                                <div class="mb-10">
+                                                    <!--begin::Heading-->
+                                                    <div class="mb-3">
+                                                        <!--begin::Label-->
+                                                        <label class="d-flex align-items-center fs-5 fw-bold">
+                                                            <span class="required">Estatus</span>
+                                                            <i class="fas fa-exclamation-circle ms-2 fs-7"
+                                                                data-bs-toggle="tooltip" title=""
+                                                                data-bs-original-title="Seleccione el estatus de la solicitud"
+                                                                aria-label="Seleccione el estatus de la solicitud"></i>
+                                                        </label>
+                                                        <!--end::Label-->
+                                                    </div>
+                                                    <!--end::Heading-->
+                                                    <!--begin::Row-->
+                                                    <div class="fv-row fv-plugins-icon-container">
+                                                        <!--begin::Radio group-->
+                                                        <div class="btn-group w-100" data-kt-buttons="true"
+                                                            data-kt-buttons-target="[data-kt-button]">
+                                                            <!--begin::Radio-->
+                                                            <label
+                                                                class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-danger active"
+                                                                data-kt-button="true">
+                                                                <!--begin::Input-->
+                                                                <input class="btn-check" type="radio" name="estatus" checked
+                                                                    value="PENDIENTE">
+                                                                <!--end::Input-->
+                                                                PENDIENTE
+                                                            </label>
+                                                            <!--end::Radio-->
+                                                            <!--begin::Radio-->
+                                                            <label
+                                                                class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-success"
+                                                                data-kt-button="true">
+                                                                <!--begin::Input-->
+                                                                <input class="btn-check" type="radio" name="estatus"
+                                                                    value="PROCESO">
+                                                                <!--end::Input-->
+                                                                PROCESO
+                                                            </label>
+                                                            <!--end::Radio-->
+                                                            <!--begin::Radio-->
+                                                            <label
+                                                                class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-warning"
+                                                                data-kt-button="true">
+                                                                <!--begin::Input-->
+                                                                <input class="btn-check" type="radio" name="estatus"
+                                                                    value="FINALIZADO">
+                                                                <!--end::Input-->
+                                                                FINALIZADO
+                                                            </label>
+                                                            <!--end::Radio-->
+                                                        </div>
+                                                        <!--end::Radio group-->
+                                                        <div class="fv-plugins-message-container invalid-feedback"></div>
+                                                    </div>
+                                                    <!--end::Row-->
                                                 </div>
                                                 <!--end::Input group-->
                                             </div>

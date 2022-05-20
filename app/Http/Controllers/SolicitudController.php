@@ -19,8 +19,8 @@ class SolicitudController extends Controller
     public function index()
     {
         $solicitud = Solicitud::all();
-        $equipo = Equipo::all();
-        $departamento = Departamento::all();
+        $equipo = Equipo::orderBy('departamento_id', 'asc')->get();
+        $departamento = Departamento::orderBy('id', 'asc')->get();
         return view('templates.content.solicitud.index', compact('departamento','solicitud','equipo'));
     }
     
