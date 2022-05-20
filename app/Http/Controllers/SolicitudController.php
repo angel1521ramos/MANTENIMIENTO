@@ -12,14 +12,16 @@ class SolicitudController extends Controller
 
     protected $solicitud;
     public function __construct(Solicitud $solicitud){
-        $this->$solicitud = $solicitud;
+        $this->solicitud = $solicitud;
     }
+
     
     public function index()
     {
         $solicitud = Solicitud::all();
         $equipo = Equipo::all();
-        return view('templates.content.solicitud.index', compact('solicitud','equipo'));
+        $departamento = Departamento::all();
+        return view('templates.content.solicitud.index', compact('departamento','solicitud','equipo'));
     }
     
     public function create()
@@ -29,17 +31,10 @@ class SolicitudController extends Controller
     
     public function store(SolicitudRequests $request)
     {
-        $departamento_id = Equipo::where('id', $request->equipo_id)->value('departamento_id');
-        $solicitud = new Solicitud;
-        $solicitud->equipo_id = $request->get('equipo_id');
-        $solicitud->departamento_id = $departamento_id;
-        $solicitud->identificador = $request->get('identificador');
-        $solicitud->observacion = $request->get('observacion');
-        $solicitud->tipo = $request->get('tipo');
-        $solicitud->estatus = $request->get('estatus');
-        $solicitud->save();
-        return $this->show($request->get('equipo_id'));
+        $solicitud = $this->solicitud->create($request->all());
+        return $this->index();
     }
+
     
     public function show($solicitud)
     {

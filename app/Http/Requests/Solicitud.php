@@ -29,7 +29,7 @@ class Solicitud extends FormRequest
             'identificador' => 'required',
             'observacion' => 'required',
             'tipo' => 'required',
-            'estatus' => 'required'
+            'estatus' => 'required',
         ];
     }
 }

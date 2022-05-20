@@ -94,7 +94,7 @@
                                                 <!--begin::Input group-->
                                                 <div class="fv-row mb-7 fv-plugins-icon-container">
                                                     <!--begin::Label-->
-                                                    <label class="required fw-bold fs-6 mb-2">Equipo y departamento</label>
+                                                    <label class="required fw-bold fs-6 mb-2">Equipo</label>
                                                     <!--end::Label-->
                                                     <!--begin::Input-->
                                                     <div class="col-md-12" data-select2-id="select2-data-453-kbzx">
@@ -125,12 +125,41 @@
                                                 <!--begin::Input group-->
                                                 <div class="fv-row mb-7 fv-plugins-icon-container">
                                                     <!--begin::Label-->
+                                                    <label class="required fw-bold fs-6 mb-2">departamento</label>
+                                                    <!--end::Label-->
+                                                    <!--begin::Input-->
+                                                    <div class="col-md-12" data-select2-id="select2-data-453-kbzx">
+                                                        <div class="w-100" data-select2-id="select2-data-189-svbm">
+                                                            <!--begin::Select2-->
+                                                            <select
+                                                                class="form-select form-select-solid select2-hidden-accessible"
+                                                                name="departamento_id" id="departamento_id" data-control="select2"
+                                                                data-hide-search="true"
+                                                                data-placeholder="Selecciona un departamento" data-select2-id="1"
+                                                                tabindex="-1" aria-hidden="true">
+                                                                <option value="">Selecciona un departamento</option>
+                                                                @foreach ($departamento as $x)
+                                                                    <option value="{{ $x->id }}">{{ $x->nombre }}
+                                                                    </option>
+                                                                @endforeach
+                                                            </select>
+                                                            <!--end::Select2-->
+                                                        </div>
+                                                        <div class="fv-plugins-message-container invalid-feedback"></div>
+                                                    </div>
+                                                    <!--end::Input-->
+                                                    <div class="fv-plugins-message-container invalid-feedback"></div>
+                                                </div>
+                                                <!--end::Input group-->
+                                                <!--begin::Input group-->
+                                                <div class="fv-row mb-7 fv-plugins-icon-container">
+                                                    <!--begin::Label-->
                                                     <label class="required fw-bold fs-6 mb-2">observacion</label>
                                                     <!--end::Label-->
                                                     <!--begin::Input-->
-                                                    <input type="email" name="observacion" id="observacion"
+                                                    <input type="text" name="observacion" id="observacion"
                                                         class="form-control form-control-solid mb-3 mb-lg-0"
-                                                        placeholder="Lenovo" style="text-transform:uppercase" value="">
+                                                        placeholder="No funciona porque ..." style="text-transform:uppercase" value="">
                                                     <!--end::Input-->
                                                     <div class="fv-plugins-message-container invalid-feedback"></div>
                                                 </div>
@@ -150,10 +179,10 @@
                                                                 data-hide-search="true"
                                                                 data-placeholder="Selecciona el tipo" data-select2-id="2"
                                                                 tabindex="-1" aria-hidden="true">
-                                                                <option data-select2-id="select2-data-21-2sb5"></option>
-                                                                <option value="COMPUTADORA">COMPUTADORA</option>
-                                                                <option value="IMPRESORA">IMPRESORA</option>
-                                                                <option value="REGULADOR">REGULADOR</option>
+                                                                <option value="">Selecciona un tipo</option>
+                                                                <option value="MANTENIMIENTO">MANTENIMIENTO</option>
+                                                                <option value="PETICION">PETICION</option>
+                                                                <option value="SOPORTE">SOPORTE</option>
                                                             </select>
                                                             <!--end::Select2-->
                                                         </div>
@@ -161,66 +190,6 @@
                                                     </div>
                                                     <!--end::Input-->
                                                     <div class="fv-plugins-message-container invalid-feedback"></div>
-                                                </div>
-                                                <!--end::Input group-->
-                                                <!--begin::Input group-->
-                                                <div class="fv-row mb-7 fv-plugins-icon-container">
-                                                    <!--begin::Heading-->
-                                                    <div class="mb-3">
-                                                        <!--begin::Label-->
-                                                        <label class="d-flex align-items-center fs-5 fw-bold">
-                                                            <span class="required">Estatus</span>
-                                                            <i class="fas fa-exclamation-circle ms-2 fs-7"
-                                                                data-bs-toggle="tooltip" title=""
-                                                                data-bs-original-title="Seleccione el estatus de la solicitud"
-                                                                aria-label="Seleccione el estatus de la solicitud"></i>
-                                                        </label>
-                                                        <!--end::Label-->
-                                                    </div>
-                                                    <!--end::Heading-->
-                                                    <!--begin::Row-->
-                                                    <div class="fv-row fv-plugins-icon-container">
-                                                        <!--begin::Radio group-->
-                                                        <div class="btn-group w-100" data-kt-buttons="true"
-                                                            data-kt-buttons-target="[data-kt-button]">
-                                                            <!--begin::Radio-->
-                                                            <label
-                                                                class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-danger"
-                                                                data-kt-button="true">
-                                                                <!--begin::Input-->
-                                                                <input class="btn-check" type="radio" name="estatus"
-                                                                    value="PENDIENTE">
-                                                                <!--end::Input-->
-                                                                PENDIENTE
-                                                            </label>
-                                                            <!--end::Radio-->
-                                                            <!--begin::Radio-->
-                                                            <label
-                                                                class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-success"
-                                                                data-kt-button="true">
-                                                                <!--begin::Input-->
-                                                                <input class="btn-check" type="radio" name="estatus"
-                                                                    value="PROCESO">
-                                                                <!--end::Input-->
-                                                                PROCESO
-                                                            </label>
-                                                            <!--end::Radio-->
-                                                            <!--begin::Radio-->
-                                                            <label
-                                                                class="btn btn-outline-secondary text-muted text-hover-white text-active-white btn-outline btn-active-warning"
-                                                                data-kt-button="true">
-                                                                <!--begin::Input-->
-                                                                <input class="btn-check" type="radio" name="estatus"
-                                                                    value="FINALIZADO">
-                                                                <!--end::Input-->
-                                                                FINALIZADO
-                                                            </label>
-                                                            <!--end::Radio-->
-                                                        </div>
-                                                        <!--end::Radio group-->
-                                                        <div class="fv-plugins-message-container invalid-feedback"></div>
-                                                    </div>
-                                                    <!--end::Row-->
                                                 </div>
                                                 <!--end::Input group-->
                                             </div>

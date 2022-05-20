@@ -29,6 +29,13 @@ var KTUsersAddUser = function () {
                             }
                         }
                     },
+                    'departamento_id': {
+                        validators: {
+                            notEmpty: {
+                                message: 'El departamento es requerido'
+                            }
+                        }
+                    },
                     'observacion': {
                         validators: {
                             notEmpty: {
@@ -40,13 +47,6 @@ var KTUsersAddUser = function () {
                         validators: {
                             notEmpty: {
                                 message: 'El tipo es requerido'
-                            }
-                        }
-                    },
-                    'estatus': {
-                        validators: {
-                            notEmpty: {
-                                message: 'El estatus es requerido'
                             }
                         }
                     },
