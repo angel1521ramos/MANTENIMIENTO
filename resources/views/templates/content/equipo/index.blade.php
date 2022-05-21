@@ -9,9 +9,8 @@
                 <!--begin::Card header-->
                 <div class="card-header border-0 pt-6">
                     <!--begin::Card title-->
-                    <div class="card-title">
-                    </div>
-                    <!--begin::Card title-->
+                    <div class="card-title fs-3 fw-bolder">Equipos</div>
+                    <!--end::Card title-->
                     <!--begin::Card toolbar-->
                     <div class="card-toolbar">
                         <!--begin::Toolbar-->
