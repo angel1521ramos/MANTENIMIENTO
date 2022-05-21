@@ -33,14 +33,19 @@ class SolicitudController extends Controller
     {
         
         $departamento_id = Equipo::where('id', $request->get('equipo_id'))->value('departamento_id');
-        $Solicitud = new Solicitud;
-        $Solicitud->equipo_id = $request->equipo_id;
-        $Solicitud->departamento_id = $departamento_id;
-        $Solicitud->identificador = $request->identificador;
-        $Solicitud->observacion = $request->observacion;
-        $Solicitud->tipo = $request->tipo;
-        $Solicitud->estatus = $request->estatus;
-        $Solicitud->save();
+        $departamento = Departamento::find($departamento_id);
+
+        $Solicitud = Solicitud::create([
+            'equipo_id' => $request->equipo_id,
+            'departamento_id' => $departamento_id,
+            'identificador' => $request->identificador,
+            'observacion' => $request->observacion,
+            'tipo' => $request->tipo,
+            'estatus' => $request->estatus,
+        ]);
+
+        Solicitud::where('id', $Solicitud->id)->update(['identificador' => $departamento->identificador.' - '.$Solicitud->id]);
+        
         return $this->index();
     }
     
@@ -48,14 +53,19 @@ class SolicitudController extends Controller
     {
         
         $departamento_id = Equipo::where('id', $request->get('equipo_id'))->value('departamento_id');
-        $Solicitud = new Solicitud;
-        $Solicitud->equipo_id = $request->equipo_id;
-        $Solicitud->departamento_id = $departamento_id;
-        $Solicitud->identificador = $request->identificador;
-        $Solicitud->observacion = $request->observacion;
-        $Solicitud->tipo = $request->tipo;
-        $Solicitud->estatus = $request->estatus;
-        $Solicitud->save();
+        $departamento = Departamento::find($departamento_id);
+
+        $Solicitud = Solicitud::create([
+            'equipo_id' => $request->equipo_id,
+            'departamento_id' => $departamento_id,
+            'identificador' => $request->identificador,
+            'observacion' => $request->observacion,
+            'tipo' => $request->tipo,
+            'estatus' => $request->estatus,
+        ]);
+
+        Solicitud::where('id', $Solicitud->id)->update(['identificador' => $departamento->identificador.' - '.$Solicitud->id]);
+        
         return redirect(route('departamento.show', $departamento_id));
     }
 
@@ -75,16 +85,16 @@ class SolicitudController extends Controller
     
     public function update(SolicitudRequests $request, $solicitud)
     {
-        $id = $solicitud;
-        $solicitud = Solicitud::find($id);
-        $solicitud->equipo_id = $request->equipo_id;
-        $solicitud->departamento_id = $request->departamento_id;
-        $solicitud->identificador = $request->identificador;
-        $solicitud->observacion = $request->observacion;
-        $solicitud->tipo = $request->tipo;
-        $solicitud->estatus = $request->estatus;
-        $solicitud->save();
-        return $this->show($id);
+        Solicitud::where('id', $solicitud)->update([
+            'equipo_id' => $request->equipo_id,
+            'departamento_id' => $request->departamento_id,
+            'identificador' => $request->identificador,
+            'observacion' => $request->observacion,
+            'tipo' => $request->tipo,
+            'estatus' => $request->estatus,
+        ]);
+
+        return $this->show($solicitud);
     }
     
     public function destroy(Solicitud $solicitud)

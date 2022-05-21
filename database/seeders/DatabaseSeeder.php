@@ -20,6 +20,6 @@ class DatabaseSeeder extends Seeder
         // \App\Models\User::factory(10)->create();
         Departamento::factory(8)->create();
         Equipo::factory(20)->create();
-        Solicitud::factory(20)->create();
+        //Solicitud::factory(20)->create();
     }
 }

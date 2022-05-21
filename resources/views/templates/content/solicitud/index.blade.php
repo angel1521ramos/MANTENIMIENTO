@@ -79,14 +79,14 @@
                                                 data-kt-scroll-wrappers="#kt_modal_add_user_scroll"
                                                 data-kt-scroll-offset="300px" style="max-height: 661px;">
                                                 <!--begin::Input group-->
-                                                <div class="fv-row mb-7 fv-plugins-icon-container">
+                                                <div class="fv-row mb-7 fv-plugins-icon-container" hidden>
                                                     <!--begin::Label-->
                                                     <label class="required fw-bold fs-6 mb-2">identificador</label>
                                                     <!--end::Label-->
                                                     <!--begin::Input-->
                                                     <input type="text" name="identificador" id="identificador"
                                                         class="form-control form-control-solid mb-3 mb-lg-0"
-                                                        placeholder="1241-0-0000" style="text-transform:uppercase" value="">
+                                                        placeholder="1241-0-0000" style="text-transform:uppercase" value="1">
                                                     <!--end::Input-->
                                                     <div class="fv-plugins-message-container invalid-feedback"></div>
                                                 </div>

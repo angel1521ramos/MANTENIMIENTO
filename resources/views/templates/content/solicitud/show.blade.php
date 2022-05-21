@@ -29,10 +29,11 @@
                             <!--end::Col-->
                             <!--begin::Col-->
                             <div class="col-xl-9 fv-row fv-plugins-icon-container">
-                                <input type="text" class="form-control form-control-solid" name="identificador"
-                                    style="text-transform:uppercase" value="{{ $solicitud->identificador }}">
+                                <input type="text" class="form-control" name="identificador"
+                                    style="text-transform:uppercase" value="{{ $solicitud->identificador }}" readonly>
                                 <div class="fv-plugins-message-container invalid-feedback"></div>
                             </div>
+                            <!--end::Col-->
                         </div>
                         <!--end::Row-->
                         <!--begin::Row-->
@@ -75,10 +76,10 @@
                             <div class="col-xl-9 fv-row fv-plugins-icon-container" data-select2-id="select2-data-453-kbzx">
                                 <div class="w-100" data-select2-id="select2-data-189-svbm">
                                     <!--begin::Select2-->
-                                    <select class="form-select form-select-solid select2-hidden-accessible"
+                                    <select class="form-select select2-hidden-accessible"
                                         name="departamento_id" id="departamento_id" data-control="select2"
                                         data-hide-search="true" data-placeholder="Selecciona un departamento"
-                                        data-select2-id="1" tabindex="-1" aria-hidden="true">
+                                        data-select2-id="2" tabindex="-1" aria-hidden="true" disabled="true">
                                         <option value="">Selecciona un departamento</option>
                                         @foreach ($departamento as $x)
                                             <option value="{{ $x->id }}"
@@ -126,7 +127,7 @@
                                     <!--begin::Select2-->
                                     <select class="form-select form-select-solid select2-hidden-accessible" name="tipo"
                                         id="tipo" data-control="select2" data-hide-search="true"
-                                        data-placeholder="Selecciona el tipo" data-select2-id="2" tabindex="-1"
+                                        data-placeholder="Selecciona el tipo" data-select2-id="3" tabindex="-1"
                                         aria-hidden="true">
                                         <option data-select2-id="select2-data-21-2sb5"></option>
                                         <option value="MANTENIMIENTO"
