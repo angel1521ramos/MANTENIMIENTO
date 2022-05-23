@@ -17,7 +17,7 @@
                         <div class="d-flex justify-content-end" data-kt-user-table-toolbar="base">
                             <!--begin::Add user-->
                             <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                data-bs-target="#kt_modal_add_user">
+                                data-bs-target="#modal_equipo_index">
                                 <!--begin::Svg Icon | path: icons/duotune/arrows/arr075.svg-->
                                 <span class="svg-icon svg-icon-2">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -33,7 +33,7 @@
                         </div>
                         <!--end::Toolbar-->
                         <!--begin::Modal - Add task-->
-                        <div class="modal fade" id="kt_modal_add_user" tabindex="-1" aria-hidden="true">
+                        <div class="modal fade" id="modal_equipo_index" tabindex="-1" aria-hidden="true">
                             <!--begin::Modal dialog-->
                             <div class="modal-dialog modal-dialog-centered mw-650px">
                                 <!--begin::Modal content-->
@@ -65,7 +65,7 @@
                                     <div class="modal-body scroll-y mx-5 mx-xl-15 my-7">
 
                                         <!--begin::Form-->
-                                        <form id="kt_modal_add_user_form" name="kt_modal_add_user_form"
+                                        <form id="form_equipo_index" name="form_equipo_index"
                                             class="form fv-plugins-bootstrap5 fv-plugins-framework" method="POST"
                                             action="{{ route('equipo.store') }}">
                                             @csrf
@@ -161,12 +161,31 @@
                                                 </div>
                                                 <!--end::Input group-->
 
-
-                                                <label class="form-label">Dispositivos</label>
-                                                <input class="form-control form-control-solid" name="dispositivos" value="" id="dispositivos"/>
-
-
-
+                                                <!--begin::Input group-->
+                                                <div class="fv-row mb-7 fv-plugins-icon-container">
+                                                    <!--begin::Label-->
+                                                    <label class="form-label">Dispositivos</label>
+                                                    <!--end::Label-->
+                                                    <!--begin::Input-->
+                                                    <input class="form-control form-control-solid" name="dispositivos"
+                                                        value="" id="dispositivos" />
+                                                    <!--end::Input-->
+                                                    <div class="fv-plugins-message-container invalid-feedback"></div>
+                                                </div>
+                                                <!--end::Input group-->
+                                                <!--begin::Input group-->
+                                                <div class="fv-row mb-7 fv-plugins-icon-container" hidden>
+                                                    <!--begin::Label-->
+                                                    <label class="required fw-bold fs-6 mb-2">estatus</label>
+                                                    <!--end::Label-->
+                                                    <!--begin::Input-->
+                                                    <input type="email" name="estatus" id="estatus"
+                                                        class="form-control form-control-solid mb-3 mb-lg-0"
+                                                        placeholder="Lenovo" style="text-transform:uppercase" value="ACTIVO">
+                                                    <!--end::Input-->
+                                                    <div class="fv-plugins-message-container invalid-feedback"></div>
+                                                </div>
+                                                <!--end::Input group-->
                                             </div>
                                             <!--end::Scroll-->
                                             <!--begin::Actions-->
@@ -228,6 +247,11 @@
                                             aria-label="Last login: activate to sort column ascending"
                                             style="width: 160.359px;">
                                             Marca</th>
+                                        <th class="min-w-125px sorting" tabindex="0" aria-controls="kt_table_users"
+                                            rowspan="1" colspan="1"
+                                            aria-label="Last login: activate to sort column ascending"
+                                            style="width: 160.359px;">
+                                            estatus</th>
                                     </tr>
                                     <!--end::Table row-->
                                 </thead>
@@ -252,6 +276,14 @@
                                             </td>
                                             <td style="text-transform:uppercase">
                                                 {{ $x->marca }}
+                                            </td>
+                                            <td>
+                                                <div
+                                                    class="badge 
+                                                {{ $x->estatus == 'BAJA' ? 'badge-light-danger' : '' }}
+                                                {{ $x->estatus == 'ACTIVO' ? 'badge-light-success' : '' }}">
+                                                    {{ $x->estatus }}
+                                                </div>
                                             </td>
                                         </tr>
                                     @endforeach

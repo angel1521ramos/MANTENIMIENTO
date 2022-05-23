@@ -232,7 +232,8 @@
                     </span>
                     <div class="menu-sub menu-sub-accordion menu-active-bg">
                         <div class="menu-item">
-                            <a class="menu-link" href="/metronic8/demo1/../demo1/dark/account/overview.html">
+                            <a class="menu-link {{ request()->is('solicitud/index/mantenimiento') ? ' active' : '' }}" 
+                            href="{{ route('solicitud.index.mantenimiento') }}">
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
@@ -240,23 +241,25 @@
                             </a>
                         </div>
                         <div class="menu-item">
-                            <a class="menu-link" href="/metronic8/demo1/../demo1/dark/account/settings.html">
+                            <a class="menu-link {{ request()->is('solicitud/index/baja') ? ' active' : '' }}" 
+                            href="{{ route('solicitud.index.baja') }}">
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
-                                <span class="menu-title">Petición</span>
+                                <span class="menu-title">baja</span>
                             </a>
                         </div>
                         <div class="menu-item">
-                            <a class="menu-link" href="/metronic8/demo1/../demo1/dark/account/security.html">
+                            <a class="menu-link {{ request()->is('solicitud/index/peticion') ? ' active' : '' }}" 
+                            href="{{ route('solicitud.index.peticion') }}">
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
-                                <span class="menu-title">Soporte</span>
+                                <span class="menu-title">petición</span>
                             </a>
                         </div>
                         <div class="menu-item">
-                            <a class="menu-link {{ request()->is('solicitud*') ? ' active' : '' }}"
+                            <a class="menu-link {{ request()->is('solicitud') ? ' active' : '' }}"
                              href="{{ route('solicitud.index') }}">
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>

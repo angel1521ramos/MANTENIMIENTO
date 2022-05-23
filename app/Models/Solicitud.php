@@ -14,7 +14,8 @@ class Solicitud extends Model
         'identificador',
         'observacion',
         'tipo',
-        'estatus'
+        'estatus',
+        'peticion_equipo'
     ];
 
     public function Equipo()

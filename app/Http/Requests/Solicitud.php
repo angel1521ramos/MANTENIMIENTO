@@ -24,12 +24,11 @@ class Solicitud extends FormRequest
     public function rules()
     {
         return [
-            'equipo_id' => 'required',
             'departamento_id' => 'required',
             'identificador' => 'required',
             'observacion' => 'required',
             'tipo' => 'required',
-            'estatus' => 'required',
+            'estatus' => 'required'
         ];
     }
 }

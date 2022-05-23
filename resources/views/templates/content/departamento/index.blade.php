@@ -48,7 +48,7 @@
                         <div class="d-flex justify-content-end" data-kt-user-table-toolbar="base">
                             <!--begin::Add user-->
                             <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                data-bs-target="#kt_modal_add_user">
+                                data-bs-target="#modal_departamento_index">
                                 <!--begin::Svg Icon | path: icons/duotune/arrows/arr075.svg-->
                                 <span class="svg-icon svg-icon-2">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
@@ -64,13 +64,13 @@
                         </div>
                         <!--end::Toolbar-->
                         <!--begin::Modal - Add task-->
-                        <div class="modal fade" id="kt_modal_add_user" tabindex="-1" aria-hidden="true">
+                        <div class="modal fade" id="modal_departamento_index" tabindex="-1" aria-hidden="true">
                             <!--begin::Modal dialog-->
                             <div class="modal-dialog modal-dialog-centered mw-650px">
                                 <!--begin::Modal content-->
                                 <div class="modal-content">
                                     <!--begin::Modal header-->
-                                    <div class="modal-header" id="kt_modal_add_user_header">
+                                    <div class="modal-header" id="modal_departamento_index_header">
                                         <!--begin::Modal title-->
                                         <h2 class="fw-bolder">Añadir departamento</h2>
                                         <!--end::Modal title-->
@@ -96,17 +96,17 @@
                                     <div class="modal-body scroll-y mx-5 mx-xl-15 my-7">
 
                                         <!--begin::Form-->
-                                        <form id="kt_modal_add_user_form" name="kt_modal_add_user_form"
+                                        <form id="form_departamento_index" name="form_departamento_index"
                                             class="form fv-plugins-bootstrap5 fv-plugins-framework" method="POST"
                                             action="{{ route('departamento.store') }}">
                                             @csrf
                                             <!--begin::Scroll-->
                                             <div class="d-flex flex-column scroll-y me-n7 pe-7"
-                                                id="kt_modal_add_user_scroll" data-kt-scroll="true"
+                                                id="modal_departamento_index_scroll" data-kt-scroll="true"
                                                 data-kt-scroll-activate="{default: false, lg: true}"
                                                 data-kt-scroll-max-height="auto"
-                                                data-kt-scroll-dependencies="#kt_modal_add_user_header"
-                                                data-kt-scroll-wrappers="#kt_modal_add_user_scroll"
+                                                data-kt-scroll-dependencies="#modal_departamento_index_header"
+                                                data-kt-scroll-wrappers="#modal_departamento_index_scroll"
                                                 data-kt-scroll-offset="300px" style="max-height: 661px;">
                                                 <!--begin::Input group-->
                                                 <div class="fv-row mb-7 fv-plugins-icon-container">

@@ -15,12 +15,13 @@ return new class extends Migration
     {
         Schema::create('solicituds', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('equipo_id')->constrained();
+            $table->foreignId('equipo_id')->nullable()->constrained();
             $table->foreignId('departamento_id')->constrained();
             $table->string('identificador');
             $table->text('observacion');
             $table->string('tipo');
             $table->string('estatus');
+            $table->string('peticion_equipo')->nullable();
             $table->timestamps();
         });
     }

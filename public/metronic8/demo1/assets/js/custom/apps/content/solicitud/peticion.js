@@ -25,7 +25,7 @@ var KTProjectSettings = function () {
                             }
                         }
                     },
-                    equipo_id: {
+                    peticion_equipo: {
                         validators: {
                             notEmpty: {
                                 message: ' El equipo de la solicitud es requerido'

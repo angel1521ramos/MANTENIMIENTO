@@ -13,7 +13,8 @@ class Equipo extends Model
         'inventario',
         'marca',
         'tipo',
-        'dispositivos'
+        'dispositivos',
+        'estatus'
     ];
 
     public function Departamento()

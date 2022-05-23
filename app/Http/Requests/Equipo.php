@@ -28,7 +28,7 @@ class Equipo extends FormRequest
             'inventario' => 'required',
             'marca' => 'required',
             'tipo' => 'required',
-            'dispositivos' => 'required'
+            'estatus' => 'required'
         ];
     }
 }

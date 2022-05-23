@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('inventario');
             $table->string('marca');
             $table->string('tipo');
+            $table->string('estatus');
             $table->string('dispositivos')->nullable();
             $table->timestamps();
         });

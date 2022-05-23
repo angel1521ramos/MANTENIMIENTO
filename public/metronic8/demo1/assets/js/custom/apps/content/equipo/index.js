@@ -3,8 +3,8 @@
 // Class definition
 var KTUsersAddUser = function () {
     // Shared variables
-    const element = document.getElementById('kt_modal_add_user');
-    const form = element.querySelector('#kt_modal_add_user_form');
+    const element = document.getElementById('modal_equipo_index');
+    const form = element.querySelector('#form_equipo_index');
     const modal = new bootstrap.Modal(element);
 
 
@@ -55,6 +55,13 @@ var KTUsersAddUser = function () {
                         validators: {
                             notEmpty: {
                                 message: 'El tipo es requerido'
+                            }
+                        }
+                    },
+                    'estatus': {
+                        validators: {
+                            notEmpty: {
+                                message: 'El estatus es requerido'
                             }
                         }
                     },

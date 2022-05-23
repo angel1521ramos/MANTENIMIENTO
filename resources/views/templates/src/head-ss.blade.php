@@ -3,8 +3,6 @@
 <link rel="stylesheet" href=" {{ asset('metronic8/demo1/assets/plugins/fontawesome-free/css/all.min.css')}}">
 <!--end::Fonts-->
 <!--begin::Page Vendor Stylesheets(used by this page)-->
-<link href="{{ asset('metronic8/demo1/assets/plugins/custom/fullcalendar/fullcalendar.bundle.css')}}" rel="stylesheet"
-    type="text/css" />
 <link href="{{ asset('metronic8/demo1/assets/plugins/custom/datatables/datatables.bundle.css')}}" rel="stylesheet"
     type="text/css" />
 <!--end::Page Vendor Stylesheets-->
