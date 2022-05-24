@@ -18,6 +18,10 @@ return new class extends Migration
             $table->string('identificador');
             $table->string('nombre');
             $table->string('responsable');
+            $table->string('cargo_responsable');
+            $table->string('direccion');
+            $table->string('telefono');
+            $table->string('correo');
             $table->timestamps();
         });
     }

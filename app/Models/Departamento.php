@@ -11,7 +11,11 @@ class Departamento extends Model
     protected $fillable = [
         'identificador',
         'nombre',
-        'responsable'
+        'responsable',
+        'cargo_responsable',
+        'direccion',
+        'telefono',
+        'correo'
     ];
 
 }

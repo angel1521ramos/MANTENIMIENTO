@@ -136,9 +136,9 @@ class SolicitudController extends Controller
         //
     }
 
-    public function pdf_mantenimiento()
+    public function pdf_mantenimiento(Solicitud $solicitud)
     {
-        $pdf = PDF::loadView('templates.content.solicitud.pdf');
+        $pdf = PDF::loadView('templates.content.solicitud.pdf', compact('solicitud'));
         return $pdf->stream();
         /**$pdf = PDF::loadView('templates.content.solicitud.pdf');
         return $pdf->stream();**/

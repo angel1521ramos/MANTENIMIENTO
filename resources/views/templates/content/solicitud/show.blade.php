@@ -221,7 +221,7 @@
 
                         <div class="my-1 me-5">
                             <!-- begin::Pint-->
-                            <a href="{{ route('solicitud.pdf.mantenimiento') }}" class="btn btn-icon btn-success">
+                            <a href="{{ route('solicitud.pdf.mantenimiento', $solicitud->id) }}" class="btn btn-icon btn-success">
                                 <!--begin::Svg Icon | path: assets/media/icons/duotune/files/fil021.svg-->
                                 <span class="svg-icon svg-icon-muted svg-icon-2hx"><svg xmlns="http://www.w3.org/2000/svg"
                                         width="24" height="24" viewBox="0 0 24 24" fill="none">

@@ -107,6 +107,70 @@
                             <!--begin::Col-->
                         </div>
                         <!--end::Row-->
+                        <!--begin::Row-->
+                        <div class="row mb-8">
+                            <!--begin::Col-->
+                            <div class="col-xl-3">
+                                <div class="fs-6 fw-bold mt-2 mb-3">Cargo del responsable</div>
+                            </div>
+                            <!--end::Col-->
+                            <!--begin::Col-->
+                            <div class="col-xl-9 fv-row fv-plugins-icon-container">
+                                <input type="text" class="form-control form-control-solid" name="cargo_responsable"
+                                    style="text-transform:uppercase" value="{{ $departamento->cargo_responsable }}">
+                                <div class="fv-plugins-message-container invalid-feedback"></div>
+                            </div>
+                            <!--begin::Col-->
+                        </div>
+                        <!--end::Row-->
+                        <!--begin::Row-->
+                        <div class="row mb-8">
+                            <!--begin::Col-->
+                            <div class="col-xl-3">
+                                <div class="fs-6 fw-bold mt-2 mb-3">direccion</div>
+                            </div>
+                            <!--end::Col-->
+                            <!--begin::Col-->
+                            <div class="col-xl-9 fv-row fv-plugins-icon-container">
+                                <input type="text" class="form-control form-control-solid" name="direccion"
+                                    style="text-transform:uppercase" value="{{ $departamento->direccion }}">
+                                <div class="fv-plugins-message-container invalid-feedback"></div>
+                            </div>
+                            <!--begin::Col-->
+                        </div>
+                        <!--end::Row-->
+                        <!--begin::Row-->
+                        <div class="row mb-8">
+                            <!--begin::Col-->
+                            <div class="col-xl-3">
+                                <div class="fs-6 fw-bold mt-2 mb-3">telefono</div>
+                            </div>
+                            <!--end::Col-->
+                            <!--begin::Col-->
+                            <div class="col-xl-9 fv-row fv-plugins-icon-container">
+                                <input type="text" class="form-control form-control-solid" name="telefono"
+                                    style="text-transform:uppercase" value="{{ $departamento->telefono }}">
+                                <div class="fv-plugins-message-container invalid-feedback"></div>
+                            </div>
+                            <!--begin::Col-->
+                        </div>
+                        <!--end::Row-->
+                        <!--begin::Row-->
+                        <div class="row mb-8">
+                            <!--begin::Col-->
+                            <div class="col-xl-3">
+                                <div class="fs-6 fw-bold mt-2 mb-3">correo</div>
+                            </div>
+                            <!--end::Col-->
+                            <!--begin::Col-->
+                            <div class="col-xl-9 fv-row fv-plugins-icon-container">
+                                <input type="text" class="form-control form-control-solid" name="correo"
+                                    style="text-transform:uppercase" value="{{ $departamento->correo }}">
+                                <div class="fv-plugins-message-container invalid-feedback"></div>
+                            </div>
+                            <!--begin::Col-->
+                        </div>
+                        <!--end::Row-->
                     </div>
                     <!--end::Card body-->
                     <!--begin::Card footer-->

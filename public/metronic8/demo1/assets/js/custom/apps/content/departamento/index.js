@@ -36,6 +36,34 @@ var KTUsersAddUser = function () {
                             }
                         }
                     },
+                    'cargo_responsable': {
+                        validators: {
+                            notEmpty: {
+                                message: 'El cargo es requerido'
+                            }
+                        }
+                    },
+                    'direccion': {
+                        validators: {
+                            notEmpty: {
+                                message: 'La direccion es requerido'
+                            }
+                        }
+                    },
+                    'telefono': {
+                        validators: {
+                            notEmpty: {
+                                message: 'El telefono es requerido'
+                            }
+                        }
+                    },
+                    'correo': {
+                        validators: {
+                            notEmpty: {
+                                message: 'El correo es requerido'
+                            }
+                        }
+                    },
                 },
 
                 plugins: {

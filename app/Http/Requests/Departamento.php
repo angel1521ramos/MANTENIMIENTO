@@ -26,7 +26,11 @@ class Departamento extends FormRequest
         return [
             'identificador' => 'required',
             'nombre' => 'required',
-            'responsable' => 'required'
+            'responsable' => 'required',
+            'cargo_responsable' => 'required',
+            'direccion' => 'required',
+            'telefono' => 'required',
+            'correo' => 'required'
         ];
     }
 }

@@ -9,7 +9,7 @@ Route::post('solicitud/peticion', [SolicitudController::class, 'peticion_store']
 Route::put('solicitud/peticion/{solicitud}', [SolicitudController::class, 'peticion_update'])->name('solicitud.update.peticion');
 
 
-Route::get('solicitud/mantenimiento/pdf', [SolicitudController::class, 'pdf_mantenimiento'])->name('solicitud.pdf.mantenimiento');
+Route::get('solicitud/mantenimiento/pdf/{solicitud}', [SolicitudController::class, 'pdf_mantenimiento'])->name('solicitud.pdf.mantenimiento');
 Route::get('solicitud/index/mantenimiento', [SolicitudController::class, 'index'])->name('solicitud.index.mantenimiento');
 Route::get('solicitud/index/baja', [SolicitudController::class, 'index'])->name('solicitud.index.baja');
 Route::get('solicitud/index/peticion', [SolicitudController::class, 'index'])->name('solicitud.index.peticion');

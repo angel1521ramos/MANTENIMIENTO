@@ -149,6 +149,62 @@
                                                     <div class="fv-plugins-message-container invalid-feedback"></div>
                                                 </div>
                                                 <!--end::Input group-->
+                                                <!--begin::Input group-->
+                                                <div class="fv-row mb-7 fv-plugins-icon-container">
+                                                    <!--begin::Label-->
+                                                    <label class="required fw-bold fs-6 mb-2">Cargo del responsable</label>
+                                                    <!--end::Label-->
+                                                    <!--begin::Input-->
+                                                    <input type="email" name="cargo_responsable" id="cargo_responsable"
+                                                        class="form-control form-control-solid mb-3 mb-lg-0"
+                                                        placeholder="ingresa el cargo del responsable directo"
+                                                        style="text-transform:uppercase" value="">
+                                                    <!--end::Input-->
+                                                    <div class="fv-plugins-message-container invalid-feedback"></div>
+                                                </div>
+                                                <!--end::Input group-->
+                                                <!--begin::Input group-->
+                                                <div class="fv-row mb-7 fv-plugins-icon-container">
+                                                    <!--begin::Label-->
+                                                    <label class="required fw-bold fs-6 mb-2">direccion</label>
+                                                    <!--end::Label-->
+                                                    <!--begin::Input-->
+                                                    <input type="email" name="direccion" id="direccion"
+                                                        class="form-control form-control-solid mb-3 mb-lg-0"
+                                                        placeholder="ingresa el direccion directo"
+                                                        style="text-transform:uppercase" value="">
+                                                    <!--end::Input-->
+                                                    <div class="fv-plugins-message-container invalid-feedback"></div>
+                                                </div>
+                                                <!--end::Input group-->
+                                                <!--begin::Input group-->
+                                                <div class="fv-row mb-7 fv-plugins-icon-container">
+                                                    <!--begin::Label-->
+                                                    <label class="required fw-bold fs-6 mb-2">telefono</label>
+                                                    <!--end::Label-->
+                                                    <!--begin::Input-->
+                                                    <input type="email" name="telefono" id="telefono"
+                                                        class="form-control form-control-solid mb-3 mb-lg-0"
+                                                        placeholder="ingresa el telefono directo"
+                                                        style="text-transform:uppercase" value="">
+                                                    <!--end::Input-->
+                                                    <div class="fv-plugins-message-container invalid-feedback"></div>
+                                                </div>
+                                                <!--end::Input group-->
+                                                <!--begin::Input group-->
+                                                <div class="fv-row mb-7 fv-plugins-icon-container">
+                                                    <!--begin::Label-->
+                                                    <label class="required fw-bold fs-6 mb-2">correo</label>
+                                                    <!--end::Label-->
+                                                    <!--begin::Input-->
+                                                    <input type="email" name="correo" id="correo"
+                                                        class="form-control form-control-solid mb-3 mb-lg-0"
+                                                        placeholder="ingresa el correo directo"
+                                                        style="text-transform:uppercase" value="">
+                                                    <!--end::Input-->
+                                                    <div class="fv-plugins-message-container invalid-feedback"></div>
+                                                </div>
+                                                <!--end::Input group-->
                                             </div>
                                             <!--end::Scroll-->
                                             <!--begin::Actions-->
