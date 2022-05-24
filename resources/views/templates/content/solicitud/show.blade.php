@@ -219,28 +219,56 @@
                     <!--begin::Card footer-->
                     <div class="card-footer d-flex justify-content-end py-6 px-9">
 
-                        <div class="my-1 me-5">
-                            <!-- begin::Pint-->
-                            <a href="{{ route('solicitud.pdf.mantenimiento', $solicitud->id) }}" class="btn btn-icon btn-success">
-                                <!--begin::Svg Icon | path: assets/media/icons/duotune/files/fil021.svg-->
-                                <span class="svg-icon svg-icon-muted svg-icon-2hx"><svg xmlns="http://www.w3.org/2000/svg"
-                                        width="24" height="24" viewBox="0 0 24 24" fill="none">
-                                        <path opacity="0.3"
-                                            d="M19 15C20.7 15 22 13.7 22 12C22 10.3 20.7 9 19 9C18.9 9 18.9 9 18.8 9C18.9 8.7 19 8.3 19 8C19 6.3 17.7 5 16 5C15.4 5 14.8 5.2 14.3 5.5C13.4 4 11.8 3 10 3C7.2 3 5 5.2 5 8C5 8.3 5 8.7 5.1 9H5C3.3 9 2 10.3 2 12C2 13.7 3.3 15 5 15H19Z"
-                                            fill="currentColor" />
-                                        <path d="M13 17.4V12C13 11.4 12.6 11 12 11C11.4 11 11 11.4 11 12V17.4H13Z"
-                                            fill="currentColor" />
-                                        <path opacity="0.3" d="M8 17.4H16L12.7 20.7C12.3 21.1 11.7 21.1 11.3 20.7L8 17.4Z"
-                                            fill="currentColor" />
-                                    </svg></span>
-                                <!--end::Svg Icon-->
-                            </a>
-                            <!-- end::Pint-->
+                        <div class="d-flex align-items-left me-6">
+                            <div class="my-1 me-5">
+                                <!-- begin::Pint-->
+                                <a href="{{ route('solicitud.pdf.entrega', $solicitud->id) }}"
+                                    class="btn btn-light-info btn-hover-scale me-5">
+                                    <!--begin::Svg Icon | path: assets/media/icons/duotune/files/fil022.svg-->
+                                    <span class="svg-icon svg-icon-muted svg-icon-2hx"><svg
+                                            xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                            fill="none">
+                                            <path opacity="0.3"
+                                                d="M5 16C3.3 16 2 14.7 2 13C2 11.3 3.3 10 5 10H5.1C5 9.7 5 9.3 5 9C5 6.2 7.2 4 10 4C11.9 4 13.5 5 14.3 6.5C14.8 6.2 15.4 6 16 6C17.7 6 19 7.3 19 9C19 9.4 18.9 9.7 18.8 10C18.9 10 18.9 10 19 10C20.7 10 22 11.3 22 13C22 14.7 20.7 16 19 16H5ZM8 13.6H16L12.7 10.3C12.3 9.89999 11.7 9.89999 11.3 10.3L8 13.6Z"
+                                                fill="currentColor" />
+                                            <path d="M11 13.6V19C11 19.6 11.4 20 12 20C12.6 20 13 19.6 13 19V13.6H11Z"
+                                                fill="currentColor" />
+                                        </svg></span>
+                                    <!--end::Svg Icon-->
+                                    Entrega
+                                </a>
+                                <!-- end::Pint-->
+                                <!-- begin::Pint-->
+                                <a href="{{ route('solicitud.pdf.recepcion', $solicitud->id) }}"
+                                    class="btn btn-light-success btn-hover-scale me-5">
+                                    <!--begin::Svg Icon | path: assets/media/icons/duotune/files/fil021.svg-->
+                                    <span class="svg-icon svg-icon-muted svg-icon-2hx"><svg
+                                            xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                            fill="none">
+                                            <path opacity="0.3"
+                                                d="M19 15C20.7 15 22 13.7 22 12C22 10.3 20.7 9 19 9C18.9 9 18.9 9 18.8 9C18.9 8.7 19 8.3 19 8C19 6.3 17.7 5 16 5C15.4 5 14.8 5.2 14.3 5.5C13.4 4 11.8 3 10 3C7.2 3 5 5.2 5 8C5 8.3 5 8.7 5.1 9H5C3.3 9 2 10.3 2 12C2 13.7 3.3 15 5 15H19Z"
+                                                fill="currentColor" />
+                                            <path d="M13 17.4V12C13 11.4 12.6 11 12 11C11.4 11 11 11.4 11 12V17.4H13Z"
+                                                fill="currentColor" />
+                                            <path opacity="0.3"
+                                                d="M8 17.4H16L12.7 20.7C12.3 21.1 11.7 21.1 11.3 20.7L8 17.4Z"
+                                                fill="currentColor" />
+                                        </svg></span>
+                                    <!--end::Svg Icon-->
+                                    Solicitud
+                                </a>
+                                <!-- end::Pint-->
+                            </div>
                         </div>
 
-                        <button type="reset" class="btn btn-light btn-active-light-primary me-2">Borrar cambios</button>
-                        <button type="submit" class="btn btn-primary" id="kt_project_settings_submit">Guardar
-                            cambios</button>
+                        <div class="d-flex align-items-center">
+                            <button type="reset" class="btn btn-light btn-active-light-primary me-2">Borrar cambios</button>
+                            <button type="submit" class="btn btn-primary" id="kt_project_settings_submit">Guardar
+                                cambios</button>
+                        </div>
+
+
+
                     </div>
                     <!--end::Card footer-->
                     <input type="hidden">

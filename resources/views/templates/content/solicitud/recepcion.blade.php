@@ -92,7 +92,7 @@
 
 
     @if ($solicitud->tipo == 'MANTENIMIENTO')
-        <p>La que suscribe <b>{{ $solicitud->Departamento->responsable }}</b> en mi
+        <p>El/La que suscribe <b>{{ $solicitud->Departamento->responsable }}</b> en mi
             caracter de <b>{{ $solicitud->Departamento->cargo_responsable }}</b>
             del H. Ayuntamiento de la ciudad de Minatitlan, Ver.,
             le solicito de la manera mas atenta su apoyo para el mantenimiento</b>
@@ -100,7 +100,7 @@
             inventario <b>{{ $solicitud->Equipo->inventario }}</b>
             por el motivo de que <b>{{ $solicitud->observacion }}</b>.</p>
     @elseif ($solicitud->tipo == 'BAJA')
-        <p>La que suscribe <b>{{ $solicitud->Departamento->responsable }}</b> en mi
+        <p>El/La que suscribe <b>{{ $solicitud->Departamento->responsable }}</b> en mi
             caracter de <b>{{ $solicitud->Departamento->cargo_responsable }}</b>
             del H. Ayuntamiento de la ciudad de Minatitlan, Ver.,
             le solicito de la manera mas atenta su apoyo para la verificacion y
@@ -110,7 +110,7 @@
             inventario <b>{{ $solicitud->Equipo->inventario }}</b>
             por el motivo de que <b>{{ $solicitud->observacion }}</b>.</p>
     @else
-        <p>La que suscribe <b>{{ $solicitud->Departamento->responsable }}</b> en mi
+        <p>El/La que suscribe <b>{{ $solicitud->Departamento->responsable }}</b> en mi
             caracter de <b>{{ $solicitud->Departamento->cargo_responsable }}</b>
             del H. Ayuntamiento de la ciudad de Minatitlan, Ver.,
             le solicito de la manera mas atenta su apoyo para la peticion
