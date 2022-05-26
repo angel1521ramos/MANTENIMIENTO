@@ -11,6 +11,7 @@ class Solicitud extends Model
     protected $fillable = [
         'equipo_id',
         'departamento_id',
+        'tecnico_id',
         'identificador',
         'observacion',
         'tipo',
@@ -27,5 +28,10 @@ class Solicitud extends Model
     {
         //una solicitud pertenece a un Departamento
     	return $this->belongsTo(Departamento::class);
+    }
+    public function Tecnico()
+    {
+        //una solicitud pertenece a un Departamento
+    	return $this->belongsTo(Tecnico::class);
     }
 }

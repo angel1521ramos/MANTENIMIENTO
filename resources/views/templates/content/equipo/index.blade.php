@@ -27,7 +27,7 @@
                                         <rect x="4.36396" y="11.364" width="16" height="2" rx="1" fill="currentColor">
                                         </rect>
                                     </svg>
-                                </span>añadir equipo
+                                </span>Añadir equipo
                             </button>
                             <!--end::Add user-->
                         </div>
@@ -81,6 +81,10 @@
                                                 <div class="fv-row mb-7 fv-plugins-icon-container">
                                                     <!--begin::Label-->
                                                     <label class="required fw-bold fs-6 mb-2">Inventario</label>
+                                                    <i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip"
+                                                        title=""
+                                                        data-bs-original-title="Ingrese el numero de inventario del equipo"
+                                                        aria-label="Ingrese el numero de inventario del equipo"></i>
                                                     <!--end::Label-->
                                                     <!--begin::Input-->
                                                     <input type="text" name="inventario" id="inventario"
@@ -94,6 +98,10 @@
                                                 <div class="fv-row mb-7 fv-plugins-icon-container">
                                                     <!--begin::Label-->
                                                     <label class="required fw-bold fs-6 mb-2">Departamento</label>
+                                                    <i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip"
+                                                        title=""
+                                                        data-bs-original-title="Seleccione el departamento del equipo"
+                                                        aria-label="Seleccione el departamento del equipo"></i>
                                                     <!--end::Label-->
                                                     <!--begin::Input-->
                                                     <div class="col-md-12" data-select2-id="select2-data-453-kbzx">
@@ -103,9 +111,9 @@
                                                                 class="form-select form-select-solid select2-hidden-accessible"
                                                                 name="departamento_id" id="departamento_id"
                                                                 data-control="select2" data-hide-search="true"
-                                                                data-placeholder="Selecciona un departamento"
+                                                                data-placeholder="SELECCIONA UN DEPARTAMENTO"
                                                                 data-select2-id="1" tabindex="-1" aria-hidden="true">
-                                                                <option value="">Selecciona un departamento</option>
+                                                                <option value="">SELECCIONA UN DEPARTAMENTO</option>
                                                                 @foreach ($departamento as $x)
                                                                     <option value="{{ $x->id }}">{{ $x->nombre }}
                                                                     </option>
@@ -123,9 +131,13 @@
                                                 <div class="fv-row mb-7 fv-plugins-icon-container">
                                                     <!--begin::Label-->
                                                     <label class="required fw-bold fs-6 mb-2">Marca</label>
+                                                    <i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip"
+                                                        title=""
+                                                        data-bs-original-title="Ingrese la marca del equipo"
+                                                        aria-label="Ingrese la marca del equipo"></i>
                                                     <!--end::Label-->
                                                     <!--begin::Input-->
-                                                    <input type="email" name="marca" id="marca"
+                                                    <input type="text" name="marca" id="marca"
                                                         class="form-control form-control-solid mb-3 mb-lg-0"
                                                         placeholder="Lenovo" style="text-transform:uppercase" value="">
                                                     <!--end::Input-->
@@ -136,6 +148,10 @@
                                                 <div class="fv-row mb-7 fv-plugins-icon-container">
                                                     <!--begin::Label-->
                                                     <label class="required fw-bold fs-6 mb-2">Tipo</label>
+                                                    <i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip"
+                                                        title=""
+                                                        data-bs-original-title="Seleccione el tipo de equipo"
+                                                        aria-label="Seleccione el tipo de equipo"></i>
                                                     <!--end::Label-->
                                                     <!--begin::Input-->
                                                     <div class="col-md-12" data-select2-id="select2-data-453-kbzx">
@@ -145,7 +161,7 @@
                                                                 class="form-select form-select-solid select2-hidden-accessible"
                                                                 name="tipo" id="tipo" data-control="select2"
                                                                 data-hide-search="true"
-                                                                data-placeholder="Selecciona el tipo" data-select2-id="2"
+                                                                data-placeholder="SELECCIONE EL TIPO" data-select2-id="2"
                                                                 tabindex="-1" aria-hidden="true">
                                                                 <option data-select2-id="select2-data-21-2sb5"></option>
                                                                 <option value="COMPUTADORA">COMPUTADORA</option>
@@ -165,6 +181,10 @@
                                                 <div class="fv-row mb-7 fv-plugins-icon-container">
                                                     <!--begin::Label-->
                                                     <label class="form-label">Dispositivos</label>
+                                                    <i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip"
+                                                        title=""
+                                                        data-bs-original-title="Seleccione los dispositivos asociados al equipo"
+                                                        aria-label="Seleccione los dispositivos asociados al equipo"></i>
                                                     <!--end::Label-->
                                                     <!--begin::Input-->
                                                     <input class="form-control form-control-solid" name="dispositivos"
@@ -179,7 +199,7 @@
                                                     <label class="required fw-bold fs-6 mb-2">estatus</label>
                                                     <!--end::Label-->
                                                     <!--begin::Input-->
-                                                    <input type="email" name="estatus" id="estatus"
+                                                    <input type="text" name="estatus" id="estatus"
                                                         class="form-control form-control-solid mb-3 mb-lg-0"
                                                         placeholder="Lenovo" style="text-transform:uppercase" value="ACTIVO">
                                                     <!--end::Input-->

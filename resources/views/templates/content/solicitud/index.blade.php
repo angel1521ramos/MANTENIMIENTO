@@ -180,14 +180,17 @@
                                             data-kt-scroll-wrappers="#kt_modal_add_user_scroll"
                                             data-kt-scroll-offset="300px" style="max-height: 661px;">
                                             <!--begin::Input group-->
-                                            <div class="fv-row mb-7 fv-plugins-icon-container" hidden>
+                                            <div class="fv-row mb-7 fv-plugins-icon-container">
                                                 <!--begin::Label-->
-                                                <label class="required fw-bold fs-6 mb-2">identificador</label>
+                                                <label class="required fw-bold fs-6 mb-2">Consecutivo</label>
+                                                <i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip"
+                                                    title="" data-bs-original-title="Ingrese el consecutivo de su oficio"
+                                                    aria-label="Ingrese el consecutivo de su oficio"></i>
                                                 <!--end::Label-->
                                                 <!--begin::Input-->
                                                 <input type="text" name="identificador" id="identificador"
                                                     class="form-control form-control-solid mb-3 mb-lg-0"
-                                                    placeholder="1241-0-0000" style="text-transform:uppercase" value="1">
+                                                    placeholder="STI - 100" style="text-transform:uppercase" value="">
                                                 <!--end::Input-->
                                                 <div class="fv-plugins-message-container invalid-feedback"></div>
                                             </div>
@@ -196,6 +199,9 @@
                                             <div class="fv-row mb-7 fv-plugins-icon-container">
                                                 <!--begin::Label-->
                                                 <label class="required fw-bold fs-6 mb-2">Equipo</label>
+                                                <i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip"
+                                                    title="" data-bs-original-title="Seleccione el equipo de la solicitud"
+                                                    aria-label="Seleccione el equipo de la solicitud"></i>
                                                 <!--end::Label-->
                                                 <!--begin::Input-->
                                                 <div class="col-md-12" data-select2-id="select2-data-453-kbzx">
@@ -204,9 +210,9 @@
                                                         <select
                                                             class="form-select form-select-solid select2-hidden-accessible"
                                                             name="equipo_id" id="equipo_id" data-control="select2"
-                                                            data-hide-search="true" data-placeholder="Selecciona un equipo"
+                                                            data-hide-search="true" data-placeholder="SELECCIONA UN EQUIPO"
                                                             data-select2-id="1" tabindex="-1" aria-hidden="true">
-                                                            <option value="">Selecciona un equipo</option>
+                                                            <option value="">SELECCIONA UN EQUIPO</option>
                                                             @foreach ($equipo as $x)
                                                                 <option value="{{ $x->id }}">
                                                                     {{ $x->tipo }}
@@ -258,13 +264,15 @@
                                             <!--begin::Input group-->
                                             <div class="fv-row mb-7 fv-plugins-icon-container">
                                                 <!--begin::Label-->
-                                                <label class="required fw-bold fs-6 mb-2">observacion</label>
+                                                <label class="required fw-bold fs-6 mb-2">Observacion</label>
+                                                <i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip"
+                                                    title="" data-bs-original-title="Ingrese la observacion de la solicitud"
+                                                    aria-label="Ingrese la observacion de la solicitud"></i>
                                                 <!--end::Label-->
                                                 <!--begin::Input-->
-                                                <input type="text" name="observacion" id="observacion"
-                                                    class="form-control form-control-solid mb-3 mb-lg-0"
-                                                    placeholder="No funciona porque ..." style="text-transform:uppercase"
-                                                    value="">
+                                                <textarea style="text-transform:uppercase" class="form-control form-control-solid mb-3 mb-lg-0"
+                                                    placeholder="El equipo esta dañado por ..." name="observacion"
+                                                    id="observacion" value=""></textarea>
                                                 <!--end::Input-->
                                                 <div class="fv-plugins-message-container invalid-feedback"></div>
                                             </div>
@@ -281,7 +289,7 @@
                                             </div>
                                             <!--end::Input group-->
                                             <!--begin::Input group-->
-                                            <div class="mb-10">
+                                            <div class="mb-10" hidden>
                                                 <!--begin::Heading-->
                                                 <div class="mb-3">
                                                     <!--begin::Label-->
@@ -412,14 +420,17 @@
                                             data-kt-scroll-wrappers="#kt_modal_add_user_scroll"
                                             data-kt-scroll-offset="300px" style="max-height: 661px;">
                                             <!--begin::Input group-->
-                                            <div class="fv-row mb-7 fv-plugins-icon-container" hidden>
+                                            <div class="fv-row mb-7 fv-plugins-icon-container">
                                                 <!--begin::Label-->
-                                                <label class="required fw-bold fs-6 mb-2">identificador</label>
+                                                <label class="required fw-bold fs-6 mb-2">Consecutivo</label>
+                                                <i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip"
+                                                    title="" data-bs-original-title="Ingrese el consecutivo de su oficio"
+                                                    aria-label="Ingrese el consecutivo de su oficio"></i>
                                                 <!--end::Label-->
                                                 <!--begin::Input-->
                                                 <input type="text" name="identificador" id="identificador"
                                                     class="form-control form-control-solid mb-3 mb-lg-0"
-                                                    placeholder="1241-0-0000" style="text-transform:uppercase" value="1">
+                                                    placeholder="STI - 100" style="text-transform:uppercase" value="">
                                                 <!--end::Input-->
                                                 <div class="fv-plugins-message-container invalid-feedback"></div>
                                             </div>
@@ -428,6 +439,9 @@
                                             <div class="fv-row mb-7 fv-plugins-icon-container">
                                                 <!--begin::Label-->
                                                 <label class="required fw-bold fs-6 mb-2">Equipo</label>
+                                                <i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip"
+                                                    title="" data-bs-original-title="Seleccione el equipo para baja"
+                                                    aria-label="Seleccione el equipo para baja"></i>
                                                 <!--end::Label-->
                                                 <!--begin::Input-->
                                                 <div class="col-md-12" data-select2-id="select2-data-453-kbzx">
@@ -436,9 +450,9 @@
                                                         <select
                                                             class="form-select form-select-solid select2-hidden-accessible"
                                                             name="equipo_id" id="equipo_id" data-control="select2"
-                                                            data-hide-search="true" data-placeholder="Selecciona un equipo"
-                                                            data-select2-id="1" tabindex="-1" aria-hidden="true">
-                                                            <option value="">Selecciona un equipo</option>
+                                                            data-hide-search="true" data-placeholder="SELECCIONA UN EQUIPO"
+                                                            data-select2-id="3" tabindex="-1" aria-hidden="true">
+                                                            <option value="">SELECCIONA UN EQUIPO</option>
                                                             @foreach ($equipo as $x)
                                                                 <option value="{{ $x->id }}">
                                                                     {{ $x->tipo }}
@@ -459,7 +473,7 @@
                                             <!--begin::Input group-->
                                             <div class="fv-row mb-7 fv-plugins-icon-container" hidden>
                                                 <!--begin::Label-->
-                                                <label class="required fw-bold fs-6 mb-2">departamento</label>
+                                                <label class="required fw-bold fs-6 mb-2">Departamento</label>
                                                 <!--end::Label-->
                                                 <!--begin::Input-->
                                                 <div class="col-md-12" data-select2-id="select2-data-453-kbzx">
@@ -470,7 +484,7 @@
                                                             name="departamento_id" id="departamento_id"
                                                             data-control="select2" data-hide-search="true"
                                                             data-placeholder="Selecciona un departamento"
-                                                            data-select2-id="2" tabindex="-1" aria-hidden="true">
+                                                            data-select2-id="4" tabindex="-1" aria-hidden="true">
                                                             <option value="">Selecciona un departamento</option>
                                                             @foreach ($departamento as $x)
                                                                 <option value="{{ $x->id }}" selected>
@@ -490,13 +504,15 @@
                                             <!--begin::Input group-->
                                             <div class="fv-row mb-7 fv-plugins-icon-container">
                                                 <!--begin::Label-->
-                                                <label class="required fw-bold fs-6 mb-2">observacion</label>
+                                                <label class="required fw-bold fs-6 mb-2">Observacion</label>
+                                                <i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip"
+                                                    title="" data-bs-original-title="Ingrese la observacion de la baja"
+                                                    aria-label="Ingrese la observacion de la baja"></i>
                                                 <!--end::Label-->
                                                 <!--begin::Input-->
-                                                <input type="text" name="observacion" id="observacion"
-                                                    class="form-control form-control-solid mb-3 mb-lg-0"
-                                                    placeholder="No funciona porque ..." style="text-transform:uppercase"
-                                                    value="">
+                                                <textarea style="text-transform:uppercase" class="form-control form-control-solid mb-3 mb-lg-0"
+                                                    placeholder="El equipo esta dañado por ..." name="observacion"
+                                                    id="observacion" value=""></textarea>
                                                 <!--end::Input-->
                                                 <div class="fv-plugins-message-container invalid-feedback"></div>
                                             </div>
@@ -513,7 +529,7 @@
                                             </div>
                                             <!--end::Input group-->
                                             <!--begin::Input group-->
-                                            <div class="mb-10">
+                                            <div class="mb-10" hidden>
                                                 <!--begin::Heading-->
                                                 <div class="mb-3">
                                                     <!--begin::Label-->
@@ -644,14 +660,52 @@
                                             data-kt-scroll-wrappers="#kt_modal_add_user_scroll"
                                             data-kt-scroll-offset="300px" style="max-height: 661px;">
                                             <!--begin::Input group-->
-                                            <div class="fv-row mb-7 fv-plugins-icon-container" hidden>
+                                            <div class="fv-row mb-7 fv-plugins-icon-container">
                                                 <!--begin::Label-->
-                                                <label class="required fw-bold fs-6 mb-2">identificador</label>
+                                                <label class="required fw-bold fs-6 mb-2">Departamento</label>
+                                                <i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip"
+                                                    title=""
+                                                    data-bs-original-title="Seleccione el departamento de la peticion"
+                                                    aria-label="Seleccione el departamento de la peticion"></i>
+                                                <!--end::Label-->
+                                                <!--begin::Input-->
+                                                <div class="col-md-12" data-select2-id="select2-data-453-kbzx">
+                                                    <div class="w-100" data-select2-id="select2-data-189-svbm">
+                                                        <!--begin::Select2-->
+                                                        <select
+                                                            class="form-select form-select-solid select2-hidden-accessible"
+                                                            name="departamento_id" id="departamento_id"
+                                                            data-control="select2" data-hide-search="true"
+                                                            data-placeholder="SELECCIONA UN DEPARTAMENTO"
+                                                            data-select2-id="6" tabindex="-1" aria-hidden="true">
+                                                            <option value="">SELECCIONA UN DEPARTAMENTO</option>
+                                                            @foreach ($departamento as $x)
+                                                                <option value="{{ $x->id }}" >
+                                                                    {{ $x->nombre }}
+                                                                </option>
+                                                            @endforeach
+                                                        </select>
+                                                        <!--end::Select2-->
+                                                    </div>
+                                                    <div class="fv-plugins-message-container invalid-feedback">
+                                                    </div>
+                                                </div>
+                                                <!--end::Input-->
+                                                <div class="fv-plugins-message-container invalid-feedback"></div>
+                                            </div>
+                                            <!--end::Input group-->
+                                            <!--begin::Input group-->
+                                            <div class="fv-row mb-7 fv-plugins-icon-container">
+                                                <!--begin::Label-->
+                                                <label class="required fw-bold fs-6 mb-2">Consecutivo</label>
+                                                <i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip"
+                                                    title="" data-bs-original-title="Ingrese el consecutivo de su oficio"
+                                                    aria-label="Ingrese el consecutivo de su oficio"></i>
                                                 <!--end::Label-->
                                                 <!--begin::Input-->
                                                 <input type="text" name="identificador" id="identificador"
                                                     class="form-control form-control-solid mb-3 mb-lg-0"
-                                                    placeholder="1241-0-0000" style="text-transform:uppercase" value="1">
+                                                    placeholder="STI - 100" style="text-transform:uppercase" value="">
                                                 <!--end::Input-->
                                                 <div class="fv-plugins-message-container invalid-feedback"></div>
                                             </div>
@@ -660,6 +714,10 @@
                                             <div class="fv-row mb-7 fv-plugins-icon-container">
                                                 <!--begin::Label-->
                                                 <label class="required fw-bold fs-6 mb-2">Equipo</label>
+                                                <i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip"
+                                                    title=""
+                                                    data-bs-original-title="Seleccione el tipo de dispositivo solicitado"
+                                                    aria-label="Seleccione el tipo de dispositivo solicitado"></i>
                                                 <!--end::Label-->
                                                 <!--begin::Input-->
                                                 <div class="col-xl-12 fv-row fv-plugins-icon-container"
@@ -670,8 +728,8 @@
                                                             class="form-select form-select-solid select2-hidden-accessible"
                                                             name="peticion_equipo" id="peticion_equipo"
                                                             data-control="select2" data-hide-search="true"
-                                                            data-placeholder="Selecciona el tipo" data-select2-id="3"
-                                                            tabindex="-1" aria-hidden="true">
+                                                            data-placeholder="SELECCIONA UN TIPO DE EQUIPO"
+                                                            data-select2-id="5" tabindex="-1" aria-hidden="true">
                                                             <option data-select2-id="select2-data-21-2sb5"></option>
                                                             <option value="COMPUTADORA">
                                                                 COMPUTADORA</option>
@@ -694,44 +752,15 @@
                                             <!--begin::Input group-->
                                             <div class="fv-row mb-7 fv-plugins-icon-container">
                                                 <!--begin::Label-->
-                                                <label class="required fw-bold fs-6 mb-2">departamento</label>
+                                                <label class="required fw-bold fs-6 mb-2">Observacion</label>
+                                                <i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip"
+                                                    title="" data-bs-original-title="Ingrese la observacion de la solicitud"
+                                                    aria-label="Ingrese la observacion de la solicitud"></i>
                                                 <!--end::Label-->
                                                 <!--begin::Input-->
-                                                <div class="col-md-12" data-select2-id="select2-data-453-kbzx">
-                                                    <div class="w-100" data-select2-id="select2-data-189-svbm">
-                                                        <!--begin::Select2-->
-                                                        <select
-                                                            class="form-select form-select-solid select2-hidden-accessible"
-                                                            name="departamento_id" id="departamento_id"
-                                                            data-control="select2" data-hide-search="true"
-                                                            data-placeholder="Selecciona un departamento"
-                                                            data-select2-id="2" tabindex="-1" aria-hidden="true">
-                                                            <option value="">Selecciona un departamento</option>
-                                                            @foreach ($departamento as $x)
-                                                                <option value="{{ $x->id }}">
-                                                                    {{ $x->nombre }}
-                                                                </option>
-                                                            @endforeach
-                                                        </select>
-                                                        <!--end::Select2-->
-                                                    </div>
-                                                    <div class="fv-plugins-message-container invalid-feedback">
-                                                    </div>
-                                                </div>
-                                                <!--end::Input-->
-                                                <div class="fv-plugins-message-container invalid-feedback"></div>
-                                            </div>
-                                            <!--end::Input group-->
-                                            <!--begin::Input group-->
-                                            <div class="fv-row mb-7 fv-plugins-icon-container">
-                                                <!--begin::Label-->
-                                                <label class="required fw-bold fs-6 mb-2">observacion</label>
-                                                <!--end::Label-->
-                                                <!--begin::Input-->
-                                                <input type="text" name="observacion" id="observacion"
-                                                    class="form-control form-control-solid mb-3 mb-lg-0"
-                                                    placeholder="No funciona porque ..." style="text-transform:uppercase"
-                                                    value="">
+                                                <textarea style="text-transform:uppercase" class="form-control form-control-solid mb-3 mb-lg-0"
+                                                    placeholder="El equipo esta dañado por ..." name="observacion"
+                                                    id="observacion" value=""></textarea>
                                                 <!--end::Input-->
                                                 <div class="fv-plugins-message-container invalid-feedback"></div>
                                             </div>
@@ -748,7 +777,7 @@
                                             </div>
                                             <!--end::Input group-->
                                             <!--begin::Input group-->
-                                            <div class="mb-10">
+                                            <div class="mb-10" hidden>
                                                 <!--begin::Heading-->
                                                 <div class="mb-3">
                                                     <!--begin::Label-->

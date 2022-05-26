@@ -24,7 +24,7 @@
                         <div class="row mb-8">
                             <!--begin::Col-->
                             <div class="col-xl-3">
-                                <div class="fs-6 fw-bold mt-2 mb-3">identificador</div>
+                                <div class="fs-6 fw-bold mt-2 mb-3">Consecutivo</div>
                             </div>
                             <!--end::Col-->
                             <!--begin::Col-->
@@ -40,7 +40,7 @@
                         <div class="row mb-8">
                             <!--begin::Col-->
                             <div class="col-xl-3">
-                                <div class="fs-6 fw-bold mt-2 mb-3">equipo</div>
+                                <div class="fs-6 fw-bold mt-2 mb-3">Equipo</div>
                             </div>
                             <!--end::Col-->
 
@@ -105,7 +105,7 @@
                         <div class="row mb-8">
                             <!--begin::Col-->
                             <div class="col-xl-3">
-                                <div class="fs-6 fw-bold mt-2 mb-3">departamento</div>
+                                <div class="fs-6 fw-bold mt-2 mb-3">Departamento</div>
                             </div>
                             <!--end::Col-->
                             <!--begin::Col-->
@@ -123,14 +123,14 @@
                         <div class="row mb-8">
                             <!--begin::Col-->
                             <div class="col-xl-3">
-                                <div class="fs-6 fw-bold mt-2 mb-3">observacion</div>
+                                <div class="fs-6 fw-bold mt-2 mb-3">Observacion</div>
                             </div>
                             <!--end::Col-->
                             <!--begin::Col-->
                             <div class="col-xl-9 fv-row fv-plugins-icon-container">
                                 <input type="text" class="form-control form-control-solid" style="text-transform:uppercase"
                                     value="" hidden>
-                                <textarea name="observacion" class="form-control form-control-solid"
+                                <textarea name="observacion" class="form-control form-control-solid" style="text-transform:uppercase"
                                     aria-label="With textarea">{{ $solicitud->observacion }}</textarea>
                                 <div class="fv-plugins-message-container invalid-feedback"></div>
                             </div>
@@ -140,7 +140,7 @@
                         <div class="row mb-8">
                             <!--begin::Col-->
                             <div class="col-xl-3">
-                                <div class="fs-6 fw-bold mt-2 mb-3">tipo</div>
+                                <div class="fs-6 fw-bold mt-2 mb-3">Tipo</div>
                             </div>
                             <!--end::Col-->
                             <!--begin::Col-->
@@ -153,9 +153,9 @@
                         </div>
                         <!--end::Row-->
                         <!--begin::Input group-->
-                        <div class="mb-10">
+                        <div class="row mb-8">
                             <!--begin::Heading-->
-                            <div class="mb-3">
+                            <div class="col-xl-3">
                                 <!--begin::Label-->
                                 <label class="d-flex align-items-center fs-5 fw-bold">
                                     <span class="required">Estatus</span>
@@ -167,7 +167,7 @@
                             </div>
                             <!--end::Heading-->
                             <!--begin::Row-->
-                            <div class="fv-row fv-plugins-icon-container">
+                            <div class="col-xl-9 fv-row fv-plugins-icon-container">
                                 <!--begin::Radio group-->
                                 <div class="btn-group w-100" data-kt-buttons="true"
                                     data-kt-buttons-target="[data-kt-button]">
@@ -214,6 +214,41 @@
                             <!--end::Row-->
                         </div>
                         <!--end::Input group-->
+                        @if ($solicitud->estatus == 'PROCESO')
+                            <!--begin::Row-->
+                            <div class="row mb-8">
+                                <!--begin::Col-->
+                                <div class="col-xl-3">
+                                    <div class="fs-6 fw-bold mt-2 mb-3 required">Tecnico</div>
+                                </div>
+                                <!--end::Col-->
+                                <!--begin::Input-->
+                                <div class="col-xl-9 fv-row fv-plugins-icon-container"
+                                    data-select2-id="select2-data-453-kbzx">
+                                    <div class="w-100" data-select2-id="select2-data-189-svbm">
+                                        <!--begin::Select2-->
+                                        <select class="form-select form-select-solid select2-hidden-accessible" name="tecnico_id"
+                                            id="tecnico_id" data-control="select2" data-hide-search="true"
+                                            data-placeholder="Selecciona el tipo" data-select2-id="1" tabindex="-1"
+                                            aria-hidden="true">
+                                            <option value="">Selecciona un tecnico</option>
+                                            @foreach ($tecnico as $x)
+                                                <option value="{{ $x->id }}"
+                                                    {{ old('tecnico_id', $solicitud->tecnico_id) == $x->id ? 'selected' : '' }}>
+                                                    {{ $x->nombre }}
+                                                </option>
+                                            @endforeach
+                                        </select>
+                                        <!--end::Select2-->
+                                    </div>
+                                    <div class="fv-plugins-message-container invalid-feedback"></div>
+                                </div>
+                                <!--end::Input-->
+                            </div>
+                            <!--end::Row-->
+                        @elseif($solicitud->estatus == 'FINALIZADO')
+
+                        @endif
                     </div>
                     <!--end::Card body-->
                     <!--begin::Card footer-->

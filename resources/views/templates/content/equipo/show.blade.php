@@ -24,7 +24,7 @@
                         <div class="row mb-8">
                             <!--begin::Col-->
                             <div class="col-xl-3">
-                                <div class="fs-6 fw-bold mt-2 mb-3">Inventario</div>
+                                <div class="fs-6 fw-bold mt-2 mb-3 required">Inventario</div>
                             </div>
                             <!--end::Col-->
                             <!--begin::Col-->
@@ -39,7 +39,7 @@
                         <div class="row mb-8">
                             <!--begin::Col-->
                             <div class="col-xl-3">
-                                <div class="fs-6 fw-bold mt-2 mb-3">departamento</div>
+                                <div class="fs-6 fw-bold mt-2 mb-3">Departamento</div>
                             </div>
                             <!--end::Col-->
                             <!--begin::Col-->
@@ -73,7 +73,7 @@
                         <div class="row mb-8">
                             <!--begin::Col-->
                             <div class="col-xl-3">
-                                <div class="fs-6 fw-bold mt-2 mb-3">Tipo</div>
+                                <div class="fs-6 fw-bold mt-2 mb-3 required">Tipo</div>
                             </div>
                             <!--end::Col-->
                             <!--begin::Input-->
@@ -82,7 +82,7 @@
                                     <!--begin::Select2-->
                                     <select class="form-select form-select-solid select2-hidden-accessible" name="tipo"
                                         id="tipo" data-control="select2" data-hide-search="true"
-                                        data-placeholder="Selecciona el tipo" data-select2-id="2" tabindex="-1"
+                                        data-placeholder="Selecciona el tipo" data-select2-id="1" tabindex="-1"
                                         aria-hidden="true">
                                         <option data-select2-id="select2-data-21-2sb5"></option>
                                         <option value="COMPUTADORA"
@@ -106,7 +106,7 @@
                         <div class="row mb-8">
                             <!--begin::Col-->
                             <div class="col-xl-3">
-                                <div class="fs-6 fw-bold mt-2 mb-3">Marca</div>
+                                <div class="fs-6 fw-bold mt-2 mb-3 required">Marca</div>
                             </div>
                             <!--end::Col-->
                             <!--begin::Col-->
@@ -120,7 +120,7 @@
                         <div class="row mb-8">
                             <!--begin::Col-->
                             <div class="col-xl-3">
-                                <label class="form-label">Dispositivos</label>
+                                <div class="fs-6 fw-bold mt-2 mb-3">Dispositivos</div>
                             </div>
                             <!--begin::Col-->
                             <div class="col-xl-9 fv-row fv-plugins-icon-container">
@@ -136,9 +136,6 @@
                                 <!--begin::Label-->
                                 <label class="d-flex align-items-center fs-5 fw-bold">
                                     <span class="required">Estatus</span>
-                                    <i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip" title=""
-                                        data-bs-original-title="Seleccione el estatus de la solicitud"
-                                        aria-label="Seleccione el estatus de la solicitud"></i>
                                 </label>
                                 <!--end::Label-->
                             </div>
@@ -154,8 +151,8 @@
                                         {{ $equipo->estatus == 'ACTIVO' ? 'btn-active-success active' : 'btn-active-success' }}"
                                         data-kt-button="true">
                                         <!--begin::Input-->
-                                        <input class="btn-check" type="radio" name="estatus" value="ACTIVO" 
-                                        {{ $equipo->estatus == 'ACTIVO' ? 'checked' : '' }}>
+                                        <input class="btn-check" type="radio" name="estatus" value="ACTIVO"
+                                            {{ $equipo->estatus == 'ACTIVO' ? 'checked' : '' }}>
                                         <!--end::Input-->
                                         ACTIVO
                                     </label>
@@ -166,8 +163,8 @@
                                         {{ $equipo->estatus == 'BAJA' ? 'btn-active-danger active' : 'btn-active-danger' }}"
                                         data-kt-button="true">
                                         <!--begin::Input-->
-                                        <input class="btn-check" type="radio" name="estatus" value="BAJA" 
-                                        {{ $equipo->estatus == 'BAJA' ? 'checked' : '' }}>
+                                        <input class="btn-check" type="radio" name="estatus" value="BAJA"
+                                            {{ $equipo->estatus == 'BAJA' ? 'checked' : '' }}>
                                         <!--end::Input-->
                                         BAJA
                                     </label>
@@ -302,15 +299,15 @@
                                                 data-kt-scroll-wrappers="#kt_modal_add_user_scroll"
                                                 data-kt-scroll-offset="300px" style="max-height: 661px;">
                                                 <!--begin::Input group-->
-                                                <div class="fv-row mb-7 fv-plugins-icon-container" hidden>
+                                                <div class="fv-row mb-7 fv-plugins-icon-container">
                                                     <!--begin::Label-->
-                                                    <label class="required fw-bold fs-6 mb-2">identificador</label>
+                                                    <label class="required fw-bold fs-6 mb-2">Consecutivo</label>
                                                     <!--end::Label-->
                                                     <!--begin::Input-->
                                                     <input type="text" name="identificador" id="identificador"
                                                         class="form-control form-control-solid mb-3 mb-lg-0"
                                                         placeholder="1241-0-0000" style="text-transform:uppercase"
-                                                        value="1">
+                                                        value="{{ $equipo->Departamento->identificador }} - ">
                                                     <!--end::Input-->
                                                     <div class="fv-plugins-message-container invalid-feedback"></div>
                                                 </div>
@@ -364,13 +361,15 @@
                                                 <!--begin::Input group-->
                                                 <div class="fv-row mb-7 fv-plugins-icon-container">
                                                     <!--begin::Label-->
-                                                    <label class="required fw-bold fs-6 mb-2">observacion</label>
+                                                    <label class="required fw-bold fs-6 mb-2">Observacion</label>
+                                                    <i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip"
+                                                        title="" data-bs-original-title="Ingresa la observacion de la solicitud"
+                                                        aria-label="Ingresa la observacion de la solicitud"></i>
                                                     <!--end::Label-->
                                                     <!--begin::Input-->
-                                                    <input type="text" name="observacion" id="observacion"
-                                                        class="form-control form-control-solid mb-3 mb-lg-0"
-                                                        placeholder="No funciona porque ..."
-                                                        style="text-transform:uppercase" value="">
+                                                    <textarea style="text-transform:uppercase" class="form-control form-control-solid mb-3 mb-lg-0"
+                                                        placeholder="El equipo esta dañado por ..." name="observacion"
+                                                        id="observacion" value=""></textarea>
                                                     <!--end::Input-->
                                                     <div class="fv-plugins-message-container invalid-feedback"></div>
                                                 </div>
@@ -387,7 +386,7 @@
                                                 </div>
                                                 <!--end::Input group-->
                                                 <!--begin::Input group-->
-                                                <div class="mb-10">
+                                                <div class="mb-10" hidden>
                                                     <!--begin::Heading-->
                                                     <div class="mb-3">
                                                         <!--begin::Label-->
@@ -519,15 +518,15 @@
                                                 data-kt-scroll-wrappers="#kt_modal_add_user_scroll"
                                                 data-kt-scroll-offset="300px" style="max-height: 661px;">
                                                 <!--begin::Input group-->
-                                                <div class="fv-row mb-7 fv-plugins-icon-container" hidden>
+                                                <div class="fv-row mb-7 fv-plugins-icon-container">
                                                     <!--begin::Label-->
-                                                    <label class="required fw-bold fs-6 mb-2">identificador</label>
+                                                    <label class="required fw-bold fs-6 mb-2">Consecutivo</label>
                                                     <!--end::Label-->
                                                     <!--begin::Input-->
                                                     <input type="text" name="identificador" id="identificador"
                                                         class="form-control form-control-solid mb-3 mb-lg-0"
                                                         placeholder="1241-0-0000" style="text-transform:uppercase"
-                                                        value="1">
+                                                        value="{{ $equipo->Departamento->identificador }} - ">
                                                     <!--end::Input-->
                                                     <div class="fv-plugins-message-container invalid-feedback"></div>
                                                 </div>
@@ -565,7 +564,7 @@
                                                                 name="departamento_id" id="departamento_id"
                                                                 data-control="select2" data-hide-search="true"
                                                                 data-placeholder="Selecciona un departamento"
-                                                                data-select2-id="2" tabindex="-1" aria-hidden="true">
+                                                                data-select2-id="3" tabindex="-1" aria-hidden="true">
                                                                 <option value="">Selecciona un departamento</option>
                                                                 <option value="{{ $equipo->departamento_id }}" selected>
                                                                     {{ $equipo->Departamento->nombre }}
@@ -584,12 +583,14 @@
                                                 <div class="fv-row mb-7 fv-plugins-icon-container">
                                                     <!--begin::Label-->
                                                     <label class="required fw-bold fs-6 mb-2">observacion</label>
+                                                    <i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip"
+                                                        title="" data-bs-original-title="Ingresa la observacion de la solicitud"
+                                                        aria-label="Ingresa la observacion de la solicitud"></i>
                                                     <!--end::Label-->
                                                     <!--begin::Input-->
-                                                    <input type="text" name="observacion" id="observacion"
-                                                        class="form-control form-control-solid mb-3 mb-lg-0"
-                                                        placeholder="No funciona porque ..."
-                                                        style="text-transform:uppercase" value="">
+                                                    <textarea style="text-transform:uppercase" class="form-control form-control-solid mb-3 mb-lg-0"
+                                                        placeholder="El equipo esta dañado por ..." name="observacion"
+                                                        id="observacion" value=""></textarea>
                                                     <!--end::Input-->
                                                     <div class="fv-plugins-message-container invalid-feedback"></div>
                                                 </div>
@@ -606,7 +607,7 @@
                                                 </div>
                                                 <!--end::Input group-->
                                                 <!--begin::Input group-->
-                                                <div class="mb-10">
+                                                <div class="mb-10" hidden>
                                                     <!--begin::Heading-->
                                                     <div class="mb-3">
                                                         <!--begin::Label-->

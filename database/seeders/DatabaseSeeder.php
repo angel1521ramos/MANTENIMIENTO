@@ -6,6 +6,7 @@ use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 use \App\Models\Departamento;
 use \App\Models\Equipo;
+use \App\Models\Tecnico;
 use \App\Models\Solicitud;
 
 class DatabaseSeeder extends Seeder
@@ -20,6 +21,7 @@ class DatabaseSeeder extends Seeder
         // \App\Models\User::factory(10)->create();
         Departamento::factory(8)->create();
         Equipo::factory(20)->create();
+        Tecnico::factory(3)->create();
         //Solicitud::factory(20)->create();
     }
 }

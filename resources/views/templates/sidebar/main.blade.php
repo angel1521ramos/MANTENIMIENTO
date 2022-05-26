@@ -246,7 +246,7 @@
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
-                                <span class="menu-title">baja</span>
+                                <span class="menu-title">Baja</span>
                             </a>
                         </div>
                         <div class="menu-item">
@@ -255,7 +255,7 @@
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
-                                <span class="menu-title">petición</span>
+                                <span class="menu-title">Petición</span>
                             </a>
                         </div>
                         <div class="menu-item">

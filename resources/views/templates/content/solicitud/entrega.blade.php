@@ -33,13 +33,17 @@
         }
 
         .img-1 {
-            float: left;
+            margin-top: -60px;
             display: inline;
+            padding: 0px;
+            float: right;
         }
 
-        .img-1 {
-            float: right;
+        .img-2 {
+            margin-top: -60px;
             display: inline;
+            padding: 0px;
+            float: left;
         }
 
         .footer-1 {
@@ -51,7 +55,6 @@
         .footer-2 {
             margin-top: -60px;
             display: inline;
-            font-size: 16px;
             padding: 0px;
             float: right;
         }
@@ -67,20 +70,20 @@
         <div class="img-2">
             <img src="metronic8/demo1/assets/media/logos/logo-mina.png" width="304">
         </div>
-    </div><br>
+    </div><br><br><br><br>
 
     <div class="date">
         <p>Minatitlan, Ver., a
             {{ $solicitud->created_at->format('d') }} de
             {{ $solicitud->created_at->format('M') }} del {{ $solicitud->created_at->format('Y') }}<br>
-            Oficio: {{ $solicitud->identificador }}/{{ $solicitud->created_at->format('Y') }}<br>
+            Oficio: sti- /{{ $solicitud->created_at->format('Y') }}<br>
             @if ($solicitud->tipo == 'PETICION')
                 ASUNTO: entrega de {{ $solicitud->peticion_equipo }}
             @else
                 ASUNTO: entrega de {{ $solicitud->Equipo->tipo }} {{ $solicitud->Equipo->marca }}
             @endif
         </p>
-    </div><br>
+    </div><br><br>
 
     <div class="address">
         <p>{{ $solicitud->Departamento->responsable }}
@@ -95,8 +98,10 @@
         <p>El que suscribe <b>ing. Sergio Fernandez Ferreira</b> en mi
             caracter de <b>Director del departamento de tecnologias de la informacion</b>
             del H. Ayuntamiento de la ciudad de Minatitlan, Ver.,
-            le hago entrega del/la <b>{{ $solicitud->Equipo->tipo }}</b> <b>{{ $solicitud->Equipo->marca }}</b> con el numero de
-            inventario <b>{{ $solicitud->Equipo->inventario }}</b>, al cual se le realizo el mantenimiento requerido, y con el equipo
+            le hago entrega del/la <b>{{ $solicitud->Equipo->tipo }}</b> <b>{{ $solicitud->Equipo->marca }}</b> con
+            el numero de
+            inventario <b>{{ $solicitud->Equipo->inventario }}</b>, al cual se le realizo el mantenimiento requerido,
+            y con el equipo
             funcionando de manera correcta.</p>
     @elseif ($solicitud->tipo == 'BAJA')
         <p>El que suscribe <b>ing. Sergio Fernandez Ferreira</b> en mi
@@ -104,7 +109,7 @@
             del H. Ayuntamiento de la ciudad de Minatitlan, Ver.,
             le hago entrega
             el proceso de baja
-            del/la <b>{{ $solicitud->Equipo->tipo }}</b> <b>{{ $solicitud->Equipo->marca }}</b> con el numero de
+            de el/la <b>{{ $solicitud->Equipo->tipo }}</b> <b>{{ $solicitud->Equipo->marca }}</b> con el numero de
             inventario <b>{{ $solicitud->Equipo->inventario }}</b>
             por el motivo de que <b>{{ $solicitud->observacion }}</b>.</p>
     @else
@@ -113,11 +118,10 @@
             del H. Ayuntamiento de la ciudad de Minatitlan, Ver.,
             le hago entrega
             de un/una <b>{{ $solicitud->peticion_equipo }}</b>
-            por el motivo de que <b>{{ $solicitud->observacion }}</b>.</p>
+            por el motivo,mencionado por su persona, textualmente de <b>{{ $solicitud->observacion }}</b>.</p>
     @endif
-    <p>Sin otro particular por el momento y agradeciendo de antemano su puntual
-        atención al tema mencionado,
-        me es grato enviarle un cordial saludo esperando su pronta respuesta,
+    <p>Sin otro particular por el momento ,
+        me es grato enviarle un cordial saludo y
         quedando a su disposición ante cualquier duda o aclaración que surja en un futuro.
     </p>
     <br><br>
@@ -130,9 +134,10 @@
 
     <p style="text-align: center;">A T E N T A M E N T E</p><br>
     <p style="text-align: center;">
-        ___________________________________<br>{{ $solicitud->Departamento->responsable }}<br>{{ $solicitud->Departamento->cargo_responsable }}
+        ___________________________________<br>ing. Sergio Fernandez Ferreira<br>director de Tecnologias<br> de la
+        Información
     </p>
-    <br><br><br><br>
+    <br><br><br><br><br>
 
     <div class="footer">
         <div class="footer-1">
