@@ -22,7 +22,8 @@ class SolicitudFactory extends Factory
             'identificador' => $this->faker->numberBetween($min = 1241, $max = 9999),
             'observacion' => $this->faker->randomElement($array = array ('NO FUNCIONA','ATASCADO', 'SE ROMPIO', 'EXPIDE UN SONIDO RARO')),
             'tipo' => $this->faker->randomElement($array = array ('SOPORTE','MANTENIMIENTO')),
-            'estatus' => $this->faker->randomElement($array = array ('PENDIENTE','PROCESO','FINALIZADO'))
+            'estatus' => $this->faker->randomElement($array = array ('PENDIENTE','PROCESO','FINALIZADO')),
+            'calificacion' => $this->faker->numberBetween($min = 0, $max = 5),
         ];
     }
 }

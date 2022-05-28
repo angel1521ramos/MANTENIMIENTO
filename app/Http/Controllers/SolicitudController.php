@@ -8,6 +8,7 @@ use App\Models\Tecnico;
 use App\Models\Equipo;
 use App\Http\Requests\Solicitud as SolicitudRequests;
 use Barryvdh\DomPDF\Facade\PDF;
+use Illuminate\Support\Facades\Auth;
 
 class SolicitudController extends Controller
 {
@@ -20,11 +21,11 @@ class SolicitudController extends Controller
 
     public function index()
     {
-        if (request()->is('solicitud/index/mantenimiento')) {
+        if (request()->is('admin/solicitud/index/mantenimiento')) {
             $solicitud = Solicitud::where('tipo', 'MANTENIMIENTO')->orderBy('estatus', 'desc')->get();
-        } elseif (request()->is('solicitud/index/peticion')) {
+        } elseif (request()->is('admin/solicitud/index/peticion')) {
             $solicitud = Solicitud::where('tipo', 'PETICION')->orderBy('estatus', 'desc')->get();
-        } elseif (request()->is('solicitud/index/baja')) {
+        } elseif (request()->is('admin/solicitud/index/baja')) {
             $solicitud = Solicitud::where('tipo', 'BAJA')->orderBy('estatus', 'desc')->get();
         } else {
             $solicitud = Solicitud::orderBy('estatus', 'desc')->get();
@@ -33,7 +34,7 @@ class SolicitudController extends Controller
         $equipo = Equipo::orderBy('departamento_id', 'asc')->get();
         $departamento = Departamento::orderBy('id', 'asc')->get();
 
-        return view('templates.content.solicitud.index', compact('departamento', 'solicitud', 'equipo'));
+        return view('templates.content.administrador.solicitud.index', compact('departamento', 'solicitud', 'equipo'));
     }
 
     public function store(SolicitudRequests $request)
@@ -50,6 +51,12 @@ class SolicitudController extends Controller
             'tipo' => $request->tipo,
             'estatus' => $request->estatus,
         ]);
+
+        if ($request->tecnico_id !== null) {
+            Solicitud::where('id', $Solicitud->id)->update([
+                'tecnico_id' => $request->tecnico_id
+            ]);
+        }
 
         if ($request->tipo == 'BAJA' && $request->estatus == 'FINALIZADO') {
             Equipo::where('id', $request->equipo_id)->update([
@@ -77,6 +84,12 @@ class SolicitudController extends Controller
             'peticion_equipo' => $request->peticion_equipo,
         ]);
 
+        if ($request->tecnico_id !== null) {
+            Solicitud::where('id', $Solicitud->id)->update([
+                'tecnico_id' => $request->tecnico_id
+            ]);
+        }
+
         return back();
     }
 
@@ -87,7 +100,7 @@ class SolicitudController extends Controller
         $departamento_id = Solicitud::where('id', $solicitud)->value('departamento_id');
         $equipo = Equipo::where('departamento_id', $departamento_id)->get();
         $solicitud = Solicitud::find($solicitud);
-        return view('templates.content.solicitud.show', compact('departamento', 'equipo', 'solicitud', 'tecnico'));
+        return view('templates.content.administrador.solicitud.show', compact('departamento', 'equipo', 'solicitud', 'tecnico'));
     }
 
     public function update(SolicitudRequests $request, $solicitud)
@@ -99,11 +112,12 @@ class SolicitudController extends Controller
             'observacion' => $request->observacion,
             'tipo' => $request->tipo,
             'estatus' => $request->estatus,
+            'tecnico_id' => $request->tecnico_id
         ]);
 
-        if ($request->tecnico_id !== null) {
+        if ($request->calificacion !== null) {
             Solicitud::where('id', $solicitud)->update([
-                'tecnico_id' => $request->tecnico_id
+                'calificacion' => $request->calificacion
             ]);
         }
 
@@ -129,11 +143,12 @@ class SolicitudController extends Controller
             'observacion' => $request->observacion,
             'tipo' => $request->tipo,
             'estatus' => $request->estatus,
+            'tecnico_id' => $request->tecnico_id
         ]);
-        
-        if ($request->tecnico_id) {
-            Solicitud::where('id', $request->equipo_id)->update([
-                'tecnico_id' => $request->tecnico_id
+
+        if ($request->calificacion !== null) {
+            Solicitud::where('id', $solicitud)->update([
+                'calificacion' => $request->calificacion
             ]);
         }
 
@@ -147,17 +162,17 @@ class SolicitudController extends Controller
 
     public function pdf_recepcion(Solicitud $solicitud)
     {
-        $pdf = PDF::loadView('templates.content.solicitud.recepcion', compact('solicitud'));
+        $pdf = PDF::loadView('templates.content.administrador.solicitud.recepcion', compact('solicitud'));
         return $pdf->stream();
-        /**$pdf = PDF::loadView('templates.content.solicitud.pdf');
+        /**$pdf = PDF::loadView('templates.content.administrador.solicitud.pdf');
         return $pdf->stream();**/
     }
 
     public function pdf_entrega(Solicitud $solicitud)
     {
-        $pdf = PDF::loadView('templates.content.solicitud.entrega', compact('solicitud'));
+        $pdf = PDF::loadView('templates.content.administrador.solicitud.entrega', compact('solicitud'));
         return $pdf->stream();
-        /**$pdf = PDF::loadView('templates.content.solicitud.pdf');
+        /**$pdf = PDF::loadView('templates.content.administrador.solicitud.pdf');
         return $pdf->stream();**/
     }
 }

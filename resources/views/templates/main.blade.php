@@ -53,6 +53,8 @@
                     <!--end::Content-->
                 </div>
                 <!--end::Content-->
+                
+                @yield('footer')
                 @include('templates.footer.main')
 
 

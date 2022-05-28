@@ -23,6 +23,7 @@ return new class extends Migration
             $table->string('tipo');
             $table->string('estatus');
             $table->string('peticion_equipo')->nullable();
+            $table->integer('calificacion')->nullable()->default(0);
             $table->timestamps();
         });
     }

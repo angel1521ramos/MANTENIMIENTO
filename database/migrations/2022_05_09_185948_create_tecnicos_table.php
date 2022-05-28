@@ -16,8 +16,9 @@ return new class extends Migration
         Schema::create('tecnicos', function (Blueprint $table) {
             $table->id();
             $table->string('nombre');
-            $table->string('numero');
-            $table->string('calificacion');
+            $table->string('telefono');
+            $table->string('correo');
+            $table->integer('calificacion')->nullable()->default(0);
             $table->timestamps();
         });
     }

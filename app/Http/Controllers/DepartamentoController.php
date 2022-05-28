@@ -6,7 +6,6 @@ use App\Models\Departamento;
 use App\Models\Equipo;
 use App\Models\Solicitud;
 use App\Http\Requests\Departamento as DepartamentoRequests;
-use App\Http\Requests\Solicitud as SolicitudRequests;
 
 class DepartamentoController extends Controller
 {
@@ -21,7 +20,7 @@ class DepartamentoController extends Controller
     public function index()
     {
         $departamento = Departamento::all();
-        return view('templates.content.departamento.index', compact('departamento'));
+        return view('templates.content.administrador.departamento.index', compact('departamento'));
     }
     
     public function create()
@@ -41,7 +40,7 @@ class DepartamentoController extends Controller
         $solicitud = Solicitud::where('departamento_id', $departamento)->orderBy('estatus', 'desc')->get();
         $equipo = Equipo::where('departamento_id', $departamento)->get();
         $departamento = Departamento::find($departamento);
-        return view('templates.content.departamento.show', compact('departamento','solicitud','equipo'));
+        return view('templates.content.administrador.departamento.show', compact('departamento','solicitud','equipo'));
     }
     
     public function edit(Departamento $departamento)

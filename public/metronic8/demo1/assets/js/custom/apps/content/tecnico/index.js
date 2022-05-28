@@ -3,8 +3,8 @@
 // Class definition
 var KTUsersAddUser = function () {
     // Shared variables
-    const element = document.getElementById('modal_departamento_index');
-    const form = element.querySelector('#form_departamento_index');
+    const element = document.getElementById('modal_tecnico_index');
+    const form = element.querySelector('#form_tecnico_index');
     const modal = new bootstrap.Modal(element);
 
     // Init add schedule modal
@@ -19,34 +19,6 @@ var KTUsersAddUser = function () {
                         validators: {
                             notEmpty: {
                                 message: 'El nombre es requerido'
-                            }
-                        }
-                    },
-                    'identificador': {
-                        validators: {
-                            notEmpty: {
-                                message: 'El identificador es requerido'
-                            }
-                        }
-                    },
-                    'responsable': {
-                        validators: {
-                            notEmpty: {
-                                message: 'El responsable es requerido'
-                            }
-                        }
-                    },
-                    'cargo_responsable': {
-                        validators: {
-                            notEmpty: {
-                                message: 'El cargo es requerido'
-                            }
-                        }
-                    },
-                    'direccion': {
-                        validators: {
-                            notEmpty: {
-                                message: 'La direccion es requerido'
                             }
                         }
                     },
@@ -85,6 +57,8 @@ var KTUsersAddUser = function () {
             // Validate form before submit
             if (validator) {
                 validator.validate().then(function (status) {
+                    console.log('validated!');
+
                     if (status == 'Valid') {
                         // Show loading indication
                         submitButton.setAttribute('data-kt-indicator', 'on');

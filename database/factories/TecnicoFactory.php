@@ -18,8 +18,8 @@ class TecnicoFactory extends Factory
     {
         return [
             'nombre' => $this->faker->name,
-            'numero' => $this->faker->tollFreePhoneNumber,
-            'calificacion' => $this->faker->numberBetween($min = 1, $max = 5),
+            'telefono' => $this->faker->tollFreePhoneNumber,
+            'correo' => $this->faker->email,
         ];
     }
 }

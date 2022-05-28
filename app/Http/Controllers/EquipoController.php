@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Equipo;
 use App\Models\Departamento;
 use App\Models\Solicitud;
+use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\Equipo as EquipoRequests;
 
 class EquipoController extends Controller
@@ -17,9 +18,14 @@ class EquipoController extends Controller
     
     public function index()
     {
+        if (request()->is('departamento/departamento')) {
+            $email = Auth::email();
+            $departamento_id = Departamento::where('correo', $email)->orderBy('estatus', 'desc')->get();
+            $equipo = Equipo::all();
+        }
         $equipo = Equipo::all();
         $departamento = Departamento::all();
-        return view('templates.content.equipo.index', compact('equipo','departamento'));
+        return view('templates.content.administrador.equipo.index', compact('equipo','departamento'));
     }
     
     public function create()
@@ -44,7 +50,7 @@ class EquipoController extends Controller
     {
         $solicitud = Solicitud::where('equipo_id', $equipo)->orderBy('estatus', 'desc')->get();
         $equipo = Equipo::find($equipo);
-        return view('templates.content.equipo.show', compact('equipo', 'solicitud'));
+        return view('templates.content.administrador.equipo.show', compact('equipo', 'solicitud'));
     }
     
     public function edit(Equipo $equipo)

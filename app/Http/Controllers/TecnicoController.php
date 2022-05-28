@@ -2,19 +2,24 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Departamento;
 use App\Models\Tecnico;
-use Illuminate\Http\Request;
+use App\Models\Solicitud;
+use App\Http\Requests\Tecnico as TecnicoRequests;
+use App\Models\Equipo;
 
 class TecnicoController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
+    protected $tecnico;
+    public function __construct(Tecnico $tecnico){
+        $this->tecnico = $tecnico;
+    }
+
     public function index()
     {
-        //
+        $tecnico = Tecnico::all();
+        return view('templates.content.administrador.tecnicos.index', compact('tecnico'));
     }
 
     /**
@@ -33,9 +38,10 @@ class TecnicoController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(TecnicoRequests $request)
     {
-        //
+        $this->tecnico->create($request->all());
+        return $this->index();
     }
 
     /**
@@ -44,9 +50,13 @@ class TecnicoController extends Controller
      * @param  \App\Models\Tecnico  $tecnico
      * @return \Illuminate\Http\Response
      */
-    public function show(Tecnico $tecnico)
+    public function show($tecnico)
     {
-        //
+        $solicitud = Solicitud::where('tecnico_id', $tecnico)->orderBy('estatus', 'desc')->get();
+        $departamento = Departamento::all();
+        $equipo = Equipo::all();
+        $tecnico = Tecnico::find($tecnico);
+        return view('templates.content.administrador.tecnicos.show', compact('tecnico','solicitud','departamento','equipo'));
     }
 
     /**
@@ -67,7 +77,7 @@ class TecnicoController extends Controller
      * @param  \App\Models\Tecnico  $tecnico
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Tecnico $tecnico)
+    public function update(TecnicoRequests $request, Tecnico $tecnico)
     {
         //
     }
