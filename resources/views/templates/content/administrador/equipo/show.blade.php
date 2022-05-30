@@ -36,7 +36,7 @@
                         </div>
                         <!--end::Row-->
                         <!--begin::Row-->
-                        <div class="row mb-8">
+                        <div class="row mb-8" {{ auth()->user()->rol == 'departamento' ? 'hidden' : '' }}>
                             <!--begin::Col-->
                             <div class="col-xl-3">
                                 <div class="fs-6 fw-bold mt-2 mb-3">Departamento</div>
@@ -129,8 +129,9 @@
                                 <div class="fv-plugins-message-container invalid-feedback"></div>
                             </div>
                         </div>
+
                         <!--begin::Input group-->
-                        <div class="row mb-8">
+                        <div class="row mb-8" {{ auth()->user()->rol == 'departamento' ? 'hidden' : '' }}>
                             <!--begin::Heading-->
                             <div class="col-xl-3">
                                 <!--begin::Label-->
@@ -176,6 +177,8 @@
                             <!--end::Row-->
                         </div>
                         <!--end::Input group-->
+
+
                     </div>
                     <!--end::Card body-->
                     <!--begin::Card footer-->
@@ -202,57 +205,60 @@
                     <!--end::Card title-->
                     <!--begin::Card toolbar-->
                     <div class="card-toolbar">
-                        <!--begin::Card toolbar-->
-                        <div class="card-toolbar">
-                            <!--begin::Menu wrapper-->
-                            <div>
-                                <!--begin::Toggle-->
-                                <button type="button" class="btn btn-primary rotate" data-kt-menu-trigger="click"
-                                    data-kt-menu-placement="bottom-start" data-kt-menu-offset="0,5">
-                                    Solicitud
-                                    <span class="svg-icon svg-icon-3 rotate-180 ms-3 me-0">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                            fill="none">
-                                            <path
-                                                d="M11.4343 12.7344L7.25 8.55005C6.83579 8.13583 6.16421 8.13584 5.75 8.55005C5.33579 8.96426 5.33579 9.63583 5.75 10.05L11.2929 15.5929C11.6834 15.9835 12.3166 15.9835 12.7071 15.5929L18.25 10.05C18.6642 9.63584 18.6642 8.96426 18.25 8.55005C17.8358 8.13584 17.1642 8.13584 16.75 8.55005L12.5657 12.7344C12.2533 13.0468 11.7467 13.0468 11.4343 12.7344Z"
-                                                fill="currentColor"></path>
-                                        </svg>
-                                    </span>
-                                </button>
-                                <!--end::Toggle-->
-                                <!--begin::Menu-->
-                                <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg-light-primary fw-bold w-200px"
-                                    data-kt-menu="true">
-                                    <!--begin::Menu item-->
-                                    <div class="menu-item px-3">
-                                        <div class="menu-content fs-6 text-dark fw-bolder px-3 py-4">Solicitar</div>
+                        @if (auth()->user()->rol !== 'tecnico')
+                            <!--begin::Card toolbar-->
+                            <div class="card-toolbar">
+                                <!--begin::Menu wrapper-->
+                                <div>
+                                    <!--begin::Toggle-->
+                                    <button type="button" class="btn btn-primary rotate" data-kt-menu-trigger="click"
+                                        data-kt-menu-placement="bottom-start" data-kt-menu-offset="0,5">
+                                        Solicitud
+                                        <span class="svg-icon svg-icon-3 rotate-180 ms-3 me-0">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none">
+                                                <path
+                                                    d="M11.4343 12.7344L7.25 8.55005C6.83579 8.13583 6.16421 8.13584 5.75 8.55005C5.33579 8.96426 5.33579 9.63583 5.75 10.05L11.2929 15.5929C11.6834 15.9835 12.3166 15.9835 12.7071 15.5929L18.25 10.05C18.6642 9.63584 18.6642 8.96426 18.25 8.55005C17.8358 8.13584 17.1642 8.13584 16.75 8.55005L12.5657 12.7344C12.2533 13.0468 11.7467 13.0468 11.4343 12.7344Z"
+                                                    fill="currentColor"></path>
+                                            </svg>
+                                        </span>
+                                    </button>
+                                    <!--end::Toggle-->
+                                    <!--begin::Menu-->
+                                    <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg-light-primary fw-bold w-200px"
+                                        data-kt-menu="true">
+                                        <!--begin::Menu item-->
+                                        <div class="menu-item px-3">
+                                            <div class="menu-content fs-6 text-dark fw-bolder px-3 py-4">Solicitar</div>
+                                        </div>
+                                        <!--end::Menu item-->
+                                        <!--begin::Menu separator-->
+                                        <div class="separator mb-3 opacity-75"></div>
+                                        <!--end::Menu separator-->
+                                        <!--begin::Menu item-->
+                                        <div class="menu-item px-3">
+                                            <a class="menu-link px-3" data-bs-toggle="modal"
+                                                data-bs-target="#modal_mantenimiento_index">
+                                                Mantenimiento
+                                            </a>
+                                        </div>
+                                        <!--end::Menu item-->
+                                        <!--begin::Menu item-->
+                                        <div class="menu-item px-3">
+                                            <a class="menu-link px-3" data-bs-toggle="modal"
+                                                data-bs-target="#modal_baja_index">
+                                                Baja
+                                            </a>
+                                        </div>
+                                        <!--end::Menu item-->
+                                        <br>
                                     </div>
-                                    <!--end::Menu item-->
-                                    <!--begin::Menu separator-->
-                                    <div class="separator mb-3 opacity-75"></div>
-                                    <!--end::Menu separator-->
-                                    <!--begin::Menu item-->
-                                    <div class="menu-item px-3">
-                                        <a class="menu-link px-3" data-bs-toggle="modal"
-                                            data-bs-target="#modal_mantenimiento_index">
-                                            Mantenimiento
-                                        </a>
-                                    </div>
-                                    <!--end::Menu item-->
-                                    <!--begin::Menu item-->
-                                    <div class="menu-item px-3">
-                                        <a class="menu-link px-3" data-bs-toggle="modal" data-bs-target="#modal_baja_index">
-                                            Baja
-                                        </a>
-                                    </div>
-                                    <!--end::Menu item-->
-                                    <br>
+                                    <!--end::Menu-->
                                 </div>
-                                <!--end::Menu-->
+                                <!--end::Dropdown wrapper-->
                             </div>
-                            <!--end::Dropdown wrapper-->
-                        </div>
-                        <!--end::Card toolbar-->
+                            <!--end::Card toolbar-->
+                        @endif
                         <!--begin::Modal - Add task-->
                         <div class="modal fade" id="modal_mantenimiento_index" tabindex="-1" aria-hidden="true">
                             <!--begin::Modal dialog-->
@@ -363,7 +369,8 @@
                                                     <!--begin::Label-->
                                                     <label class="required fw-bold fs-6 mb-2">Observacion</label>
                                                     <i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip"
-                                                        title="" data-bs-original-title="Ingresa la observacion de la solicitud"
+                                                        title=""
+                                                        data-bs-original-title="Ingresa la observacion de la solicitud"
                                                         aria-label="Ingresa la observacion de la solicitud"></i>
                                                     <!--end::Label-->
                                                     <!--begin::Input-->
@@ -584,7 +591,8 @@
                                                     <!--begin::Label-->
                                                     <label class="required fw-bold fs-6 mb-2">observacion</label>
                                                     <i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip"
-                                                        title="" data-bs-original-title="Ingresa la observacion de la solicitud"
+                                                        title=""
+                                                        data-bs-original-title="Ingresa la observacion de la solicitud"
                                                         aria-label="Ingresa la observacion de la solicitud"></i>
                                                     <!--end::Label-->
                                                     <!--begin::Input-->

@@ -23,7 +23,8 @@ class DepartamentoFactory extends Factory
             'cargo_responsable' => $this->faker->randomElement($array = array ('DIRECTOR/A','JEFE/A')),
             'direccion' => $this->faker->randomElement($array = array ('Av. Miguel Hidalgo 107, Zona Centro')),
             'telefono' => $this->faker->tollFreePhoneNumber,
-            'correo' => $this->faker->regexify('[A-Z.+-]+@minatitlan+gob+mx')
+            'correo' => $this->faker->regexify('[A-Z.+-]+@minatitlan+gob+mx'),
+            'password' => '123456'
         ];
     }
 }

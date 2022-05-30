@@ -79,7 +79,7 @@
                             <!--end::Title-->
                             <!--begin::Link-->
                             <div class="text-gray-400 fw-bold fs-4">No tienes cuenta?
-                                <a href="http://localhost/mantenimiento/public/sign-up"
+                                <a href="{{ route('sign-up.view') }}"
                                     class="link-primary fw-bolder">Crear una cuenta</a>
                             </div>
                             <!--end::Link-->

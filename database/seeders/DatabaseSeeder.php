@@ -30,19 +30,13 @@ class DatabaseSeeder extends Seeder
             'name' => 'Angel',
             'email' => 'angel1521ramos@gmail.com',
             'rol' => 'administrador',
-            'password' => Hash::make('123456')
+            'password' => bcrypt('123456')
         ]);
         User::create([
             'name' => 'gaer',
             'email' => 'gaer1521ramos@gmail.com',
             'rol' => 'departamento',
-            'password' => Hash::make('123456')
-        ]);
-        User::create([
-            'name' => 'fernando',
-            'email' => 'fernando1521ramos@gmail.com',
-            'rol' => 'tecnico',
-            'password' => Hash::make('123456')
+            'password' => bcrypt('123456')
         ]);
     }
 }

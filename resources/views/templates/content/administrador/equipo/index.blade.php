@@ -13,25 +13,27 @@
                     <!--end::Card title-->
                     <!--begin::Card toolbar-->
                     <div class="card-toolbar">
-                        <!--begin::Toolbar-->
-                        <div class="d-flex justify-content-end" data-kt-user-table-toolbar="base">
-                            <!--begin::Add user-->
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                data-bs-target="#modal_equipo_index">
-                                <!--begin::Svg Icon | path: icons/duotune/arrows/arr075.svg-->
-                                <span class="svg-icon svg-icon-2">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                        fill="none">
-                                        <rect opacity="0.5" x="11.364" y="20.364" width="16" height="2" rx="1"
-                                            transform="rotate(-90 11.364 20.364)" fill="currentColor"></rect>
-                                        <rect x="4.36396" y="11.364" width="16" height="2" rx="1" fill="currentColor">
-                                        </rect>
-                                    </svg>
-                                </span>Añadir equipo
-                            </button>
-                            <!--end::Add user-->
-                        </div>
-                        <!--end::Toolbar-->
+                        @if (auth()->user()->rol !== 'tecnico')
+                            <!--begin::Toolbar-->
+                            <div class="d-flex justify-content-end" data-kt-user-table-toolbar="base">
+                                <!--begin::Add user-->
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                    data-bs-target="#modal_equipo_index">
+                                    <!--begin::Svg Icon | path: icons/duotune/arrows/arr075.svg-->
+                                    <span class="svg-icon svg-icon-2">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                            fill="none">
+                                            <rect opacity="0.5" x="11.364" y="20.364" width="16" height="2" rx="1"
+                                                transform="rotate(-90 11.364 20.364)" fill="currentColor"></rect>
+                                            <rect x="4.36396" y="11.364" width="16" height="2" rx="1" fill="currentColor">
+                                            </rect>
+                                        </svg>
+                                    </span>Añadir equipo
+                                </button>
+                                <!--end::Add user-->
+                            </div>
+                            <!--end::Toolbar-->
+                        @endif
                         <!--begin::Modal - Add task-->
                         <div class="modal fade" id="modal_equipo_index" tabindex="-1" aria-hidden="true">
                             <!--begin::Modal dialog-->
@@ -94,46 +96,73 @@
                                                     <div class="fv-plugins-message-container invalid-feedback"></div>
                                                 </div>
                                                 <!--end::Input group-->
-                                                <!--begin::Input group-->
-                                                <div class="fv-row mb-7 fv-plugins-icon-container">
-                                                    <!--begin::Label-->
-                                                    <label class="required fw-bold fs-6 mb-2">Departamento</label>
-                                                    <i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip"
-                                                        title=""
-                                                        data-bs-original-title="Seleccione el departamento del equipo"
-                                                        aria-label="Seleccione el departamento del equipo"></i>
-                                                    <!--end::Label-->
-                                                    <!--begin::Input-->
-                                                    <div class="col-md-12" data-select2-id="select2-data-453-kbzx">
-                                                        <div class="w-100" data-select2-id="select2-data-189-svbm">
-                                                            <!--begin::Select2-->
-                                                            <select
-                                                                class="form-select form-select-solid select2-hidden-accessible"
-                                                                name="departamento_id" id="departamento_id"
-                                                                data-control="select2" data-hide-search="true"
-                                                                data-placeholder="SELECCIONA UN DEPARTAMENTO"
-                                                                data-select2-id="1" tabindex="-1" aria-hidden="true">
-                                                                <option value="">SELECCIONA UN DEPARTAMENTO</option>
-                                                                @foreach ($departamento as $x)
-                                                                    <option value="{{ $x->id }}">{{ $x->nombre }}
-                                                                    </option>
-                                                                @endforeach
-                                                            </select>
-                                                            <!--end::Select2-->
-                                                        </div>
+                                                @if (auth()->user()->rol == 'departamento')
+                                                    <!--begin::Input group-->
+                                                    <div class="fv-row mb-7 fv-plugins-icon-container" hidden>
+                                                        <!--begin::Label-->
+                                                        <label class="required fw-bold fs-6 mb-2">Departamento</label>
+                                                        <i class="fas fa-exclamation-circle ms-2 fs-7"
+                                                            data-bs-toggle="tooltip" title=""
+                                                            data-bs-original-title="Seleccione el departamento del equipo"
+                                                            aria-label="Seleccione el departamento del equipo"></i>
+                                                        <!--end::Label-->
+                                                        <!--begin::Input-->
+                                                        <input type="text" name="departamento_id" id="departamento_id"
+                                                            class="form-control form-control-solid mb-3 mb-lg-0"
+                                                            placeholder="1241-0-0000" style="text-transform:uppercase"
+                                                            value="{{ $departamento->id }}" readonly>
+                                                        <input type="text"
+                                                            class="form-control form-control-solid mb-3 mb-lg-0"
+                                                            placeholder="1241-0-0000" style="text-transform:uppercase"
+                                                            value="{{ $departamento->nombre }}" readonly>
+                                                        <!--end::Input-->
                                                         <div class="fv-plugins-message-container invalid-feedback"></div>
                                                     </div>
-                                                    <!--end::Input-->
-                                                    <div class="fv-plugins-message-container invalid-feedback"></div>
-                                                </div>
-                                                <!--end::Input group-->
+                                                    <!--end::Input group-->
+                                                @else
+                                                    <!--begin::Input group-->
+                                                    <div class="fv-row mb-7 fv-plugins-icon-container">
+                                                        <!--begin::Label-->
+                                                        <label class="required fw-bold fs-6 mb-2">Departamento</label>
+                                                        <i class="fas fa-exclamation-circle ms-2 fs-7"
+                                                            data-bs-toggle="tooltip" title=""
+                                                            data-bs-original-title="Seleccione el departamento del equipo"
+                                                            aria-label="Seleccione el departamento del equipo"></i>
+                                                        <!--end::Label-->
+                                                        <!--begin::Input-->
+                                                        <div class="col-md-12" data-select2-id="select2-data-453-kbzx">
+                                                            <div class="w-100"
+                                                                data-select2-id="select2-data-189-svbm">
+                                                                <!--begin::Select2-->
+                                                                <select
+                                                                    class="form-select form-select-solid select2-hidden-accessible"
+                                                                    name="departamento_id" id="departamento_id"
+                                                                    data-control="select2" data-hide-search="true"
+                                                                    data-placeholder="SELECCIONA UN DEPARTAMENTO"
+                                                                    data-select2-id="1" tabindex="-1" aria-hidden="true">
+                                                                    <option value="">SELECCIONA UN DEPARTAMENTO</option>
+                                                                    @foreach ($departamento as $x)
+                                                                        <option value="{{ $x->id }}">
+                                                                            {{ $x->nombre }}
+                                                                        </option>
+                                                                    @endforeach
+                                                                </select>
+                                                                <!--end::Select2-->
+                                                            </div>
+                                                            <div class="fv-plugins-message-container invalid-feedback">
+                                                            </div>
+                                                        </div>
+                                                        <!--end::Input-->
+                                                        <div class="fv-plugins-message-container invalid-feedback"></div>
+                                                    </div>
+                                                    <!--end::Input group-->
+                                                @endif
                                                 <!--begin::Input group-->
                                                 <div class="fv-row mb-7 fv-plugins-icon-container">
                                                     <!--begin::Label-->
                                                     <label class="required fw-bold fs-6 mb-2">Marca</label>
                                                     <i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip"
-                                                        title=""
-                                                        data-bs-original-title="Ingrese la marca del equipo"
+                                                        title="" data-bs-original-title="Ingrese la marca del equipo"
                                                         aria-label="Ingrese la marca del equipo"></i>
                                                     <!--end::Label-->
                                                     <!--begin::Input-->
@@ -149,8 +178,7 @@
                                                     <!--begin::Label-->
                                                     <label class="required fw-bold fs-6 mb-2">Tipo</label>
                                                     <i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip"
-                                                        title=""
-                                                        data-bs-original-title="Seleccione el tipo de equipo"
+                                                        title="" data-bs-original-title="Seleccione el tipo de equipo"
                                                         aria-label="Seleccione el tipo de equipo"></i>
                                                     <!--end::Label-->
                                                     <!--begin::Input-->
@@ -201,7 +229,8 @@
                                                     <!--begin::Input-->
                                                     <input type="text" name="estatus" id="estatus"
                                                         class="form-control form-control-solid mb-3 mb-lg-0"
-                                                        placeholder="Lenovo" style="text-transform:uppercase" value="ACTIVO">
+                                                        placeholder="Lenovo" style="text-transform:uppercase"
+                                                        value="ACTIVO">
                                                     <!--end::Input-->
                                                     <div class="fv-plugins-message-container invalid-feedback"></div>
                                                 </div>

@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('nombre');
             $table->string('telefono');
             $table->string('correo');
+            $table->string('password');
             $table->integer('calificacion')->nullable()->default(0);
             $table->timestamps();
         });

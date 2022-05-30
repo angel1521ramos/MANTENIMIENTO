@@ -18,13 +18,15 @@ class EquipoController extends Controller
     
     public function index()
     {
-        if (request()->is('departamento/departamento')) {
-            $email = Auth::email();
-            $departamento_id = Departamento::where('correo', $email)->orderBy('estatus', 'desc')->get();
+        if (auth()->user()->rol == 'departamento') {
+            $email = auth()->user()->email;
+            $departamento_id = Departamento::where('correo', $email)->value('id');
+            $equipo = Equipo::where('departamento_id', $departamento_id)->get();
+            $departamento = Departamento::find($departamento_id);
+        }else {
             $equipo = Equipo::all();
+            $departamento = Departamento::all();
         }
-        $equipo = Equipo::all();
-        $departamento = Departamento::all();
         return view('templates.content.administrador.equipo.index', compact('equipo','departamento'));
     }
     

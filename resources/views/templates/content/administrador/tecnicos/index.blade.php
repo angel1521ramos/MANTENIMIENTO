@@ -159,6 +159,23 @@
                                                     <div class="fv-plugins-message-container invalid-feedback"></div>
                                                 </div>
                                                 <!--end::Input group-->
+                                                <!--begin::Input group-->
+                                                <div class="fv-row mb-7 fv-plugins-icon-container">
+                                                    <!--begin::Label-->
+                                                    <label class="required fw-bold fs-6 mb-2">Contraseña</label>
+                                                    <i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip"
+                                                        title="" data-bs-original-title="Ingrese la contraseña del tecnico"
+                                                        aria-label="Ingrese la contraseña del tecnico"></i>
+                                                    <!--end::Label-->
+                                                    <!--begin::Input-->
+                                                    <input type="text" name="password" id="password"
+                                                        class="form-control form-control-solid mb-3 mb-lg-0"
+                                                        placeholder="Ingrese la contraseña del tecnico"
+                                                        style="text-transform:uppercase" value="">
+                                                    <!--end::Input-->
+                                                    <div class="fv-plugins-message-container invalid-feedback"></div>
+                                                </div>
+                                                <!--end::Input group-->
                                             </div>
                                             <!--end::Scroll-->
                                             <!--begin::Actions-->

@@ -13,5 +13,6 @@ class Tecnico extends Model
         'telefono',
         'correo',
         'calificacion',
+        'password'
     ];
 }

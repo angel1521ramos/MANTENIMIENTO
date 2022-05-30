@@ -15,7 +15,8 @@ class Departamento extends Model
         'cargo_responsable',
         'direccion',
         'telefono',
-        'correo'
+        'correo',
+        'password',
     ];
 
 }

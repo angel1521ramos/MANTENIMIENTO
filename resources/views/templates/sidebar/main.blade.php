@@ -46,85 +46,6 @@
                             <span class="menu-section text-muted text-uppercase fs-8 ls-1">Departamento</span>
                         </div>
                     </div>
-                    <div class="menu-item">
-                        <a class="menu-link" href="{{ route('equipo.index') }}">
-                            <span class="menu-icon">
-                                <!--begin::Svg Icon | path: icons/duotune/finance/fin006.svg-->
-                                <span class="svg-icon svg-icon-2">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                        fill="none">
-                                        <path opacity="0.3"
-                                            d="M20 15H4C2.9 15 2 14.1 2 13V7C2 6.4 2.4 6 3 6H21C21.6 6 22 6.4 22 7V13C22 14.1 21.1 15 20 15ZM13 12H11C10.5 12 10 12.4 10 13V16C10 16.5 10.4 17 11 17H13C13.6 17 14 16.6 14 16V13C14 12.4 13.6 12 13 12Z"
-                                            fill="currentColor"></path>
-                                        <path
-                                            d="M14 6V5H10V6H8V5C8 3.9 8.9 3 10 3H14C15.1 3 16 3.9 16 5V6H14ZM20 15H14V16C14 16.6 13.5 17 13 17H11C10.5 17 10 16.6 10 16V15H4C3.6 15 3.3 14.9 3 14.7V18C3 19.1 3.9 20 5 20H19C20.1 20 21 19.1 21 18V14.7C20.7 14.9 20.4 15 20 15Z"
-                                            fill="currentColor"></path>
-                                    </svg>
-                                </span>
-                                <!--end::Svg Icon-->
-                            </span>
-                            <span class="menu-title">Equipos</span>
-                        </a>
-                    </div>
-                    <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
-                        <span class="menu-link">
-                            <span class="menu-icon">
-                                <!--begin::Svg Icon | path: icons/duotune/communication/com013.svg-->
-                                <span class="menu-icon">
-                                    <!--begin::Svg Icon | path: icons/duotune/communication/com011.svg-->
-                                    <span class="svg-icon svg-icon-2">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                            viewBox="0 0 24 24" fill="none">
-                                            <path opacity="0.3"
-                                                d="M21 19H3C2.4 19 2 18.6 2 18V6C2 5.4 2.4 5 3 5H21C21.6 5 22 5.4 22 6V18C22 18.6 21.6 19 21 19Z"
-                                                fill="currentColor"></path>
-                                            <path
-                                                d="M21 5H2.99999C2.69999 5 2.49999 5.10005 2.29999 5.30005L11.2 13.3C11.7 13.7 12.4 13.7 12.8 13.3L21.7 5.30005C21.5 5.10005 21.3 5 21 5Z"
-                                                fill="currentColor"></path>
-                                        </svg>
-                                    </span>
-                                    <!--end::Svg Icon-->
-                                </span>
-                                <!--end::Svg Icon-->
-                            </span>
-                            <span class="menu-title">Solicitud</span>
-                            <span class="menu-arrow"></span>
-                        </span>
-                        <div class="menu-sub menu-sub-accordion menu-active-bg">
-                            <div class="menu-item">
-                                <a class="menu-link" href="/metronic8/demo1/../demo1/dark/account/overview.html">
-                                    <span class="menu-bullet">
-                                        <span class="bullet bullet-dot"></span>
-                                    </span>
-                                    <span class="menu-title">Mantenimiento</span>
-                                </a>
-                            </div>
-                            <div class="menu-item">
-                                <a class="menu-link" href="/metronic8/demo1/../demo1/dark/account/settings.html">
-                                    <span class="menu-bullet">
-                                        <span class="bullet bullet-dot"></span>
-                                    </span>
-                                    <span class="menu-title">Baja</span>
-                                </a>
-                            </div>
-                            <div class="menu-item">
-                                <a class="menu-link" href="/metronic8/demo1/../demo1/dark/account/security.html">
-                                    <span class="menu-bullet">
-                                        <span class="bullet bullet-dot"></span>
-                                    </span>
-                                    <span class="menu-title">peticion</span>
-                                </a>
-                            </div>
-                            <div class="menu-item">
-                                <a class="menu-link" href="/metronic8/demo1/../demo1/dark/account/security.html">
-                                    <span class="menu-bullet">
-                                        <span class="bullet bullet-dot"></span>
-                                    </span>
-                                    <span class="menu-title">Visualizar solictudes</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
                 @endif
 
                 @if (auth()->user()->rol == 'tecnico')
@@ -134,7 +55,8 @@
                         </div>
                     </div>
                     <div class="menu-item">
-                        <a class="menu-link" href="/metronic8/demo1/../demo1/dark/apps/calendar.html">
+                        <a class="menu-link {{ request()->is('departamento*') ? ' active' : '' }}"
+                            href="{{ route('departamento.index') }}">
                             <span class="menu-icon">
                                 <!--begin::Svg Icon | path: icons/duotune/finance/fin006.svg-->
                                 <span class="svg-icon svg-icon-2">
@@ -153,89 +75,6 @@
                             <span class="menu-title">Departamento</span>
                         </a>
                     </div>
-                    <div class="menu-item">
-                        <a class="menu-link" href="/metronic8/demo1/../demo1/dark/apps/calendar.html">
-                            <span class="menu-icon">
-                                <!--begin::Svg Icon | path: icons/duotune/general/gen025.svg-->
-                                <span class="svg-icon svg-icon-2">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                        fill="none">
-                                        <rect x="2" y="2" width="9" height="9" rx="2" fill="currentColor"></rect>
-                                        <rect opacity="0.3" x="13" y="2" width="9" height="9" rx="2"
-                                            fill="currentColor">
-                                        </rect>
-                                        <rect opacity="0.3" x="13" y="13" width="9" height="9" rx="2"
-                                            fill="currentColor">
-                                        </rect>
-                                        <rect opacity="0.3" x="2" y="13" width="9" height="9" rx="2"
-                                            fill="currentColor">
-                                        </rect>
-                                    </svg>
-                                </span>
-                                <!--end::Svg Icon-->
-                            </span>
-                            <span class="menu-title">Equipos</span>
-                        </a>
-                    </div>
-                    <div data-kt-menu-trigger="click" class="menu-item menu-accordion">
-                        <span class="menu-link">
-                            <span class="menu-icon">
-                                <!--begin::Svg Icon | path: icons/duotune/communication/com013.svg-->
-                                <span class="menu-icon">
-                                    <!--begin::Svg Icon | path: icons/duotune/communication/com011.svg-->
-                                    <span class="svg-icon svg-icon-2">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                            viewBox="0 0 24 24" fill="none">
-                                            <path opacity="0.3"
-                                                d="M21 19H3C2.4 19 2 18.6 2 18V6C2 5.4 2.4 5 3 5H21C21.6 5 22 5.4 22 6V18C22 18.6 21.6 19 21 19Z"
-                                                fill="currentColor"></path>
-                                            <path
-                                                d="M21 5H2.99999C2.69999 5 2.49999 5.10005 2.29999 5.30005L11.2 13.3C11.7 13.7 12.4 13.7 12.8 13.3L21.7 5.30005C21.5 5.10005 21.3 5 21 5Z"
-                                                fill="currentColor"></path>
-                                        </svg>
-                                    </span>
-                                    <!--end::Svg Icon-->
-                                </span>
-                                <!--end::Svg Icon-->
-                            </span>
-                            <span class="menu-title">Solicitud</span>
-                            <span class="menu-arrow"></span>
-                        </span>
-                        <div class="menu-sub menu-sub-accordion menu-active-bg">
-                            <div class="menu-item">
-                                <a class="menu-link" href="/metronic8/demo1/../demo1/dark/account/overview.html">
-                                    <span class="menu-bullet">
-                                        <span class="bullet bullet-dot"></span>
-                                    </span>
-                                    <span class="menu-title">Mantenimiento</span>
-                                </a>
-                            </div>
-                            <div class="menu-item">
-                                <a class="menu-link" href="/metronic8/demo1/../demo1/dark/account/settings.html">
-                                    <span class="menu-bullet">
-                                        <span class="bullet bullet-dot"></span>
-                                    </span>
-                                    <span class="menu-title">Baja</span>
-                                </a>
-                            </div>
-                            <div class="menu-item">
-                                <a class="menu-link" href="/metronic8/demo1/../demo1/dark/account/security.html">
-                                    <span class="menu-bullet">
-                                        <span class="bullet bullet-dot"></span>
-                                    </span>
-                                    <span class="menu-title">Peticion</span>
-                                </a>
-                            </div>
-                            <div class="menu-item">
-                                <a class="menu-link" href="/metronic8/demo1/../demo1/dark/account/security.html">
-                                    <span class="menu-bullet">
-                                        <span class="bullet bullet-dot"></span>
-                                    </span>
-                                    <span class="menu-title">Visualizar solicitudes</span>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
                 @endif
 
                 @if (auth()->user()->rol == 'administrador')
@@ -245,7 +84,7 @@
                         </div>
                     </div>
                     <div class="menu-item">
-                        <a class="menu-link {{ request()->is('admin/tecnico*') ? ' active' : '' }}" href="{{ route('tecnico.index') }}">
+                        <a class="menu-link {{ request()->is('tecnico*') ? ' active' : '' }}" href="{{ route('tecnico.index') }}">
                             <span class="menu-icon">
                                 <!--begin::Svg Icon | path: icons/duotune/general/gen014.svg-->
                                 <span class="svg-icon svg-icon-2">
@@ -264,7 +103,7 @@
                         </a>
                     </div>
                     <div class="menu-item">
-                        <a class="menu-link {{ request()->is('admin/departamento*') ? ' active' : '' }}"
+                        <a class="menu-link {{ request()->is('departamento*') ? ' active' : '' }}"
                             href="{{ route('departamento.index') }}">
                             <span class="menu-icon">
                                 <!--begin::Svg Icon | path: icons/duotune/finance/fin006.svg-->
@@ -284,97 +123,88 @@
                             <span class="menu-title">Departamentos</span>
                         </a>
                     </div>
-                    <div class="menu-item">
-                        <a class="menu-link {{ request()->is('admin/equipo*') ? ' active' : '' }}"
-                            href="{{ route('equipo.index') }}">
+                @endif
+
+                <div class="menu-item">
+                    <a class="menu-link {{ request()->is('equipo*') ? ' active' : '' }}" href="{{ route('equipo.index') }}">
+                        <span class="menu-icon">
+                            <!--begin::Svg Icon | path: icons/duotune/finance/fin006.svg-->
+                            <span class="svg-icon svg-icon-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                    fill="none">
+                                    <path opacity="0.3"
+                                        d="M20 15H4C2.9 15 2 14.1 2 13V7C2 6.4 2.4 6 3 6H21C21.6 6 22 6.4 22 7V13C22 14.1 21.1 15 20 15ZM13 12H11C10.5 12 10 12.4 10 13V16C10 16.5 10.4 17 11 17H13C13.6 17 14 16.6 14 16V13C14 12.4 13.6 12 13 12Z"
+                                        fill="currentColor"></path>
+                                    <path
+                                        d="M14 6V5H10V6H8V5C8 3.9 8.9 3 10 3H14C15.1 3 16 3.9 16 5V6H14ZM20 15H14V16C14 16.6 13.5 17 13 17H11C10.5 17 10 16.6 10 16V15H4C3.6 15 3.3 14.9 3 14.7V18C3 19.1 3.9 20 5 20H19C20.1 20 21 19.1 21 18V14.7C20.7 14.9 20.4 15 20 15Z"
+                                        fill="currentColor"></path>
+                                </svg>
+                            </span>
+                            <!--end::Svg Icon-->
+                        </span>
+                        <span class="menu-title">Equipos</span>
+                    </a>
+                </div>
+                
+                <div data-kt-menu-trigger="click" class="menu-item menu-accordion {{ request()->is('solicitud*') ? 'hover show' : '' }}">
+                    <span class="menu-link">
+                        <span class="menu-icon">
+                            <!--begin::Svg Icon | path: icons/duotune/communication/com013.svg-->
                             <span class="menu-icon">
-                                <!--begin::Svg Icon | path: icons/duotune/general/gen022.svg-->
+                                <!--begin::Svg Icon | path: icons/duotune/communication/com011.svg-->
                                 <span class="svg-icon svg-icon-2">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                        fill="none">
-                                        <path
-                                            d="M11.2929 2.70711C11.6834 2.31658 12.3166 2.31658 12.7071 2.70711L15.2929 5.29289C15.6834 5.68342 15.6834 6.31658 15.2929 6.70711L12.7071 9.29289C12.3166 9.68342 11.6834 9.68342 11.2929 9.29289L8.70711 6.70711C8.31658 6.31658 8.31658 5.68342 8.70711 5.29289L11.2929 2.70711Z"
-                                            fill="currentColor"></path>
-                                        <path
-                                            d="M11.2929 14.7071C11.6834 14.3166 12.3166 14.3166 12.7071 14.7071L15.2929 17.2929C15.6834 17.6834 15.6834 18.3166 15.2929 18.7071L12.7071 21.2929C12.3166 21.6834 11.6834 21.6834 11.2929 21.2929L8.70711 18.7071C8.31658 18.3166 8.31658 17.6834 8.70711 17.2929L11.2929 14.7071Z"
-                                            fill="currentColor"></path>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                        viewBox="0 0 24 24" fill="none">
                                         <path opacity="0.3"
-                                            d="M5.29289 8.70711C5.68342 8.31658 6.31658 8.31658 6.70711 8.70711L9.29289 11.2929C9.68342 11.6834 9.68342 12.3166 9.29289 12.7071L6.70711 15.2929C6.31658 15.6834 5.68342 15.6834 5.29289 15.2929L2.70711 12.7071C2.31658 12.3166 2.31658 11.6834 2.70711 11.2929L5.29289 8.70711Z"
+                                            d="M21 19H3C2.4 19 2 18.6 2 18V6C2 5.4 2.4 5 3 5H21C21.6 5 22 5.4 22 6V18C22 18.6 21.6 19 21 19Z"
                                             fill="currentColor"></path>
-                                        <path opacity="0.3"
-                                            d="M17.2929 8.70711C17.6834 8.31658 18.3166 8.31658 18.7071 8.70711L21.2929 11.2929C21.6834 11.6834 21.6834 12.3166 21.2929 12.7071L18.7071 15.2929C18.3166 15.6834 17.6834 15.6834 17.2929 15.2929L14.7071 12.7071C14.3166 12.3166 14.3166 11.6834 14.7071 11.2929L17.2929 8.70711Z"
+                                        <path
+                                            d="M21 5H2.99999C2.69999 5 2.49999 5.10005 2.29999 5.30005L11.2 13.3C11.7 13.7 12.4 13.7 12.8 13.3L21.7 5.30005C21.5 5.10005 21.3 5 21 5Z"
                                             fill="currentColor"></path>
                                     </svg>
                                 </span>
                                 <!--end::Svg Icon-->
                             </span>
-                            <span class="menu-title">Equipos</span>
-                        </a>
-                    </div>
-                    <div data-kt-menu-trigger="click"
-                        class="menu-item {{ request()->is('admin/solicitud*') ? 'here hover show' : 'menu-accordion' }}">
-                        <span class="menu-link">
-                            <span class="menu-icon">
-                                <!--begin::Svg Icon | path: icons/duotune/communication/com013.svg-->
-                                <span class="menu-icon">
-                                    <!--begin::Svg Icon | path: icons/duotune/general/gen022.svg-->
-                                    <span class="svg-icon svg-icon-2">
-                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                                            viewBox="0 0 24 24" fill="none">
-                                            <path opacity="0.3"
-                                                d="M19 22H5C4.4 22 4 21.6 4 21V3C4 2.4 4.4 2 5 2H14L20 8V21C20 21.6 19.6 22 19 22Z"
-                                                fill="currentColor"></path>
-                                            <path d="M15 8H20L14 2V7C14 7.6 14.4 8 15 8Z" fill="currentColor"></path>
-                                        </svg>
-                                    </span>
-                                    <!--end::Svg Icon-->
-                                </span>
-                                <!--end::Svg Icon-->
-                            </span>
-                            <span class="menu-title">solicitud</span>
-                            <span class="menu-arrow"></span>
+                            <!--end::Svg Icon-->
                         </span>
-                        <div class="menu-sub menu-sub-accordion menu-active-bg">
-                            <div class="menu-item">
-                                <a class="menu-link {{ request()->is('admin/solicitud/index/mantenimiento') ? ' active' : '' }}"
-                                    href="{{ route('solicitud.index.mantenimiento') }}">
-                                    <span class="menu-bullet">
-                                        <span class="bullet bullet-dot"></span>
-                                    </span>
-                                    <span class="menu-title">Mantenimiento</span>
-                                </a>
-                            </div>
-                            <div class="menu-item">
-                                <a class="menu-link {{ request()->is('admin/solicitud/index/baja') ? ' active' : '' }}"
-                                    href="{{ route('solicitud.index.baja') }}">
-                                    <span class="menu-bullet">
-                                        <span class="bullet bullet-dot"></span>
-                                    </span>
-                                    <span class="menu-title">Baja</span>
-                                </a>
-                            </div>
-                            <div class="menu-item">
-                                <a class="menu-link {{ request()->is('admin/solicitud/index/peticion') ? ' active' : '' }}"
-                                    href="{{ route('solicitud.index.peticion') }}">
-                                    <span class="menu-bullet">
-                                        <span class="bullet bullet-dot"></span>
-                                    </span>
-                                    <span class="menu-title">Petición</span>
-                                </a>
-                            </div>
-                            <div class="menu-item">
-                                <a class="menu-link {{ request()->is('admin/solicitud') ? ' active' : '' }}"
-                                    href="{{ route('solicitud.index') }}">
-                                    <span class="menu-bullet">
-                                        <span class="bullet bullet-dot"></span>
-                                    </span>
-                                    <span class="menu-title">Visualizar todos</span>
-                                </a>
-                            </div>
+                        <span class="menu-title">Solicitud</span>
+                        <span class="menu-arrow"></span>
+                    </span>
+                    <div class="menu-sub menu-sub-accordion menu-active-bg">
+                        <div class="menu-item">
+                            <a class="menu-link {{ request()->is('solicitud/index/mantenimiento') ? ' active' : '' }}" href="{{ route('solicitud.index.mantenimiento') }}">
+                                <span class="menu-bullet">
+                                    <span class="bullet bullet-dot"></span>
+                                </span>
+                                <span class="menu-title">Mantenimiento</span>
+                            </a>
+                        </div>
+                        <div class="menu-item">
+                            <a class="menu-link {{ request()->is('solicitud/index/baja') ? ' active' : '' }}" href="{{ route('solicitud.index.baja') }}">
+                                <span class="menu-bullet">
+                                    <span class="bullet bullet-dot"></span>
+                                </span>
+                                <span class="menu-title">Baja</span>
+                            </a>
+                        </div>
+                        <div class="menu-item">
+                            <a class="menu-link {{ request()->is('solicitud/index/peticion') ? ' active' : '' }}" href="{{ route('solicitud.index.peticion') }}">
+                                <span class="menu-bullet">
+                                    <span class="bullet bullet-dot"></span>
+                                </span>
+                                <span class="menu-title">peticion</span>
+                            </a>
+                        </div>
+                        <div class="menu-item">
+                            <a class="menu-link {{ request()->is('solicitud') ? ' active' : '' }}" href="{{ route('solicitud.index') }}">
+                                <span class="menu-bullet">
+                                    <span class="bullet bullet-dot"></span>
+                                </span>
+                                <span class="menu-title">Visualizar solictudes</span>
+                            </a>
                         </div>
                     </div>
-                @endif
-
+                </div>
             </div>
             <!--end::Menu-->
         </div>

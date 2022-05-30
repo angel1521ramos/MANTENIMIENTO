@@ -36,6 +36,13 @@ var KTUsersAddUser = function () {
                             }
                         }
                     },
+                    'password': {
+                        validators: {
+                            notEmpty: {
+                                message: 'la contraseña es requerida'
+                            }
+                        }
+                    },
                 },
 
                 plugins: {

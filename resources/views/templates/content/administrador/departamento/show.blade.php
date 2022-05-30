@@ -203,60 +203,63 @@
                     <!--end::Card title-->
                     <!--begin::Card toolbar-->
                     <div class="card-toolbar">
-                        <!--begin::Menu wrapper-->
-                        <div>
-                            <!--begin::Toggle-->
-                            <button type="button" class="btn btn-primary rotate" data-kt-menu-trigger="click"
-                                data-kt-menu-placement="bottom-start" data-kt-menu-offset="0,5">
-                                Solicitud
-                                <span class="svg-icon svg-icon-3 rotate-180 ms-3 me-0">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                        fill="none">
-                                        <path
-                                            d="M11.4343 12.7344L7.25 8.55005C6.83579 8.13583 6.16421 8.13584 5.75 8.55005C5.33579 8.96426 5.33579 9.63583 5.75 10.05L11.2929 15.5929C11.6834 15.9835 12.3166 15.9835 12.7071 15.5929L18.25 10.05C18.6642 9.63584 18.6642 8.96426 18.25 8.55005C17.8358 8.13584 17.1642 8.13584 16.75 8.55005L12.5657 12.7344C12.2533 13.0468 11.7467 13.0468 11.4343 12.7344Z"
-                                            fill="currentColor"></path>
-                                    </svg>
-                                </span>
-                            </button>
-                            <!--end::Toggle-->
-                            <!--begin::Menu-->
-                            <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg-light-primary fw-bold w-200px"
-                                data-kt-menu="true">
-                                <!--begin::Menu item-->
-                                <div class="menu-item px-3">
-                                    <div class="menu-content fs-6 text-dark fw-bolder px-3 py-4">Solicitar</div>
+                        @if (auth()->user()->rol !== 'tecnico')
+                            <!--begin::Menu wrapper-->
+                            <div>
+                                <!--begin::Toggle-->
+                                <button type="button" class="btn btn-primary rotate" data-kt-menu-trigger="click"
+                                    data-kt-menu-placement="bottom-start" data-kt-menu-offset="0,5">
+                                    Solicitud
+                                    <span class="svg-icon svg-icon-3 rotate-180 ms-3 me-0">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                            fill="none">
+                                            <path
+                                                d="M11.4343 12.7344L7.25 8.55005C6.83579 8.13583 6.16421 8.13584 5.75 8.55005C5.33579 8.96426 5.33579 9.63583 5.75 10.05L11.2929 15.5929C11.6834 15.9835 12.3166 15.9835 12.7071 15.5929L18.25 10.05C18.6642 9.63584 18.6642 8.96426 18.25 8.55005C17.8358 8.13584 17.1642 8.13584 16.75 8.55005L12.5657 12.7344C12.2533 13.0468 11.7467 13.0468 11.4343 12.7344Z"
+                                                fill="currentColor"></path>
+                                        </svg>
+                                    </span>
+                                </button>
+                                <!--end::Toggle-->
+                                <!--begin::Menu-->
+                                <div class="menu menu-sub menu-sub-dropdown menu-column menu-rounded menu-gray-800 menu-state-bg-light-primary fw-bold w-200px"
+                                    data-kt-menu="true">
+                                    <!--begin::Menu item-->
+                                    <div class="menu-item px-3">
+                                        <div class="menu-content fs-6 text-dark fw-bolder px-3 py-4">Solicitar</div>
+                                    </div>
+                                    <!--end::Menu item-->
+                                    <!--begin::Menu separator-->
+                                    <div class="separator mb-3 opacity-75"></div>
+                                    <!--end::Menu separator-->
+                                    <!--begin::Menu item-->
+                                    <div class="menu-item px-3">
+                                        <a class="menu-link px-3" data-bs-toggle="modal"
+                                            data-bs-target="#modal_mantenimiento_index">
+                                            Mantenimiento
+                                        </a>
+                                    </div>
+                                    <!--end::Menu item-->
+                                    <!--begin::Menu item-->
+                                    <div class="menu-item px-3">
+                                        <a class="menu-link px-3" data-bs-toggle="modal" data-bs-target="#modal_baja_index">
+                                            Baja
+                                        </a>
+                                    </div>
+                                    <!--end::Menu item-->
+                                    <!--begin::Menu item-->
+                                    <div class="menu-item px-3">
+                                        <a class="menu-link px-3" data-bs-toggle="modal"
+                                            data-bs-target="#modal_peticion_index">
+                                            Peticion
+                                        </a>
+                                    </div>
+                                    <!--end::Menu item-->
+                                    <br>
                                 </div>
-                                <!--end::Menu item-->
-                                <!--begin::Menu separator-->
-                                <div class="separator mb-3 opacity-75"></div>
-                                <!--end::Menu separator-->
-                                <!--begin::Menu item-->
-                                <div class="menu-item px-3">
-                                    <a class="menu-link px-3" data-bs-toggle="modal"
-                                        data-bs-target="#modal_mantenimiento_index">
-                                        Mantenimiento
-                                    </a>
-                                </div>
-                                <!--end::Menu item-->
-                                <!--begin::Menu item-->
-                                <div class="menu-item px-3">
-                                    <a class="menu-link px-3" data-bs-toggle="modal" data-bs-target="#modal_baja_index">
-                                        Baja
-                                    </a>
-                                </div>
-                                <!--end::Menu item-->
-                                <!--begin::Menu item-->
-                                <div class="menu-item px-3">
-                                    <a class="menu-link px-3" data-bs-toggle="modal" data-bs-target="#modal_peticion_index">
-                                        Peticion
-                                    </a>
-                                </div>
-                                <!--end::Menu item-->
-                                <br>
+                                <!--end::Menu-->
                             </div>
-                            <!--end::Menu-->
-                        </div>
-                        <!--end::Dropdown wrapper-->
+                            <!--end::Dropdown wrapper-->
+                        @endif
                     </div>
                     <!--end::Card toolbar-->
 
@@ -634,7 +637,7 @@
                                                 <!--end::Label-->
                                                 <!--begin::Input-->
                                                 <textarea style="text-transform:uppercase" class="form-control form-control-solid mb-3 mb-lg-0"
-                                                    placeholder="El equipo esta dañado por ..." name="observacion" 
+                                                    placeholder="El equipo esta dañado por ..." name="observacion"
                                                     id="observacion" value=""></textarea>
                                                 <!--end::Input-->
                                                 <div class="fv-plugins-message-container invalid-feedback"></div>
@@ -818,8 +821,8 @@
                                                             class="form-select form-select-solid select2-hidden-accessible"
                                                             name="peticion_equipo" id="peticion_equipo"
                                                             data-control="select2" data-hide-search="true"
-                                                            data-placeholder="SELECCIONE EL TIPO DE EQUIPO" data-select2-id="5"
-                                                            tabindex="-1" aria-hidden="true">
+                                                            data-placeholder="SELECCIONE EL TIPO DE EQUIPO"
+                                                            data-select2-id="5" tabindex="-1" aria-hidden="true">
                                                             <option data-select2-id="select2-data-21-2sb5"></option>
                                                             <option value="COMPUTADORA">
                                                                 COMPUTADORA</option>
@@ -878,7 +881,7 @@
                                                 <!--end::Label-->
                                                 <!--begin::Input-->
                                                 <textarea style="text-transform:uppercase" class="form-control form-control-solid mb-3 mb-lg-0"
-                                                    placeholder="REQUIERO EL EQUIPO POR ..." name="observacion" 
+                                                    placeholder="REQUIERO EL EQUIPO POR ..." name="observacion"
                                                     id="observacion" value=""></textarea>
                                                 <!--end::Input-->
                                                 <div class="fv-plugins-message-container invalid-feedback"></div>
@@ -1077,23 +1080,25 @@
                     <!--begin::Card toolbar-->
                     <div class="card-toolbar">
                         <!--begin::Toolbar-->
-                        <div class="d-flex justify-content-end" data-kt-user-table-toolbar="base">
-                            <!--begin::Add user-->
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                data-bs-target="#modal_equipo_index">
-                                <!--begin::Svg Icon | path: icons/duotune/arrows/arr075.svg-->
-                                <span class="svg-icon svg-icon-2">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                        fill="none">
-                                        <rect opacity="0.5" x="11.364" y="20.364" width="16" height="2" rx="1"
-                                            transform="rotate(-90 11.364 20.364)" fill="currentColor"></rect>
-                                        <rect x="4.36396" y="11.364" width="16" height="2" rx="1" fill="currentColor">
-                                        </rect>
-                                    </svg>
-                                </span>Añadir equipo
-                            </button>
-                            <!--end::Add user-->
-                        </div>
+                        @if (auth()->user()->rol !== 'tecnico')
+                            <div class="d-flex justify-content-end" data-kt-user-table-toolbar="base">
+                                <!--begin::Add user-->
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                    data-bs-target="#modal_equipo_index">
+                                    <!--begin::Svg Icon | path: icons/duotune/arrows/arr075.svg-->
+                                    <span class="svg-icon svg-icon-2">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                            fill="none">
+                                            <rect opacity="0.5" x="11.364" y="20.364" width="16" height="2" rx="1"
+                                                transform="rotate(-90 11.364 20.364)" fill="currentColor"></rect>
+                                            <rect x="4.36396" y="11.364" width="16" height="2" rx="1" fill="currentColor">
+                                            </rect>
+                                        </svg>
+                                    </span>Añadir equipo
+                                </button>
+                                <!--end::Add user-->
+                            </div>
+                        @endif
                         <!--end::Toolbar-->
                         <!--begin::Modal - Add task-->
                         <div class="modal fade" id="modal_equipo_index" tabindex="-1" aria-hidden="true">
@@ -1181,8 +1186,7 @@
                                                     <!--begin::Label-->
                                                     <label class="required fw-bold fs-6 mb-2">Marca</label>
                                                     <i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip"
-                                                        title=""
-                                                        data-bs-original-title="Ingrese la marca del equipo"
+                                                        title="" data-bs-original-title="Ingrese la marca del equipo"
                                                         aria-label="Ingrese la marca del equipo"></i>
                                                     <!--end::Label-->
                                                     <!--begin::Input-->
@@ -1236,8 +1240,8 @@
                                                         aria-label="Seleccione los dispositivos incluidos en el equipo"></i>
                                                     <!--end::Label-->
                                                     <!--begin::Input-->
-                                                    <input class="form-control form-control-solid" name="dispositivos" style="text-transform:uppercase"
-                                                        value="" id="dispositivos"/>
+                                                    <input class="form-control form-control-solid" name="dispositivos"
+                                                        style="text-transform:uppercase" value="" id="dispositivos" />
                                                     <!--end::Input-->
                                                     <div class="fv-plugins-message-container invalid-feedback"></div>
                                                 </div>
