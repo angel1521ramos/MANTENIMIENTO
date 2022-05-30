@@ -26,7 +26,8 @@ class Tecnico extends FormRequest
         return [
             'nombre' => 'required',
             'telefono' => 'required',
-            'correo' => 'required'
+            'correo' => 'required',
+            'password' => 'required'
         ];
     }
 }

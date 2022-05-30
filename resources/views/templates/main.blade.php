@@ -6,7 +6,7 @@
     <title>SISTEMAS Y TI</title>
     <meta charset="utf-8" />
     @include('templates.extras.head')
-    <link rel="shortcut icon" href="metronic8/demo1/assets/media/logos/favicon.ico" />
+    <link rel="shortcut icon" href="{{ asset('metronic8/demo1/assets/media/svg/logo-ayuntamiento.ico') }}" />
     @include('templates.src.head-ss')
 </head>
 <!--end::Head-->

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Departamento;
 use App\Models\Tecnico;
 use App\Models\Solicitud;
+use App\Models\user;
 use App\Http\Requests\Tecnico as TecnicoRequests;
 use App\Models\Equipo;
 
@@ -41,6 +42,13 @@ class TecnicoController extends Controller
     public function store(TecnicoRequests $request)
     {
         $this->tecnico->create($request->all());
+        $rol = 'tecnico';
+        $user = user::create([
+            'name' => $request->nombre,
+            'email' => $request->correo,
+            'rol' => $rol,
+            'password' => bcrypt($request->password),
+        ]);
         return $this->index();
     }
 

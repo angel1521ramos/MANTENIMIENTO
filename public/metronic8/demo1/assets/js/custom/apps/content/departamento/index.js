@@ -46,7 +46,7 @@ var KTUsersAddUser = function () {
                     'direccion': {
                         validators: {
                             notEmpty: {
-                                message: 'La direccion es requerido'
+                                message: 'La direccion es requerida'
                             }
                         }
                     },
@@ -61,6 +61,13 @@ var KTUsersAddUser = function () {
                         validators: {
                             notEmpty: {
                                 message: 'El correo es requerido'
+                            }
+                        }
+                    },
+                    'password': {
+                        validators: {
+                            notEmpty: {
+                                message: 'la contraseña es requerida'
                             }
                         }
                     },

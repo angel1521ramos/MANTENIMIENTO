@@ -3,7 +3,7 @@
 <!--begin::Head-->
 
 <head>
-    <title>SISTEMAS Y TI</title>
+    <title>Soporte TI - Iniciar</title>
     <meta charset="utf-8" />
     <meta name="description"
         content="The most advanced Bootstrap Admin Theme on Themeforest trusted by 94,000 beginners and professionals. Multi-demo, Dark Mode, RTL support and complete React, Angular, Vue &amp; Laravel versions. Grab your copy now and get life-time updates for free." />
@@ -17,12 +17,13 @@
     <meta property="og:url" content="https://keenthemes.com/metronic" />
     <meta property="og:site_name" content="Keenthemes | Metronic" />
     <link rel="canonical" href="https://preview.keenthemes.com/metronic8" />
-    <link rel="shortcut icon" href="{{ asset('metronic8/demo1/assets/media/logos/favicon.ico') }}" />
+    <link rel="shortcut icon" href="{{ asset('metronic8/demo1/assets/media/svg/logo-ayuntamiento.ico') }}" />
     <!--begin::Fonts-->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
     <!--end::Fonts-->
     <!--begin::Global Stylesheets Bundle(used by all pages)-->
-    <link href="{{ asset('metronic8/demo1/assets/plugins/global/plugins.dark.bundle.css') }}" rel="stylesheet" type="text/css" />
+    <link href="{{ asset('metronic8/demo1/assets/plugins/global/plugins.dark.bundle.css') }}" rel="stylesheet"
+        type="text/css" />
     <link href="{{ asset('metronic8/demo1/assets/css/style.dark.bundle.css') }}" rel="stylesheet" type="text/css" />
     <!--end::Global Stylesheets Bundle-->
     <!--Begin::Google Tag Manager -->
@@ -58,12 +59,13 @@
     <div class="d-flex flex-column flex-root">
         <!--begin::Authentication - Sign-in -->
         <div class="d-flex flex-column flex-column-fluid bgi-position-y-bottom position-x-center bgi-no-repeat bgi-size-contain bgi-attachment-fixed"
-            style="background-image: url({{ asset(')metronic8/demo1/assets/media/illustrations/sketchy-1/14-dark.png') }})">
+            style="background-image: url({{ asset('metronic8/demo1/assets/media/svg/fondo.svg') }})">
             <!--begin::Content-->
             <div class="d-flex flex-center flex-column flex-column-fluid p-10 pb-lg-20">
                 <!--begin::Logo-->
-                <a href="/metronic8/demo1/../demo1/dark/index.html" class="mb-12">
-                    <img alt="Logo" src="{{ asset('metronic8/demo1/assets/media/logos/logo-1-dark.svg') }}" class="h-40px" />
+                <a class="mb-12">
+                    <img alt="Logo" src="{{ asset('metronic8/demo1/assets/media/svg/logo-ayuntamiento.svg') }}"
+                        class="h-100px" />
                 </a>
                 <!--end::Logo-->
                 <!--begin::Wrapper-->
@@ -75,12 +77,12 @@
                         <!--begin::Heading-->
                         <div class="text-center mb-10">
                             <!--begin::Title-->
-                            <h1 class="text-dark mb-3">Ingresa al Centro de soporte<br>Sistemas y TI</h1>
+                            <h1 class="text-dark mb-3">Ingresar a soporte TI</h1>
                             <!--end::Title-->
                             <!--begin::Link-->
                             <div class="text-gray-400 fw-bold fs-4">No tienes cuenta?
-                                <a href="http://localhost/mantenimiento/public/sign-up"
-                                    class="link-primary fw-bolder">Crear una cuenta</a>
+                                <a href="{{ route('sign-up.view') }}" class="link-primary fw-bolder">Crear una
+                                    cuenta</a>
                             </div>
                             <!--end::Link-->
                         </div>
@@ -103,10 +105,6 @@
                                 <!--begin::Label-->
                                 <label class="form-label fw-bolder text-dark fs-6 mb-0">Password</label>
                                 <!--end::Label-->
-                                <!--begin::Link-->
-                                <a href="/metronic8/demo1/../demo1/dark/authentication/layouts/basic/password-reset.html"
-                                    class="link-primary fs-6 fw-bolder">Olvidaste tu contraseña?</a>
-                                <!--end::Link-->
                             </div>
                             <!--end::Wrapper-->
                             <!--begin::Input-->
@@ -114,14 +112,6 @@
                                 name="password" autocomplete="off" />
                             <!--end::Input-->
                         </div>
-                        <!--end::Input group-->
-                        <div class="fv-row mb-10 fv-plugins-icon-container">
-                            <label class="form-check form-check-custom form-check-solid form-check-inline">
-                                <input class="form-check-input" type="checkbox" name="recordar">
-                                <span class="form-check-label fw-bold text-gray-700 fs-6">Recordar sesion</span>
-                            </label>
-                        <div class="fv-plugins-message-container invalid-feedback"></div></div>
-                        <!--begin::Actions-->
                         <div class="text-center">
                             <!--begin::Submit button-->
                             <button type="submit" id="kt_sign_in_submit" class="btn btn-lg btn-primary w-100 mb-5">
@@ -129,7 +119,7 @@
                                 <span class="indicator-progress">Por favor, espere...
                                     <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
                             </button>
-                            <!--end::Submit button--> 
+                            <!--end::Submit button-->
                         </div>
                         <!--end::Actions-->
                     </form>
@@ -140,13 +130,13 @@
             <!--end::Content-->
             <!--begin::Footer-->
             <div class="d-flex flex-center flex-column-auto p-10">
-                <!--begin::Links-->
+                <!--begin::Links
                 <div class="d-flex align-items-center fw-bold fs-6">
                     <a href="https://keenthemes.com" class="text-muted text-hover-primary px-2">About</a>
                     <a href="mailto:support@keenthemes.com" class="text-muted text-hover-primary px-2">Contact</a>
                     <a href="https://1.envato.market/EA4JP" class="text-muted text-hover-primary px-2">Contact Us</a>
                 </div>
-                <!--end::Links-->
+                end::Links-->
             </div>
             <!--end::Footer-->
         </div>

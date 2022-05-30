@@ -251,7 +251,7 @@
                                                 <!--begin::Input-->
                                                 <input type="text" name="identificador" id="identificador"
                                                     class="form-control form-control-solid mb-3 mb-lg-0"
-                                                    placeholder="1241-0-0000" style="text-transform:uppercase" value="">
+                                                    placeholder="STI - " style="text-transform:uppercase" value="">
                                                 <!--end::Input-->
                                                 <div class="fv-plugins-message-container invalid-feedback"></div>
                                             </div>
@@ -502,7 +502,7 @@
                                                 <!--begin::Input-->
                                                 <input type="text" name="identificador" id="identificador"
                                                     class="form-control form-control-solid mb-3 mb-lg-0"
-                                                    placeholder="1241-0-0000" style="text-transform:uppercase" value="">
+                                                    placeholder="STI - " style="text-transform:uppercase" value="">
                                                 <!--end::Input-->
                                                 <div class="fv-plugins-message-container invalid-feedback"></div>
                                             </div>
@@ -753,7 +753,7 @@
                                                 <!--begin::Input-->
                                                 <input type="text" name="identificador" id="identificador"
                                                     class="form-control form-control-solid mb-3 mb-lg-0"
-                                                    placeholder="1241-0-0000" style="text-transform:uppercase" value="">
+                                                    placeholder="STI - " style="text-transform:uppercase" value="">
                                                 <!--end::Input-->
                                                 <div class="fv-plugins-message-container invalid-feedback"></div>
                                             </div>

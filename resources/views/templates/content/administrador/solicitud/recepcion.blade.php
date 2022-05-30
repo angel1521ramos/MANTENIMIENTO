@@ -93,30 +93,30 @@
 
     @if ($solicitud->tipo == 'MANTENIMIENTO')
         <p>El/La que suscribe <b>{{ $solicitud->Departamento->responsable }}</b> en mi
-            caracter de <b>{{ $solicitud->Departamento->cargo_responsable }}</b>
+            CARÁCTER de <b>{{ $solicitud->Departamento->cargo_responsable }}</b>
             del H. Ayuntamiento de la ciudad de Minatitlan, Ver.,
-            le solicito de la manera mas atenta su apoyo para el mantenimiento</b>
-            del/la <b>{{ $solicitud->Equipo->tipo }}</b> <b>{{ $solicitud->Equipo->marca }}</b> con el numero de
+            le solicito de la manera MÁS atenta su apoyo para el mantenimiento</b>
+            del/la <b>{{ $solicitud->Equipo->tipo }}</b> <b>{{ $solicitud->Equipo->marca }}</b> con el NÚMERO de
             inventario <b>{{ $solicitud->Equipo->inventario }}</b>
-            por el motivo de que <b>{{ $solicitud->observacion }}</b>.</p>
+            por Él motivo de que <b>{{ $solicitud->observacion }}</b> y es necesario que REALICE el DIAGNÓSTICO y/o mantenimiento correcto.</p>
     @elseif ($solicitud->tipo == 'BAJA')
         <p>El/La que suscribe <b>{{ $solicitud->Departamento->responsable }}</b> en mi
-            caracter de <b>{{ $solicitud->Departamento->cargo_responsable }}</b>
+            CARÁCTER de <b>{{ $solicitud->Departamento->cargo_responsable }}</b>
             del H. Ayuntamiento de la ciudad de Minatitlan, Ver.,
-            le solicito de la manera mas atenta su apoyo para la verificacion y
+            le solicito de la manera MÁS atenta su apoyo para la verificacion y
             el proceso de baja
             </b>
-            del/la <b>{{ $solicitud->Equipo->tipo }}</b> <b>{{ $solicitud->Equipo->marca }}</b> con el numero de
+            del/la <b>{{ $solicitud->Equipo->tipo }}</b> <b>{{ $solicitud->Equipo->marca }}</b> con Él NÚMERO de
             inventario <b>{{ $solicitud->Equipo->inventario }}</b>
-            por el motivo de que <b>{{ $solicitud->observacion }}</b>.</p>
+            por Él motivo de que <b>{{ $solicitud->observacion }}</b> y es necesario que REALICE el DIAGNÓSTICO y/o baja de manera correcto.</p>
     @else
         <p>El/La que suscribe <b>{{ $solicitud->Departamento->responsable }}</b> en mi
-            caracter de <b>{{ $solicitud->Departamento->cargo_responsable }}</b>
+            CARÁCTER de <b>{{ $solicitud->Departamento->cargo_responsable }}</b>
             del H. Ayuntamiento de la ciudad de Minatitlan, Ver.,
-            le solicito de la manera mas atenta su apoyo para la peticion
+            le solicito de la manera MÁS atenta su apoyo para la peticion
             </b>
             de un/una <b>{{ $solicitud->peticion_equipo }}</b>
-            por el motivo de que <b>{{ $solicitud->observacion }}</b>.</p>
+            por Él motivo de que <b>{{ $solicitud->observacion }}</b>. y es necesario sea proporcionado por los motivos expuestos.</p>
     @endif
     <p>Sin otro particular por el momento y agradeciendo de antemano su puntual
         atención al tema mencionado,

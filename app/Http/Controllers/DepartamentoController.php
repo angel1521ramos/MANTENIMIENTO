@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Departamento;
 use App\Models\Equipo;
+use App\Models\user;
 use App\Models\Solicitud;
 use App\Http\Requests\Departamento as DepartamentoRequests;
 
@@ -31,6 +32,13 @@ class DepartamentoController extends Controller
     public function store(DepartamentoRequests $request)
     {
         $this->departamento->create($request->all());
+        $rol = 'departamento';
+        $user = user::create([
+            'name' => $request->nombre,
+            'email' => $request->correo,
+            'rol' => $rol,
+            'password' => bcrypt($request->password),
+        ]);
         return $this->index();
     }
     

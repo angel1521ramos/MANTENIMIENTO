@@ -45,23 +45,25 @@
                     <!--begin::Card toolbar-->
                     <div class="card-toolbar">
                         <!--begin::Toolbar-->
-                        <div class="d-flex justify-content-end" data-kt-user-table-toolbar="base">
-                            <!--begin::Add user-->
-                            <button type="button" class="btn btn-primary" data-bs-toggle="modal"
-                                data-bs-target="#modal_departamento_index">
-                                <!--begin::Svg Icon | path: icons/duotune/arrows/arr075.svg-->
-                                <span class="svg-icon svg-icon-2">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
-                                        fill="none">
-                                        <rect opacity="0.5" x="11.364" y="20.364" width="16" height="2" rx="1"
-                                            transform="rotate(-90 11.364 20.364)" fill="currentColor"></rect>
-                                        <rect x="4.36396" y="11.364" width="16" height="2" rx="1" fill="currentColor">
-                                        </rect>
-                                    </svg>
-                                </span>Añadir departamento
-                            </button>
-                            <!--end::Add user-->
-                        </div>
+                        @if (auth()->user()->rol !== 'tecnico')
+                            <div class="d-flex justify-content-end" data-kt-user-table-toolbar="base">
+                                <!--begin::Add user-->
+                                <button type="button" class="btn btn-primary" data-bs-toggle="modal"
+                                    data-bs-target="#modal_departamento_index">
+                                    <!--begin::Svg Icon | path: icons/duotune/arrows/arr075.svg-->
+                                    <span class="svg-icon svg-icon-2">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                            fill="none">
+                                            <rect opacity="0.5" x="11.364" y="20.364" width="16" height="2" rx="1"
+                                                transform="rotate(-90 11.364 20.364)" fill="currentColor"></rect>
+                                            <rect x="4.36396" y="11.364" width="16" height="2" rx="1" fill="currentColor">
+                                            </rect>
+                                        </svg>
+                                    </span>Añadir departamento
+                                </button>
+                                <!--end::Add user-->
+                            </div>
+                        @endif
                         <!--end::Toolbar-->
                         <!--begin::Modal - Add task-->
                         <div class="modal fade" id="modal_departamento_index" tabindex="-1" aria-hidden="true">
@@ -113,8 +115,7 @@
                                                     <!--begin::Label-->
                                                     <label class="required fw-bold fs-6 mb-2">Nombre</label>
                                                     <i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip"
-                                                        title=""
-                                                        data-bs-original-title="Ingrese el nombre del departamento"
+                                                        title="" data-bs-original-title="Ingrese el nombre del departamento"
                                                         aria-label="Ingrese el nombre del departamento"></i>
                                                     <!--end::Label-->
                                                     <!--begin::Input-->
@@ -138,7 +139,8 @@
                                                     <!--begin::Input-->
                                                     <input type="text" name="identificador" id="identificador"
                                                         class="form-control form-control-solid mb-3 mb-lg-0"
-                                                        placeholder="Ejemplo: DSTI" style="text-transform:uppercase" value="">
+                                                        placeholder="Ejemplo: DSTI" style="text-transform:uppercase"
+                                                        value="">
                                                     <!--end::Input-->
                                                     <div class="fv-plugins-message-container invalid-feedback"></div>
                                                 </div>
@@ -228,6 +230,23 @@
                                                     <input type="text" name="correo" id="correo"
                                                         class="form-control form-control-solid mb-3 mb-lg-0"
                                                         placeholder="Ejemplo: soporte@minatitlan.gob.mx"
+                                                        style="text-transform:uppercase" value="">
+                                                    <!--end::Input-->
+                                                    <div class="fv-plugins-message-container invalid-feedback"></div>
+                                                </div>
+                                                <!--end::Input group-->
+                                                <!--begin::Input group-->
+                                                <div class="fv-row mb-7 fv-plugins-icon-container">
+                                                    <!--begin::Label-->
+                                                    <label class="required fw-bold fs-6 mb-2">Contraseña</label>
+                                                    <i class="fas fa-exclamation-circle ms-2 fs-7" data-bs-toggle="tooltip"
+                                                        title="" data-bs-original-title="Ingrese la contraseña del departamento"
+                                                        aria-label="Ingrese la contraseña del departamento"></i>
+                                                    <!--end::Label-->
+                                                    <!--begin::Input-->
+                                                    <input type="text" name="password" id="password"
+                                                        class="form-control form-control-solid mb-3 mb-lg-0"
+                                                        placeholder="Ingrese la contraseña del departamento"
                                                         style="text-transform:uppercase" value="">
                                                     <!--end::Input-->
                                                     <div class="fv-plugins-message-container invalid-feedback"></div>

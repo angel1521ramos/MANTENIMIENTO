@@ -153,7 +153,7 @@
                         </div>
                         <!--end::Row-->
                         <!--begin::Input group-->
-                        <div class="row mb-8">
+                        <div class="row mb-8" {{ auth()->user()->rol == 'departamento' ? 'hidden' : '' }}>
                             <!--begin::Heading-->
                             <div class="col-xl-3">
                                 <!--begin::Label-->
@@ -223,26 +223,42 @@
                                 </div>
                                 <!--end::Col-->
                                 <!--begin::Input-->
-                                <div class="col-xl-9 fv-row fv-plugins-icon-container"
-                                    data-select2-id="select2-data-453-kbzx">
-                                    <div class="w-100" data-select2-id="select2-data-189-svbm">
-                                        <!--begin::Select2-->
-                                        <select class="form-select form-select-solid select2-hidden-accessible"
-                                            name="tecnico_id" id="tecnico_id" data-control="select2" data-hide-search="true"
-                                            data-placeholder="SELECCIONA UN TECNICO" data-select2-id="1" tabindex="-1"
-                                            aria-hidden="true">
-                                            <option value="">SELECCIONA UN TECNICO</option>
-                                            @foreach ($tecnico as $x)
-                                                <option value="{{ $x->id }}"
-                                                    {{ old('tecnico_id', $solicitud->tecnico_id) == $x->id ? 'selected' : '' }}>
-                                                    {{ $x->nombre }}
-                                                </option>
-                                            @endforeach
-                                        </select>
-                                        <!--end::Select2-->
+
+                                @if (auth()->user()->rol == 'departamento')
+                                    <div class="col-xl-9 fv-row fv-plugins-icon-container" hidden>
+                                        <input type="text" class="form-control" name="tecnico_id"
+                                            style="text-transform:uppercase" value="{{ $solicitud->tecnico_id }}">
                                     </div>
-                                    <div class="fv-plugins-message-container invalid-feedback"></div>
-                                </div>
+                                    <div class="col-xl-9 fv-row fv-plugins-icon-container">
+                                        <input type="text" class="form-control"
+                                            style="text-transform:uppercase" value="{{ $solicitud->Tecnico->nombre }}"
+                                            readonly>
+                                    </div>
+                                @else
+                                    <div class="col-xl-9 fv-row fv-plugins-icon-container"
+                                        data-select2-id="select2-data-453-kbzx">
+                                        <div class="w-100" data-select2-id="select2-data-189-svbm">
+                                            <!--begin::Select2-->
+                                            <select class="form-select form-select-solid select2-hidden-accessible"
+                                                name="tecnico_id" id="tecnico_id" data-control="select2"
+                                                data-hide-search="true" data-placeholder="SELECCIONA UN TECNICO"
+                                                data-select2-id="1" tabindex="-1" aria-hidden="true">
+                                                <option value="">SELECCIONA UN TECNICO</option>
+                                                @foreach ($tecnico as $x)
+                                                    <option value="{{ $x->id }}"
+                                                        {{ old('tecnico_id', $solicitud->tecnico_id) == $x->id ? 'selected' : '' }}>
+                                                        {{ $x->nombre }}
+                                                    </option>
+                                                @endforeach
+                                            </select>
+                                            <!--end::Select2-->
+                                        </div>
+                                        <div class="fv-plugins-message-container invalid-feedback"></div>
+                                    </div>
+                                @endif
+
+
+
                                 <!--end::Input-->
                             </div>
                             <!--end::Row-->
@@ -506,8 +522,8 @@
                                             data-placeholder="SELECCIONA UN TECNICO" data-select2-id="1" tabindex="-1"
                                             aria-hidden="true">
                                             <option value="">SELECCIONA UN TECNICO</option>
-                                                <option value="" selected>
-                                                </option>
+                                            <option value="" selected>
+                                            </option>
                                         </select>
                                         <!--end::Select2-->
                                     </div>
@@ -628,7 +644,8 @@
                             <div class="my-1 me-5">
                                 <!-- begin::Pint-->
                                 <a href="{{ route('solicitud.pdf.entrega', $solicitud->id) }}"
-                                    class="btn btn-light-info btn-hover-scale me-5">
+                                    class="btn btn-light-info btn-hover-scale me-5"
+                                    {{ auth()->user()->rol == 'departamento' ? 'hidden' : '' }} ->
                                     <!--begin::Svg Icon | path: assets/media/icons/duotune/files/fil022.svg-->
                                     <span class="svg-icon svg-icon-muted svg-icon-2hx"><svg
                                             xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"

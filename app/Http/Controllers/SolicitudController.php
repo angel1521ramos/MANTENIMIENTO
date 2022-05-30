@@ -21,18 +21,36 @@ class SolicitudController extends Controller
 
     public function index()
     {
-        if (request()->is('admin/solicitud/index/mantenimiento')) {
-            $solicitud = Solicitud::where('tipo', 'MANTENIMIENTO')->orderBy('estatus', 'desc')->get();
-        } elseif (request()->is('admin/solicitud/index/peticion')) {
-            $solicitud = Solicitud::where('tipo', 'PETICION')->orderBy('estatus', 'desc')->get();
-        } elseif (request()->is('admin/solicitud/index/baja')) {
-            $solicitud = Solicitud::where('tipo', 'BAJA')->orderBy('estatus', 'desc')->get();
-        } else {
-            $solicitud = Solicitud::orderBy('estatus', 'desc')->get();
-        }
 
-        $equipo = Equipo::orderBy('departamento_id', 'asc')->get();
-        $departamento = Departamento::orderBy('id', 'asc')->get();
+        if (auth()->user()->rol == 'departamento') {
+            $email = auth()->user()->email;
+            $departamento_id = Departamento::where('correo', $email)->value('id');
+            $departamento = Departamento::find($departamento_id);
+            $equipo = Equipo::where('departamento_id', $departamento_id)->orderBy('departamento_id', 'asc')->get();
+
+            if (request()->is('solicitud/index/mantenimiento')) {
+                $solicitud = Solicitud::where('tipo', 'MANTENIMIENTO')->where('departamento_id', $departamento_id)->orderBy('estatus', 'desc')->get();
+            } elseif (request()->is('solicitud/index/peticion')) {
+                $solicitud = Solicitud::where('tipo', 'PETICION')->where('departamento_id', $departamento_id)->orderBy('estatus', 'desc')->get();
+            } elseif (request()->is('solicitud/index/baja')) {
+                $solicitud = Solicitud::where('tipo', 'BAJA')->where('departamento_id', $departamento_id)->orderBy('estatus', 'desc')->get();
+            } else {
+                $solicitud = Solicitud::where('departamento_id', $departamento_id)->orderBy('estatus', 'desc')->get();
+            }
+        } else {
+
+            if (request()->is('solicitud/index/mantenimiento')) {
+                $solicitud = Solicitud::where('tipo', 'MANTENIMIENTO')->orderBy('estatus', 'desc')->get();
+            } elseif (request()->is('solicitud/index/peticion')) {
+                $solicitud = Solicitud::where('tipo', 'PETICION')->orderBy('estatus', 'desc')->get();
+            } elseif (request()->is('solicitud/index/baja')) {
+                $solicitud = Solicitud::where('tipo', 'BAJA')->orderBy('estatus', 'desc')->get();
+            } else {
+                $solicitud = Solicitud::orderBy('estatus', 'desc')->get();
+            }
+            $departamento = Departamento::orderBy('id', 'asc')->get();
+            $equipo = Equipo::orderBy('departamento_id', 'asc')->get();
+        }
 
         return view('templates.content.administrador.solicitud.index', compact('departamento', 'solicitud', 'equipo'));
     }

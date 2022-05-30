@@ -20,6 +20,7 @@ class TecnicoFactory extends Factory
             'nombre' => $this->faker->name,
             'telefono' => $this->faker->tollFreePhoneNumber,
             'correo' => $this->faker->email,
+            'password' => '123456',
         ];
     }
 }

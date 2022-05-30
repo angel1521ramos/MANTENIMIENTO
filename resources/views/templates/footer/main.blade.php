@@ -5,7 +5,7 @@
         <!--begin::Copyright-->
         <div class="text-dark order-2 order-md-1">
             <span class="text-muted fw-bold me-1">2022-2025©</span>
-            <a href="#" target="_blank"
+            <a href="https://www.minatitlan.gob.mx/" target="_blank"
                 class="text-gray-800 text-hover-primary">Ayuntamiento de Minatitlan</a>
         </div>
         <!--end::Copyright-->
