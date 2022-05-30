@@ -81,8 +81,13 @@
                             <!--end::Title-->
                             <!--begin::Link-->
                             <div class="text-gray-400 fw-bold fs-4">No tienes cuenta?
+<<<<<<< HEAD
                                 <a href="{{ route('sign-up.view') }}" class="link-primary fw-bolder">Crear una
                                     cuenta</a>
+=======
+                                <a href="{{ route('sign-up.view') }}"
+                                    class="link-primary fw-bolder">Crear una cuenta</a>
+>>>>>>> b851a61bd23bc9896ce64d732b2c853652284b60
                             </div>
                             <!--end::Link-->
                         </div>

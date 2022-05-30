@@ -29,6 +29,7 @@ class DatabaseSeeder extends Seeder
             'name' => 'Jose Angel Ramos Martinez',
             'email' => 'angel1521ramos@gmail.com',
             'rol' => 'administrador',
+<<<<<<< HEAD
             'password' => bcrypt('Mdsti2k22#')
         ]);
         User::create([
@@ -42,6 +43,15 @@ class DatabaseSeeder extends Seeder
             'email' => 'carmenmedel@minatitlan.gob.mx',
             'rol' => 'administrador',
             'password' => bcrypt('Prm2k22#')
+=======
+            'password' => bcrypt('123456')
+        ]);
+        User::create([
+            'name' => 'gaer',
+            'email' => 'gaer1521ramos@gmail.com',
+            'rol' => 'departamento',
+            'password' => bcrypt('123456')
+>>>>>>> b851a61bd23bc9896ce64d732b2c853652284b60
         ]);
     }
 }

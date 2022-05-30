@@ -63,16 +63,27 @@
             <!--begin::Content-->
             <div class="d-flex flex-center flex-column flex-column-fluid p-10 pb-lg-20">
                 <!--begin::Logo-->
+<<<<<<< HEAD
                 <a class="mb-12">
                     <img alt="Logo" src="{{ asset('metronic8/demo1/assets/media/svg/logo-ayuntamiento.svg') }}"
                         class="h-100px" />
+=======
+                <a href="/metronic8/demo1/../demo1/dark/index.html" class="mb-12">
+                    <img alt="Logo" src="{{ asset('metronic8/demo1/assets/media/logos/logo-mina.png') }}"
+                        class="h-40px" />
+>>>>>>> b851a61bd23bc9896ce64d732b2c853652284b60
                 </a>
                 <!--end::Logo-->
                 <!--begin::Wrapper-->
                 <div class="w-lg-850px bg-body rounded shadow-sm p-10 p-lg-15 mx-auto">
                     <!--begin::Form-->
+<<<<<<< HEAD
                     <form class="form w-100" novalidate="novalidate" id="register_form" name="register_form"
                         method="POST" action="{{ route('signup.post') }}">
+=======
+                    <form class="form w-100" novalidate="novalidate" id="kt_sign_up_form" method="POST"
+                        action="{{ route('departamento.store') }}">
+>>>>>>> b851a61bd23bc9896ce64d732b2c853652284b60
                         @csrf
                         <!--begin::Heading-->
                         <div class="mb-10 text-center">
@@ -85,7 +96,12 @@
                             </div>
                             <!--end::Link-->
                         </div>
+<<<<<<< HEAD
                         <!--end::Heading--><!--begin::Input group-->
+=======
+                        <!--end::Heading-->
+                        <!--begin::Input group-->
+>>>>>>> b851a61bd23bc9896ce64d732b2c853652284b60
                         <div class="fv-row mb-7">
                             <label class="form-label fw-bolder text-dark fs-6">Nombre</label>
                             <input class="form-control form-control-lg form-control-solid" type="text" placeholder=""
@@ -94,13 +110,20 @@
                         <!--end::Input group-->
                         <!--begin::Input group-->
                         <div class="fv-row mb-7">
+<<<<<<< HEAD
                             <label class="form-label fw-bolder text-dark fs-6">Encargado</label>
                             <input class="form-control form-control-lg form-control-solid" type="text" placeholder=""
                                 name="responsable" id="responsable" autocomplete="off" />
+=======
+                            <label class="form-label fw-bolder text-dark fs-6">identificador</label>
+                            <input class="form-control form-control-lg form-control-solid" type="text" placeholder=""
+                                name="identificador" id="identificador" autocomplete="off" />
+>>>>>>> b851a61bd23bc9896ce64d732b2c853652284b60
                         </div>
                         <!--end::Input group-->
                         <!--begin::Input group-->
                         <div class="fv-row mb-7">
+<<<<<<< HEAD
                             <label class="form-label fw-bolder text-dark fs-6">Cargo del encargado</label>
                             <input class="form-control form-control-lg form-control-solid" type="text" placeholder=""
                                 name="cargo_responsable" id="cargo_responsable" autocomplete="off" />
@@ -122,10 +145,16 @@
                                     placeholder="" name="telefono" id="telefono" autocomplete="off" />
                             </div>
                             <!--end::Input group-->
+=======
+                            <label class="form-label fw-bolder text-dark fs-6">responsable</label>
+                            <input class="form-control form-control-lg form-control-solid" type="text" placeholder=""
+                                name="responsable" id="responsable" autocomplete="off" />
+>>>>>>> b851a61bd23bc9896ce64d732b2c853652284b60
                         </div>
                         <!--end::Input group-->
                         <!--begin::Input group-->
                         <div class="fv-row mb-7">
+<<<<<<< HEAD
                             <label class="form-label fw-bolder text-dark fs-6">Dirección</label>
                             <input class="form-control form-control-lg form-control-solid" type="text" placeholder=""
                                 name="direccion" id="direccion" autocomplete="off" />
@@ -147,10 +176,23 @@
                                     placeholder="" name="password" autocomplete="off" />
                             </div>
                             <!--end::Input group-->
+=======
+                            <label class="form-label fw-bolder text-dark fs-6">cargo</label>
+                            <input class="form-control form-control-lg form-control-solid" type="text" placeholder=""
+                                name="cargo_responsable" id="cargo_responsable" autocomplete="off" />
                         </div>
                         <!--end::Input group-->
                         <!--begin::Input group-->
                         <div class="fv-row mb-7">
+                            <label class="form-label fw-bolder text-dark fs-6">direccion</label>
+                            <input class="form-control form-control-lg form-control-solid" type="text" placeholder=""
+                                name="direccion" id="direccion" autocomplete="off" />
+>>>>>>> b851a61bd23bc9896ce64d732b2c853652284b60
+                        </div>
+                        <!--end::Input group-->
+                        <!--begin::Input group-->
+                        <div class="fv-row mb-7">
+<<<<<<< HEAD
                             <label class="form-label fw-bolder text-dark fs-6">Codigo de verificacion</label>
                             <input class="form-control form-control-lg form-control-solid" type="text" placeholder=""
                                 name="codigo" id="codigo" autocomplete="off" />
@@ -166,6 +208,36 @@
                         <div class="text-center">
                             <button type="submit" id="form_input" class="btn btn-lg btn-primary w-100 mb-5">
                                 <span class="indicator-label">Continuar</span>
+=======
+                            <label class="form-label fw-bolder text-dark fs-6">Telefono</label>
+                            <input class="form-control form-control-lg form-control-solid" type="text" placeholder=""
+                                name="telefono" id="telefono" autocomplete="off" />
+                        </div>
+                        <!--end::Input group-->
+                        <!--begin::Input group-->
+                        <div class="fv-row mb-7">
+                            <label class="form-label fw-bolder text-dark fs-6">Correo</label>
+                            <input class="form-control form-control-lg form-control-solid" type="correo" placeholder=""
+                                name="correo" autocomplete="off" />
+                        </div>
+                        <!--end::Input group-->
+                        <!--begin::Input group-->
+                        <div class="fv-row mb-7">
+                            <label class="form-label fw-bolder text-dark fs-6">Contraseña</label>
+                            <input class="form-control form-control-lg form-control-solid" type="password" placeholder=""
+                                name="password" autocomplete="off" />
+                        </div>
+                        <!--end::Input group-->
+                        <!--begin::Hint-->
+                        <div class="text-muted">Utilize 8 o mas caracteres con una combinación de minusculas,
+                            mayusculas, numeros y simbolos
+                        </div>
+                        <!--end::Hint-->
+                        <!--begin::Actions-->
+                        <div class="text-center">
+                            <button type="button" id="kt_sign_up_submit" class="btn btn-lg btn-primary">
+                                <span class="indicator-label">Crear</span>
+>>>>>>> b851a61bd23bc9896ce64d732b2c853652284b60
                                 <span class="indicator-progress">Por favor espere...
                                     <span class="spinner-border spinner-border-sm align-middle ms-2"></span></span>
                             </button>

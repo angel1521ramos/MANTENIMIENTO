@@ -192,7 +192,11 @@
                                 <span class="menu-bullet">
                                     <span class="bullet bullet-dot"></span>
                                 </span>
+<<<<<<< HEAD
                                 <span class="menu-title">Peticion</span>
+=======
+                                <span class="menu-title">peticion</span>
+>>>>>>> b851a61bd23bc9896ce64d732b2c853652284b60
                             </a>
                         </div>
                         <div class="menu-item">

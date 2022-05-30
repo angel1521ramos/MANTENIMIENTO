@@ -28,8 +28,13 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::view('/home','templates.main')->name('home')->middleware('auth');
+<<<<<<< HEAD
 Route::post('sign-up', [LoginController::class, 'signup' ] )->name('signup.post')->middleware('guest');
 Route::view('/','templates.content.autenticacion.log-in')->name('login.view')->middleware('guest');
 Route::view('sign-up','templates.content.autenticacion.sign-up')->name('sign-up.view')->middleware('guest');
+=======
+Route::view('/','templates.content.autenticacion.log-in')->name('login.view')->middleware('guest');
+Route::view('/sign-up','templates.content.autenticacion.sign-up')->name('sign-up.view')->middleware('guest');
+>>>>>>> b851a61bd23bc9896ce64d732b2c853652284b60
 Route::post('login', [LoginController::class, 'login' ] )->name('login.post');
 Route::post('logout', [LoginController::class, 'logout' ] )->name('logout.post');

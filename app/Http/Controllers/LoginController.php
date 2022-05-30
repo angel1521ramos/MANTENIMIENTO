@@ -45,6 +45,7 @@ class LoginController extends Controller
         return $redirect->to('/');
     }
 
+<<<<<<< HEAD
 
     public function signup(DepartamentoRequests $request)
     {
@@ -63,4 +64,7 @@ class LoginController extends Controller
         }
         return back();
     }
+=======
+    
+>>>>>>> b851a61bd23bc9896ce64d732b2c853652284b60
 }
